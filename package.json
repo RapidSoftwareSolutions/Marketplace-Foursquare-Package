@@ -1,0 +1,32 @@
+{
+  "name": "Foursquare",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "q": "^1.4.1",
+    "rapi-js-package": "^1.2"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^2.4.5",
+    "supertest": "^1.2.0",
+    "supertest-as-promised": "^3.1.0"
+  },
+  "scripts": {
+    "test": "node_modules/mocha/bin/mocha --recursive",
+    "start": "node ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RapidSoftwareSolutions/Marketplace-Foursquare-Package.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RapidSoftwareSolutions/Marketplace-Foursquare-Package/issues"
+  },
+  "homepage": "https://github.com/RapidSoftwareSolutions/Marketplace-Foursquare-Package#readme"
+}

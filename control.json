@@ -1,0 +1,1197 @@
+{
+    "getAccessToken": {
+        "url": "https://foursquare.com/oauth2/access_token?client_id=:clientId&client_secret=:clientSecret&grant_type=authorization_code&redirect_uri=:redirectUri&code=:code",
+        "method": "GET",
+        "args": {
+            "credentials|clientId": "$!clientId",
+            "credentials|clientSecret": "$!clientSecret",
+            "String|code": "$!code",
+            "String|redirectUri": "$!redirectUri"
+        }
+    },
+    "getUser": {
+        "url": "https://api.foursquare.com/v2/users/:userId",
+        "method": "GET",
+        "args": {
+            "String|accessToken": "$oauth_token",
+            "String|userId": "$!userId"
+        }
+    },
+    "getPendingFriendRequests": {
+        "url": "https://api.foursquare.com/v2/users/requests",
+        "method": "GET",
+        "args": {
+            "String|accessToken": "$oauth_token"
+        }
+    },
+    "findUsers": {
+        "url": "https://api.foursquare.com/v2/users/search",
+        "method": "GET",
+        "args": {
+            "String|accessToken": "$oauth_token",
+            "String|phone": "phone",
+            "String|email": "email",
+            "String|twitter": "twitter",
+            "String|twitterSource": "twitterSource",
+            "String|fbid": "fbid",
+            "String|name": "name",
+            "Boolean|onlyPages": "onlyPages"
+        }
+    },
+    "getUserVisitedVenues": {
+        "url": "https://api.foursquare.com/v2/users/:userId/venuehistory",
+        "method": "GET",
+        "args": {
+            "String|accessToken": "$oauth_token",
+            "String|userId": "!userId",
+            "Number|beforeTimestamp": "beforeTimestamp",
+            "Number|afterTimestamp": "afterTimestamp",
+            "String|categoryId": "categoryId"
+        }
+    },
+    "getUserPhotos": {
+        "url": "https://api.foursquare.com/v2/users/:userId/photos",
+        "method": "GET",
+        "args": {
+            "String|accessToken": "$oauth_token",
+            "String|userId": "$!userId",
+            "Number|limit": "limit",
+            "Number|offset": "offset"
+        }
+    },
+    "getUserTastes": {
+        "url": "https://api.foursquare.com/v2/users/:userId/tastes",
+        "method": "GET",
+        "args": {
+            "String|accessToken": "$oauth_token",
+            "String|userId": "$!userId"
+        }
+    },
+    "getUserCheckins": {
+        "url": "https://api.foursquare.com/v2/users/:userId/checkins",
+        "method": "GET",
+        "args": {
+            "String|accessToken": "$oauth_token",
+            "String|userId": "!userId",
+            "Number|limit": "limit",
+            "Number|offset": "offset",
+            "String|sort": "sort",
+            "Number|afterTimestamp": "afterTimestamp",
+            "Number|beforeTimestamp": "beforeTimestamp"
+        }
+    },
+    "getUserLikedVenues": {
+        "url": "https://api.foursquare.com/v2/users/:userId/venuelikes",
+        "method": "GET",
+        "args": {
+            "String|accessToken": "$oauth_token",
+            "String|userId": "$!userId",
+            "String|beforeTimestamp": "beforeTimestamp",
+            "String|afterTimestamp": "afterTimestamp",
+            "String|categoryId": "categoryId",
+            "Number|limit": "limit",
+            "Number|offset": "offset"
+        }
+    },
+    "getUserMayorships": {
+        "url": "https://api.foursquare.com/v2/users/:userId/mayorships",
+        "method": "GET",
+        "args": {
+            "String|accessToken": "$oauth_token",
+            "String|userId": "$!userId"
+        }
+    },
+    "getUserLists": {
+        "url": "https://api.foursquare.com/v2/users/:userId/lists",
+        "method": "GET",
+        "args": {
+            "String|accessToken": "$oauth_token",
+            "String|userId": "$!userId",
+            "String|group": "group",
+            "String|location": "ll",
+            "Number|limit": "limit",
+            "String|offset": "offset"
+        }
+    },
+    "denyFriendRequest": {
+        "url": "https://api.foursquare.com/v2/users/:userId/deny",
+        "method": "POST",
+        "args": {
+            "String|accessToken": "$oauth_token",
+            "String|userId": "$!userId"
+        }
+    },
+    "setPings": {
+        "url": "https://api.foursquare.com/v2/users/:userId/setpings",
+        "method": "POST",
+        "args": {
+            "String|accessToken": "$oauth_token",
+            "String|userId": "$!userId",
+            "Boolean|value": "$value"
+        }
+    },
+    "updateUserPhoto": {
+        "url": "https://api.foursquare.com/v2/users/self/update",
+        "method": "POST",
+        "args": {
+            "String|accessToken": "$oauth_token",
+            "File|photo": "photo"
+        }
+    },
+    "removeFriend": {
+        "url": "https://api.foursquare.com/v2/users/:userId/unfriend",
+        "method": "POST",
+        "args": {
+            "String|accessToken": "$oauth_token",
+            "String|userId": "$!userId"
+        }
+    },
+    "approveFriendRequest": {
+        "url": "https://api.foursquare.com/v2/users/:userId/approve",
+        "method": "POST",
+        "args": {
+            "String|accessToken": "$oauth_token",
+            "String|userId": "$!userId"
+        }
+    },
+    "getUserFriends": {
+        "url": "https://api.foursquare.com/v2/users/:userId/friends",
+        "method": "GET",
+        "args": {
+            "String|accessToken": "$oauth_token",
+            "String|userId": "$!userId",
+            "Number|limit": "limit",
+            "Number|offset": "offset"
+        }
+    },
+    "getSingleVenue": {
+        "url": "https://api.foursquare.com/v2/venues/:_venueId",
+        "method": "GET",
+        "args": {
+            "String|accessToken": "$oauth_token",
+            "String|venueId": "$!_venueId"
+        }
+    },
+    "searchVenues": {
+        "url": "https://api.foursquare.com/v2/venues/search",
+        "method": "GET",
+        "args": {
+            "String|accessToken": "$oauth_token",
+            "String|location": "ll",
+            "String|near": "near",
+            "Float|locationAccuracy": "llAcc",
+            "Number|altitude": "alt",
+            "Float|altitudeAccuracy": "altAcc",
+            "String|query": "query",
+            "String|limit": "limit",
+            "String|intent": "intent",
+            "Number|radius": "radius",
+            "String|southWest": "sw",
+            "String|northEast": "ne",
+            "String|categoryId": "categoryId",
+            "String|url": "url",
+            "String|providerId": "providerId",
+            "String|linkedId": "linkedId"
+        }
+    },
+    "getSuggestedCompletion": {
+        "url": "https://api.foursquare.com/v2/venues/suggestcompletion",
+        "method": "GET",
+        "args": {
+            "String|accessToken": "$oauth_token",
+            "String|query": "$query",
+            "String|location": "ll",
+            "String|near": "near",
+            "Float|locationAccuracy": "llAcc",
+            "String|limit": "limit",
+            "String|radius": "radius",
+            "String|southWest": "sw",
+            "String|northEast": "ne"
+        }
+    },
+    "getVenueCategories": {
+        "url": "https://api.foursquare.com/v2/venues/categories",
+        "method": "GET",
+        "args": {
+            "String|accessToken": "$oauth_token"
+        }
+    },
+    "getVenueTimeSeriesData": {
+        "url": "https://api.foursquare.com/v2/venues/timeseries",
+        "method": "GET",
+        "args": {
+            "String|accessToken": "$oauth_token",
+            "Number|startAt": "startAt",
+            "String|venueId": "venueId",
+            "Number|endAt": "endAt",
+            "String|fields": "fields"
+        }
+    },
+    "getTrendingVenues": {
+        "url": "https://api.foursquare.com/v2/venues/trending",
+        "method": "GET",
+        "args": {
+            "String|accessToken": "$oauth_token",
+            "String|location": "$ll",
+            "Number|limit": "limit",
+            "String|radius": "radius"
+        }
+    },
+    "getRecommendedVenues": {
+        "url": "https://api.foursquare.com/v2/venues/explore",
+        "method": "GET",
+        "args": {
+            "String|accessToken": "$oauth_token",
+            "String|location": "ll",
+            "String|near": "near",
+            "Float|locationAccuracy": "llAcc",
+            "Number|altitude": "alt",
+            "Float|altitudeAccuracy": "altAcc",
+            "String|query": "query",
+            "Number|radius": "radius",
+            "String|section": "section",
+            "Number|limit": "limit",
+            "String|offset": "offset",
+            "String|novelty": "novelty",
+            "String|friendVisits": "friendVisits",
+            "String|time": "time",
+            "String|day": "day",
+            "Number|venuePhotos": "venuePhotos",
+            "String|lastVenue": "lastVenue",
+            "Boolean|openNow": "openNow",
+            "Boolean|sortByDistance": "sortByDistance",
+            "String|price": "price",
+            "Boolean|saved": "saved",
+            "Boolean|specials": "specials"
+        }
+    },
+    "addVenue": {
+        "url": "https://api.foursquare.com/v2/venues/add",
+        "method": "POST",
+        "args": {
+            "String|accessToken": "$oauth_token",
+            "String|name": "$name",
+            "String|address": "address",
+            "String|crossStreet": "crossStreet",
+            "String|city": "city",
+            "String|state": "state",
+            "String|zip": "zip",
+            "String|phone": "phone",
+            "String|twitter": "twitter",
+            "String|location": "ll",
+            "String|primaryCategoryId": "primaryCategoryId",
+            "String|description": "description",
+            "String|url": "url",
+            "Boolean|ignoreDuplicates": "ignoreDuplicates",
+            "String|ignoreDuplicatesKey": "ignoreDuplicatesKey"
+        }
+    },
+    "getUserManagedVenues": {
+        "url": "https://api.foursquare.com/v2/venues/managed",
+        "method": "GET",
+        "args": {
+            "String|accessToken": "$oauth_token",
+            "Number|limit": "limit",
+            "Number|offset": "offset"
+        }
+    },
+    "getSimilarVenues": {
+        "url": "https://api.foursquare.com/v2/venues/:_venueId/similar",
+        "method": "GET",
+        "args": {
+            "String|accessToken": "$oauth_token",
+            "String|venueId": "$!_venueId"
+        }
+    },
+    "getVenuePhotos": {
+        "url": "https://api.foursquare.com/v2/venues/:_venueId/photos",
+        "method": "GET",
+        "args": {
+            "String|accessToken": "$oauth_token",
+            "String|venueId": "$!_venueId",
+            "String|group": "group",
+            "Number|limit": "limit",
+            "Number|offset": "offset"
+        }
+    },
+    "getVenueEvents": {
+        "url": "https://api.foursquare.com/v2/venues/:_venueId/events",
+        "method": "GET",
+        "args": {
+            "String|accessToken": "$oauth_token"
+        }
+    },
+    "getUsersWhoLikedVenue": {
+        "url": "https://api.foursquare.com/v2/venues/:_venueId/likes",
+        "method": "GET",
+        "args": {
+            "String|accessToken": "$oauth_token",
+            "String|venueId": "$!_venueId"
+        }
+    },
+    "getNextVenues": {
+        "url": "https://api.foursquare.com/v2/venues/:_venueId/nextvenues",
+        "method": "GET",
+        "args": {
+            "String|accessToken": "$oauth_token",
+            "String|venueId": "$!_venueId"
+        }
+    },
+    "getVenueHours": {
+        "url": "https://api.foursquare.com/v2/venues/:_venueId/hours",
+        "method": "GET",
+        "args": {
+            "String|accessToken": "$oauth_token",
+            "String|venueId": "$!_venueId"
+        }
+    },
+    "getVenueStats": {
+        "url": "https://api.foursquare.com/v2/venues/:_venueId/stats",
+        "method": "GET",
+        "args": {
+            "String|accessToken": "$oauth_token",
+            "String|venueId": "!_venueId",
+            "Number|startAt": "startAt",
+            "Number|endAt": "endAt"
+        }
+    },
+    "getVenueLinks": {
+        "url": "https://api.foursquare.com/v2/venues/:_venueId/links",
+        "method": "GET",
+        "args": {
+            "String|accessToken": "$oauth_token",
+            "String|venueId": "$!_venueId"
+        }
+    },
+    "getVenueMenu": {
+        "url": "https://api.foursquare.com/v2/venues/:_venueId/menu",
+        "method": "GET",
+        "args": {
+            "String|accessToken": "$oauth_token",
+            "String|venueId": "$!_venueId"
+        }
+    },
+    "getVenueTips": {
+        "url": "https://api.foursquare.com/v2/venues/:_venueId/tips",
+        "method": "GET",
+        "args": {
+            "String|accessToken": "$oauth_token",
+            "String|venueId": "$!_venueId",
+            "String|sort": "sort",
+            "String|limit": "limit",
+            "String|offset": "offset"
+        }
+    },
+    "getVenuePeopleCount": {
+        "url": "https://api.foursquare.com/v2/venues/:_venueId/herenow",
+        "method": "GET",
+        "args": {
+            "String|accessToken": "$oauth_token",
+            "String|venueId": "$!_venueId",
+            "Number|limit": "limit",
+            "Number|offset": "offset"
+        }
+    },
+    "claimVenue": {
+        "url": "https://api.foursquare.com/v2/venues/:_venueId/claim",
+        "method": "POST",
+        "args": {
+            "String|accessToken": "$oauth_token",
+            "Boolean|visible": "visible"
+        }
+    },
+    "dislikeVenue": {
+        "url": "https://api.foursquare.com/v2/venues/:_venueId/dislike?set=1",
+        "method": "POST",
+        "args": {
+            "String|accessToken": "$oauth_token",
+            "String|venueId": "$!_venueId"
+        }
+    },
+    "undoDislikeVenue": {
+        "url": "https://api.foursquare.com/v2/venues/:_venueId/dislike?set=0",
+        "method": "POST",
+        "args": {
+            "String|accessToken": "$oauth_token",
+            "String|venueId": "$!_venueId"
+        }
+    },
+    "flagVenue": {
+        "url": "https://api.foursquare.com/v2/venues/:_venueId/flag",
+        "method": "POST",
+        "args": {
+            "String|accessToken": "$oauth_token",
+            "String|venueId": "$!_venueId",
+            "String|problem": "$problem",
+            "String|dublicatedVenue": "venueId"
+        }
+    },
+    "proposeVenueChange": {
+        "url": "https://api.foursquare.com/v2/venues/:_venueId/proposeedit",
+        "method": "POST",
+        "args": {
+            "String|accessToken": "$oauth_token",
+            "String|venueId": "$!_venueId",
+            "String|name": "name",
+            "String|address": "address",
+            "String|crossStreet": "crossStreet",
+            "String|city": "city",
+            "String|state": "state",
+            "String|zip": "zip",
+            "String|phone": "phone",
+            "String|twitter": "twitter",
+            "String|description": "description",
+            "String|url": "url",
+            "String|menuUrl": "menuUrl",
+            "String|facebookUrl": "facebookUrl",
+            "String|venueLocation": "venuell",
+            "String|primaryCategoryId": "primaryCategoryId",
+            "String|addCategoryIds": "addCategoryIds",
+            "String|removeCategoryIds": "removeCategoryIds",
+            "String|hours": "hours"
+        }
+    },
+    "likeVenue": {
+        "url": "https://api.foursquare.com/v2/venues/:_venueId/like?set=1",
+        "method": "POST",
+        "args": {
+            "String|accessToken": "$oauth_token",
+            "String|venueId": "$!_venueId"
+        }
+    },
+    "unlikeVenue": {
+        "url": "https://api.foursquare.com/v2/venues/:_venueId/like?set=0",
+        "method": "POST",
+        "args": {
+            "String|accessToken": "$oauth_token",
+            "String|venueId": "$!_venueId"
+        }
+    },
+    "setVenueRole": {
+        "url": "https://api.foursquare.com/v2/venues/:_venueId/setrole",
+        "method": "POST",
+        "args": {
+            "String|accessToken": "$oauth_token",
+            "String|venueId": "$!_venueId",
+            "String|userId": "$userId",
+            "String|role": "$role",
+            "Boolean|visible": "visible"
+        }
+    },
+    "editVenue": {
+        "url": "https://api.foursquare.com/v2/venues/:_venueId/edit",
+        "method": "POST",
+        "args": {
+            "String|accessToken": "$oauth_token",
+            "String|venueId": "$!_venueId",
+            "String|name": "name",
+            "String|address": "address",
+            "String|crossStreet": "crossStreet",
+            "String|city": "city",
+            "String|state": "state",
+            "String|zip": "zip",
+            "String|phone": "phone",
+            "String|location": "ll",
+            "String|primaryCategoryId": "primaryCategoryId",
+            "String|addCategoryIds": "addCategoryIds",
+            "String|removeCategoryIds": "removeCategoryIds",
+            "String|twitter": "twitter",
+            "String|description": "description",
+            "String|url": "url",
+            "String|storeId": "storeId",
+            "String|hours": "hours"
+        }
+    },
+    "setSingleLocationVenue": {
+        "url": "https://api.foursquare.com/v2/venues/:_venueId/setsinglelocation",
+        "method": "GET",
+        "args": {
+            "String|accessToken": "$oauth_token",
+            "String|venueId": "$!_venueId"
+        }
+    },
+    "getVenueGroupDetails": {
+        "url": "https://api.foursquare.com/v2/venuegroups/:groupId",
+        "method": "GET",
+        "args": {
+            "String|accessToken": "$oauth_token",
+            "String|groupId": "$!groupId"
+        }
+    },
+    "getVenueGroups": {
+        "url": "https://api.foursquare.com/v2/venuegroups/list",
+        "method": "GET",
+        "args": {
+            "String|accessToken": "$oauth_token"
+        }
+    },
+    "deleteVenueGroup": {
+        "url": "https://api.foursquare.com/v2/venuegroups/:groupId/delete",
+        "method": "POST",
+        "args": {
+            "String|accessToken": "$oauth_token",
+            "String|groupId": "$!groupId"
+        }
+    },
+    "createVenueGroup": {
+        "url": "https://api.foursquare.com/v2/venuegroups/add",
+        "method": "POST",
+        "args": {
+            "String|accessToken": "$oauth_token",
+            "String|name": "$name",
+            "String|venueId": "venueId"
+        }
+    },
+    "getVenueGroupTimeSeriesData": {
+        "url": "https://api.foursquare.com/v2/venuegroups/:groupId/timeseries",
+        "method": "GET",
+        "args": {
+            "String|accessToken": "$oauth_token",
+            "String|groupId": "$!groupId",
+            "Number|startAt": "$startAt",
+            "Number|endAt": "endAt",
+            "String|fields": "fields"
+        }
+    },
+    "updateVenueGroup": {
+        "url": "https://api.foursquare.com/v2/venuegroups/:groupId/update",
+        "method": "POST",
+        "args": {
+            "String|accessToken": "$oauth_token",
+            "String|groupId": "$!groupId",
+            "String|name": "name",
+            "String|venueId": "venueId"
+        }
+    },
+    "addVenueToGroup": {
+        "url": "https://api.foursquare.com/v2/venuegroups/:groupId/addvenue",
+        "method": "POST",
+        "args": {
+            "String|accessToken": "$oauth_token",
+            "String|groupId": "$!groupId",
+            "String|venueId": "$venueId"
+        }
+    },
+    "editAllVenuesInGroup": {
+        "url": "https://api.foursquare.com/v2/venuegroups/:venueGroupId/edit",
+        "method": "POST",
+        "args": {
+            "String|accessToken": "$oauth_token",
+            "String|venueGroupId": "$!venueGroupId",
+            "String|name": "name",
+            "String|city": "city",
+            "String|state": "state",
+            "String|zip": "zip",
+            "String|phone": "phone",
+            "String|categoryId": "categoryId",
+            "String|twitter": "twitter",
+            "String|description": "description",
+            "String|url": "url",
+            "String|hours": "hours"
+        }
+    },
+    "removeVenueFromGroup": {
+        "url": "https://api.foursquare.com/v2/venuegroups/:groupId/removevenue",
+        "method": "POST",
+        "args": {
+            "String|accessToken": "$oauth_token",
+            "String|groupId": "$!groupId",
+            "String|venueId": "$venueId"
+        }
+    },
+    "getCheckin": {
+        "url": "https://api.foursquare.com/v2/checkins/:checkinId",
+        "method": "GET",
+        "args": {
+            "String|accessToken": "$oauth_token",
+            "String|checkinId": "!checkinId"
+        }
+    },
+    "resolvePublicCheckinFromUrl": {
+        "url": "https://api.foursquare.com/v2/checkins/resolve",
+        "method": "POST",
+        "args": {
+            "String|accessToken": "$oauth_token",
+            "String|shortId": "$shortId"
+        }
+    },
+    "getRecentFriendsCheckins": {
+        "url": "https://api.foursquare.com/v2/checkins/recent",
+        "method": "GET",
+        "args": {
+            "String|accessToken": "$oauth_token",
+            "String|location": "ll",
+            "Number|limit": "limit",
+            "Number|afterTimestamp": "afterTimestamp"
+        }
+    },
+    "createCheckin": {
+        "url": "https://api.foursquare.com/v2/checkins/add",
+        "method": "POST",
+        "args": {
+            "String|accessToken": "$oauth_token",
+            "String|venueId": "$venueId",
+            "String|eventId": "eventId",
+            "String|shout": "shout",
+            "String|mentions": "mentions",
+            "String|broadcast": "broadcast",
+            "String|location": "ll",
+            "Float|locationAccuracy": "llAcc",
+            "Number|altitude": "alt",
+            "Float|altitudeAccuracy": "altAcc"
+        }
+    },
+    "getUsersWhoLikedCheckin": {
+        "url": "https://api.foursquare.com/v2/checkins/:checkinId/likes",
+        "method": "GET",
+        "args": {
+            "String|accessToken": "$oauth_token",
+            "String|checkinId": "$!checkinId"
+        }
+    },
+    "removeCommmentFromCheckin": {
+        "url": "https://api.foursquare.com/v2/checkins/:checkinId/deletecomment",
+        "method": "POST",
+        "args": {
+            "String|accessToken": "$oauth_token",
+            "String|checkinId": "$!checkinId",
+            "String|commentId": "$commentId"
+        }
+    },
+    "likeCheckin": {
+        "url": "https://api.foursquare.com/v2/checkins/:checkinId/like?set=1",
+        "method": "POST",
+        "args": {
+            "String|accessToken": "$oauth_token",
+            "String|checkingId": "$checkingId"
+        }
+    },
+    "unlikeCheckin": {
+        "url": "https://api.foursquare.com/v2/checkins/:checkinId/like?set=0",
+        "method": "POST",
+        "args": {
+            "String|accessToken": "$oauth_token",
+            "String|checkingId": "$checkingId"
+        }
+    },
+    "addPostToCheckin": {
+        "url": "https://api.foursquare.com/v2/checkins/:checkinId/addpost",
+        "method": "POST",
+        "args": {
+            "String|accessToken": "$oauth_token",
+            "String|checkinId": "$!checkinId",
+            "String|text": "text",
+            "String|url": "url",
+            "String|contentId": "contentId"
+        }
+    },
+    "addCommentToCheckin": {
+        "url": "https://api.foursquare.com/v2/checkins/:checkinId/addcomment",
+        "method": "POST",
+        "args": {
+            "String|accessToken": "$oauth_token",
+            "String|checkinId": "$!checkinId",
+            "String|text": "text",
+            "String|mentions": "mentions"
+        }
+    },
+    "getTip": {
+        "url": "https://api.foursquare.com/v2/tips/:tipId",
+        "method": "GET",
+        "args": {
+            "String|accessToken": "$oauth_token",
+            "String|tipId": "$!tipId"
+        }
+    },
+    "addTip": {
+        "url": "https://api.foursquare.com/v2/tips/add",
+        "method": "POST",
+        "args": {
+            "String|accessToken": "$oauth_token",
+            "String|venueId": "$venueId",
+            "String|text": "$text",
+            "String|url": "url",
+            "String|broadcast": "broadcast"
+        }
+    },
+    "getUsersWhoLikedTip": {
+        "url": "https://api.foursquare.com/v2/tips/:tipId/likes",
+        "method": "GET",
+        "args": {
+            "String|accessToken": "$oauth_token",
+            "String|tipId": "$!tipId"
+        }
+    },
+    "getUsersSavedTip": {
+        "url": "https://api.foursquare.com/v2/tips/:tipId/saves",
+        "method": "GET",
+        "args": {
+            "String|accessToken": "$oauth_token",
+            "String|tipId": "$!tipId"
+        }
+    },
+    "getListsTipAppears": {
+        "url": "https://api.foursquare.com/v2/tips/:tipId/listed",
+        "method": "GET",
+        "args": {
+            "String|accessToken": "$oauth_token",
+            "String|tipId": "$!tipId",
+            "String|group": "group"
+        }
+    },
+    "removeTipFromToDoList": {
+        "url": "https://api.foursquare.com/v2/tips/:tipId/unmark",
+        "method": "POST",
+        "args": {
+            "String|accessToken": "$oauth_token",
+            "String|tipId": "$!tipId"
+        }
+    },
+    "flagTip": {
+        "url": "https://api.foursquare.com/v2/tips/:tipId/flag",
+        "method": "POST",
+        "args": {
+            "String|accessToken": "$oauth_token",
+            "String|tipId": "$!tipId",
+            "String|comment": "comment",
+            "String|problem": "problem"
+        }
+    },
+    "likeTip": {
+        "url": "https://api.foursquare.com/v2/tips/:tipId/like?set=1",
+        "method": "POST",
+        "args": {
+            "String|accessToken": "$oauth_token",
+            "String|tipId": "$!tipId"
+        }
+    },
+    "unlikeTip": {
+        "url": "https://api.foursquare.com/v2/tips/:tipId/like?set=0",
+        "method": "POST",
+        "args": {
+            "String|accessToken": "$oauth_token",
+            "String|tipId": "$!tipId"
+        }
+    },
+    "getSingleList": {
+        "url": "https://api.foursquare.com/v2/lists/:listId",
+        "method": "GET",
+        "args": {
+            "String|accessToken": "$oauth_token",
+            "String|listId": "$!listId",
+            "String|limit": "limit",
+            "String|offset": "offset",
+            "String|locationBounds": "llBounds",
+            "String|categoryId": "categoryId",
+            "String|sort": "sort"
+        }
+    },
+    "addList": {
+        "url": "https://api.foursquare.com/v2/lists/add",
+        "method": "POST",
+        "args": {
+            "String|accessToken": "$oauth_token",
+            "String|name": "name",
+            "String|description": "description",
+            "String|collaborative": "collaborative",
+            "String|photoId": "photoId"
+        }
+    },
+    "getListFollowers": {
+        "url": "https://api.foursquare.com/v2/lists/:listId/followers",
+        "method": "GET",
+        "args": {
+            "String|accessToken": "$oauth_token",
+            "String|listId": "$!listId"
+        }
+    },
+    "suggestItemListPhotos": {
+        "url": "https://api.foursquare.com/v2/lists/:listId/suggestphoto",
+        "method": "POST",
+        "args": {
+            "String|accessToken": "$oauth_token",
+            "String|listId": "$!listId",
+            "String|itemId": "itemId"
+        }
+    },
+    "suggestListTips": {
+        "url": "https://api.foursquare.com/v2/lists/:listId/suggesttip",
+        "method": "POST",
+        "args": {
+            "String|accessToken": "$oauth_token",
+            "String|listId": "$!listId",
+            "String|itemId": "$itemId"
+        }
+    },
+    "getListItem": {
+        "url": "https://api.foursquare.com/v2/lists/:listId/:itemId",
+        "method": "GET",
+        "args": {
+            "String|accessToken": "$oauth_token",
+            "String|listId": "$!listId",
+            "String|itemId": "$!itemId"
+        }
+    },
+    "suggestVenuesForList": {
+        "url": "https://api.foursquare.com/v2/lists/:listId/suggestvenues",
+        "method": "POST",
+        "args": {
+            "String|accessToken": "$oauth_token",
+            "String|listId": "$!listId"
+        }
+    },
+    "updatesList": {
+        "url": "https://api.foursquare.com/v2/lists/:list/update",
+        "method": "POST",
+        "args": {
+            "String|accessToken": "$oauth_token",
+            "String|listId": "$listId",
+            "String|name": "name",
+            "String|description": "description",
+            "String|collaborative": "collaborative",
+            "String|photoId": "photoId"
+        }
+    },
+    "deleteItemFromList": {
+        "url": "https://api.foursquare.com/v2/lists/:listId/deleteitem",
+        "method": "POST",
+        "args": {
+            "String|accessToken": "$oauth_token",
+            "String|listId": "$!listId",
+            "String|itemId": "itemId",
+            "String|venueId": "venueId",
+            "String|tipId": "tipId"
+        }
+    },
+    "updateListItem": {
+        "url": "https://api.foursquare.com/v2/lists/:listId/updateitem",
+        "method": "POST",
+        "args": {
+            "String|accessToken": "$oauth_token",
+            "String|listId": "$!listId",
+            "String|tipId": "tipId",
+            "String|text": "text",
+            "String|url": "url",
+            "String|photoId": "photoId"
+        }
+    },
+    "followList": {
+        "url": "https://api.foursquare.com/v2/lists/:listId/follow",
+        "method": "POST",
+        "args": {
+            "String|accessToken": "$oauth_token",
+            "String|listId": "$!listId"
+        }
+    },
+    "unfollowList": {
+        "url": "https://api.foursquare.com/v2/lists/:listId/unfollow",
+        "method": "POST",
+        "args": {
+            "String|accessToken": "$oauth_token",
+            "String|listId": "$!listId"
+        }
+    },
+    "moveItemOnList": {
+        "url": "https://api.foursquare.com/v2/lists/:listId/moveitem",
+        "method": "POST",
+        "args": {
+            "String|accessToken": "$oauth_token",
+            "String|listId": "$!listId",
+            "String|itemId": "$itemId",
+            "String|beforeId": "beforeId",
+            "String|afterId": "afterId"
+        }
+    },
+    "shareList": {
+        "url": "https://api.foursquare.com/v2/lists/:listId/share",
+        "method": "POST",
+        "args": {
+            "String|accessToken": "$oauth_token",
+            "String|broadcast": "$broadcast",
+            "String|message": "message"
+        }
+    },
+    "addItemToList": {
+        "url": "https://api.foursquare.com/v2/lists/:followedListId/additem",
+        "method": "POST",
+        "args": {
+            "String|accessToken": "$oauth_token",
+            "String|followedListId": "$!followedListId",
+            "String|venueId": "venueId",
+            "String|url": "url",
+            "String|tipId": "tipId",
+            "String|listId": "listId",
+            "String|itemId": "itemId"
+        }
+    },
+    "getUpdateDetails": {
+        "url": "https://api.foursquare.com/v2/updates/:updateId",
+        "method": "GET",
+        "args": {
+            "String|accessToken": "$oauth_token",
+            "String|updateId": "$!updateId"
+        }
+    },
+    "getNotificationUpdates": {
+        "url": "https://api.foursquare.com/v2/updates/notifications",
+        "method": "GET",
+        "args": {
+            "String|accessToken": "$oauth_token",
+            "String|limit": "$limit"
+        }
+    },
+    "markNotificationsAsRead": {
+        "url": "https://api.foursquare.com/v2/updates/marknotificationsread",
+        "method": "POST",
+        "args": {
+            "String|accessToken": "$oauth_token",
+            "String|highWatermark": "$highWatermark"
+        }
+    },
+    "getPhoto": {
+        "url": "https://api.foursquare.com/v2/photos/:photoId",
+        "method": "GET",
+        "args": {
+            "String|accessToken": "$oauth_token",
+            "String|photoId": "$!photoId"
+        }
+    },
+    "getSingleSetting": {
+        "url": "https://api.foursquare.com/v2/settings/:settingId",
+        "method": "GET",
+        "args": {
+            "String|accessToken": "$oauth_token",
+            "String|settingId": "$!settingId"
+        }
+    },
+    "getUserSettings": {
+        "url": "https://api.foursquare.com/v2/settings/all",
+        "method": "GET",
+        "args": {
+            "String|accessToken": "$oauth_token"
+        }
+    },
+    "changeSingleSetting": {
+        "url": "https://api.foursquare.com/v2/settings/:settingId/set",
+        "method": "POST",
+        "args": {
+            "String|accessToken": "$oauth_token",
+            "String|settingId": "$!settingId",
+            "Number|value": "value"
+        }
+    },
+    "getSpecialDetails": {
+        "url": "https://api.foursquare.com/v2/specials/:specialId",
+        "method": "GET",
+        "args": {
+            "String|accessToken": "$oauth_token",
+            "String|specialId": "$!specialId",
+            "String|venueId": "$venueId",
+            "String|userId": "userId"
+        }
+    },
+    "searchSpecials": {
+        "url": "https://api.foursquare.com/v2/specials/search",
+        "method": "GET",
+        "args": {
+            "String|accessToken": "$oauth_token",
+            "String|location": "ll",
+            "Number|radius": "radius",
+            "Float|locationAccuracy": "llAcc",
+            "Number|altitude": "alt",
+            "Float|altitudeAccuracy": "altAcc",
+            "Number|limit": "limit"
+        }
+    },
+    "getAvailableSpecials": {
+        "url": "https://api.foursquare.com/v2/specials/list",
+        "method": "GET",
+        "args": {
+            "String|accessToken": "$oauth_token",
+            "String|venueId": "venueId",
+            "String|status": "status"
+        }
+    },
+    "createSpecial": {
+        "url": "https://api.foursquare.com/v2/specials/add",
+        "method": "POST",
+        "args": {
+            "String|accessToken": "$oauth_token",
+            "String|text": "$text",
+            "String|name": "name",
+            "String|finePrint": "finePrint",
+            "String|count1": "count1",
+            "String|type": "type",
+            "String|offerId": "offerId",
+            "Float|cost": "cost"
+        }
+    },
+    "flagSpecial": {
+        "url": "https://api.foursquare.com/v2/specials/:specialId/flag",
+        "method": "POST",
+        "args": {
+            "String|accessToken": "$oauth_token",
+            "String|specialId": "$!specialId",
+            "String|venueId": "$venueId",
+            "String|problem": "$problem",
+            "String|text": "text"
+        }
+    },
+    "getSingleEvent": {
+        "url": "https://api.foursquare.com/v2/events/:eventId",
+        "method": "GET",
+        "args": {
+            "String|accessToken": "$oauth_token",
+            "String|eventId": "$!eventId"
+        }
+    },
+    "searchEvents": {
+        "url": "https://api.foursquare.com/v2/events/search",
+        "method": "GET",
+        "args": {
+            "String|accessToken": "$oauth_token",
+            "String|domain": "$domain",
+            "String|eventId": "eventId",
+            "String|participantId": "participantId"
+        }
+    },
+    "getEventCategories": {
+        "url": "https://api.foursquare.com/v2/events/categories",
+        "method": "GET",
+        "args": {
+            "String|accessToken": "$oauth_token"
+        }
+    },
+    "addSingleEvent": {
+        "url": "https://api.foursquare.com/v2/events/add",
+        "method": "POST",
+        "args": {
+            "String|accessToken": "$oauth_token",
+            "String|venueId": "venueId",
+            "String|name": "name",
+            "Number|startAt": "startAt",
+            "Number|endAt": "endAt"
+        }
+    },
+    "getUserManagedPages": {
+        "url": "https://api.foursquare.com/v2/pages/managing",
+        "method": "GET",
+        "args": {
+            "String|accessToken": "$oauth_token"
+        }
+    },
+    "addPage": {
+        "url": "https://api.foursquare.com/v2/pages/add",
+        "method": "POST",
+        "args": {
+            "String|accessToken": "$oauth_token",
+            "String|name": "$name"
+        }
+    },
+    "getSimilarPages": {
+        "url": "https://api.foursquare.com/v2/pages/:userId/similar",
+        "method": "GET",
+        "args": {
+            "String|accessToken": "$oauth_token",
+            "String|userId": "$!userId",
+            "String|limit": "limit",
+            "String|offset": "offset",
+            "Boolean|includeFollowing": "includeFollowing"
+        }
+    },
+    "getPageVenuesTimeSeriesData": {
+        "url": "https://api.foursquare.com/v2/pages/:pageId/timeseries",
+        "method": "GET",
+        "args": {
+            "String|accessToken": "$oauth_token",
+            "String|pageId": "$!pageId",
+            "String|startAt": "$startAt",
+            "String|endAt": "endAt",
+            "String|fields": "fields"
+        }
+    },
+    "getPageAccessToken": {
+        "url": "https://api.foursquare.com/v2/pages/:userId/access",
+        "method": "GET",
+        "args": {
+            "String|accessToken": "$oauth_token",
+            "String|userId": "$!userId"
+        }
+    },
+    "getPageVenues": {
+        "url": "https://api.foursquare.com/v2/pages/:pageId/venues",
+        "method": "GET",
+        "args": {
+            "String|accessToken": "$oauth_token",
+            "String|location": "ll",
+            "Number|radius": "radius",
+            "String|southWest": "sw",
+            "String|northEast": "ne",
+            "Number|offset": "offset",
+            "Number|limit": "limit",
+            "Number|storeId": "storeId"
+        }
+    },
+    "followPage": {
+        "url": "https://api.foursquare.com/v2/pages/USER_ID/follow",
+        "method": "POST",
+        "args": {
+            "String|accessToken": "$oauth_token",
+            "String|userId": "$userId"
+        }
+    },
+    "unfollowPage": {
+        "url": "https://api.foursquare.com/v2/pages/USER_ID/follow",
+        "method": "POST",
+        "args": {
+            "String|accessToken": "$oauth_token",
+            "String|userId": "$userId"
+        }
+    },
+    "getSinglePageUpdate": {
+        "url": "https://api.foursquare.com/v2/pageupdates/:updateId",
+        "method": "GET",
+        "args": {
+            "String|accessToken": "$oauth_token",
+            "String|updateId": "$!updateId",
+            "String|limit": "limit",
+            "String|location": "ll"
+        }
+    },
+    "getPageUpdates": {
+        "url": "https://api.foursquare.com/v2/pageupdates/list",
+        "method": "GET",
+        "args": {
+            "String|accessToken": "$oauth_token"
+        }
+    },
+    "addPageUpdate": {
+        "url": "https://api.foursquare.com/v2/pageupdates/add",
+        "method": "POST",
+        "args": {
+            "String|accessToken": "$oauth_token",
+            "String|pageId": "$pageId",
+            "String|groupId": "groupId",
+            "String|venueId": "venueId",
+            "String|shout": "shout",
+            "String|photoId": "photoId",
+            "String|broadcast": "broadcast"
+        }
+    },
+    "likePageUpdate": {
+        "url": "https://api.foursquare.com/v2/pageupdates/:updateId/like",
+        "method": "POST",
+        "args": {
+            "String|accessToken": "$oauth_token",
+            "String|updateId": "$!updateId"
+        }
+    },
+    "deletePageUpdate": {
+        "url": "https://api.foursquare.com/v2/pageupdates/:updateId/delete",
+        "method": "POST",
+        "args": {
+            "String|accessToken": "$oauth_token",
+            "String|updateId": "$!updateId"
+        }
+    }
+}
