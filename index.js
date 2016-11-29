@@ -65,7 +65,7 @@ for(let func in control) {
 
             response              = yield new API(url).request(options);
             r.callback            = 'success';
-            r.contextWrites['to'] = response === null ? 'No items.' : response;
+            r.contextWrites['to'] = response;
         } catch(e) {
             console.log(e);
             r.callback            = 'error';
