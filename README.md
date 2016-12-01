@@ -45,7 +45,7 @@ Helps a user locate friends.
 | email        | String | A comma-delimited list of email addresses to look for.
 | twitter      | String | A comma-delimited list of Twitter handles to look for.
 | twitterSource| String | A single Twitter handle. Results will be users that this handle follows on Twitter who use Foursquare.
-| fbid         | String | A comma-delimited list of Facebook ID's to look for.
+| facebookIds  | String | A comma-delimited list of Facebook ID's to look for.
 | name         | String | A single string to search for in users' names.
 | onlyPages    | Boolean| (default false) Indicates whether to only return pages. This replaces the functionality of the old dedicated pages/search endpoint.
 
@@ -120,7 +120,7 @@ A User's Lists.
 | accessToken| String| Required: Access Token obtained from Foursquare OAuth.
 | userId     | String| Required: Identity of the user to get lists for. Pass `self` to get lists of the acting user.
 | group      | String| Can be `created` (lists created by this user), `edited` (other people's lists this user has edited), `followed` (lists this user follows), `friends` (lists from this user's friends), and `suggested` (lists relevant to the user's current location).
-| location   | String| Location of the user, required in order to receive the suggested group. Foramt: `lat,lng`. Example: `40.7,-74`
+| location   | String| Location of the user, required in order to receive the suggested group. Format: `lat,lng`. Example: `40.7,-74`
 | limit      | Number| Number of results to return, up to 200.
 | offset     | String| The number of results to skip. Used to page through results.
 
@@ -189,7 +189,7 @@ Returns a list of venues near the current location, optionally matching a search
 | Field           | Type  | Description
 |-----------------|-------|----------
 | accessToken     | String| Required: Access Token obtained from Foursquare OAuth.
-| location        | String| Required unless near is provided: Latitude and longitude of the user's location. Foramt: `lat,lng`. Example: `40.7,-74`
+| location        | String| Required unless near is provided: Latitude and longitude of the user's location. Format: `lat,lng`. Example: `40.7,-74`
 | near            | String| Required unless location is provided:  A string naming a place in the world. If the near string is not geocodable, returns a failed_geocode error. Otherwise, searches within the bounds of the geocode. Adds a geocode object to the response. (Required for query searches)
 | locationAccuracy| Float | Accuracy of latitude and longitude, in meters. (Does not currently affect search results.)
 | altitude        | Number| Altitude of the user's location, in meters. (Does not currently affect search results.)
@@ -212,7 +212,7 @@ Returns a list of mini-venues partially matching the search term, near the locat
 |-----------------|-------|----------
 | accessToken     | String| Required: Access Token obtained from Foursquare OAuth.
 | query           | String| Required: A search term to be applied against titles. Must be at least 3 characters long.
-| location        | String| Required unless near is provided: Latitude and longitude of the user's location. Foramt: `lat,lng`. Example: `40.7,-74`
+| location        | String| Required unless near is provided: Latitude and longitude of the user's location. Format: `lat,lng`. Example: `40.7,-74`
 | near            | String| Required unless location is provided:  A string naming a place in the world. If the near string is not geocodable, returns a failed_geocode error. Otherwise, searches within the bounds of the geocode. Adds a geocode object to the response. (Required for query searches)
 | locationAccuracy| Float | Accuracy of latitude and longitude, in meters. (Does not currently affect search results.)
 | limit           | String| Number of results to return, up to 100.
@@ -244,7 +244,7 @@ Returns a list of venues near the current location with the most people currentl
 | Field      | Type  | Description
 |------------|-------|----------
 | accessToken| String| Required: Access Token obtained from Foursquare OAuth.
-| location   | String| Required: Location of the user. Foramt: `lat,lng`. Example: `40.7,-74`
+| location   | String| Required: Location of the user. Format: `lat,lng`. Example: `40.7,-74`
 | limit      | Number| Number of results to return, up to 50.
 | radius     | String| Radius in meters, up to approximately 2000 meters.
 
@@ -254,7 +254,7 @@ Returns a list of recommended venues near the current location.
 | Field           | Type   | Description
 |-----------------|--------|----------
 | accessToken     | String | Required: Access Token obtained from Foursquare OAuth.
-| location        | String | Required unless near is provided: Latitude and longitude of the user's location. Foramt: `lat,lng`. Example: `40.7,-74`
+| location        | String | Required unless near is provided: Latitude and longitude of the user's location. Format: `lat,lng`. Example: `40.7,-74`
 | near            | String | Required unless location is provided:  A string naming a place in the world. If the near string is not geocodable, returns a failed_geocode error. Otherwise, searches within the bounds of the geocode. Adds a geocode object to the response. (Required for query searches)
 | locationAccuracy| Float  | Accuracy of latitude and longitude, in meters. (Does not currently affect search results.)
 | altitude        | Number | Altitude of the user's location, in meters. (Does not currently affect search results.)
@@ -290,7 +290,7 @@ Allows Foursquare users to add a new venue.
 | zip                | String | The zip or postal code for the venue.
 | phone              | String | The phone number of the venue.
 | twitter            | String | The twitter handle of the venue.
-| location           | String | Latitude and longitude of the venue, as accurate as is known. Foramt: `lat,lng`. Example: `40.7,-74`
+| location           | String | Latitude and longitude of the venue, as accurate as is known. Format: `lat,lng`. Example: `40.7,-74`
 | primaryCategoryId  | String | The ID of the category to which you want to assign this venue.
 | description        | String | A freeform description of the venue, up to 160 characters.
 | url                | String | The url of the homepage of the venue.
@@ -503,7 +503,7 @@ Allows you to make changes to a venue (acting user must be a superuser or venue 
 | state            | String| The nearest state or province to the venue.
 | zip              | String| The zip or postal code for the venue.
 | phone            | String| The phone number of the venue.
-| location         | String| Location of the user, required in order to receive the suggested group. Foramt: `lat,lng`. Example: `40.7,-74`
+| location         | String| Location of the user, required in order to receive the suggested group. Format: `lat,lng`. Example: `40.7,-74`
 | primaryCategoryId| String| The ID of the category to which you want to assign this venue.
 | addCategoryIds   | String| Comma-separated list of new category IDs to be assigned to this venue. If you are adding a new category to a venue and you want to make it primary, you should just use primaryCategoryId.
 | removeCategoryIds| String| Comma-separated list of new category IDs to be removed from this venue.
@@ -632,7 +632,7 @@ Returns a list of recent checkins from friends.
 | Field         | Type  | Description
 |---------------|-------|----------
 | accessToken   | String| Required: Access Token obtained from Foursquare OAuth.
-| location      | String| Latitude and longitude of the user's location, so response can include distance. Foramt: `lat,lng`. Example: `40.7,-74`
+| location      | String| Latitude and longitude of the user's location, so response can include distance. Format: `lat,lng`. Example: `40.7,-74`
 | limit         | Number| Number of results to return, up to 100.
 | afterTimestamp| Number| Seconds after which to look for checkins, e.g. for looking for new checkins since the last fetch. If more than limit results are new since then, this is ignored. Checkins created prior to this timestamp will still be returned if they have new comments or photos, making it easier to poll for all new activity.
 
@@ -647,7 +647,7 @@ Allows you to check in to a place.
 | shout           | String| A message about your check-in. The maximum length of this field is 140 characters.
 | mentions        | String| Mentions in your check-in. This parameter is a semicolon-delimited list of mentions. A single mention is of the form `start,end,userid`, where start is the index of the first character in the shout representing the mention, end is the index of the first character in the shout after the mention, and userid is the userid of the user being mentioned. If userid is prefixed with 'fbu-', this indicates a Facebook userid that is being mention. Character indices in shouts are 0-based.
 | broadcast       | String| Who to broadcast this check-in to. Accepts a comma-delimited list of values: `private`, `public`, `facebook`, `twitter`, `followers`
-| location        | String| Latitude and longitude of the user's location. Only specify this field if you have a GPS or other device reported location for the user at the time of check-in. Foramt: `lat,lng`. Example: `40.7,-74`
+| location        | String| Latitude and longitude of the user's location. Only specify this field if you have a GPS or other device reported location for the user at the time of check-in. Format: `lat,lng`. Example: `40.7,-74`
 | locationAccuracy| Float | Accuracy of latitude and longitude, in meters.
 | altitude        | Number| Altitude of the user's location, in meters.
 | altitudeAccuracy| Float | Accuracy of the user's altitude, in meters.
@@ -660,7 +660,7 @@ Returns friends and a total count of users who have liked this checkin.
 | accessToken| String| Required: Access Token obtained from Foursquare OAuth.
 | checkinId  | String| Required: The ID of the checkin to get likes for.
 
-## Foursquare.removeCommmentFromCheckin
+## Foursquare.removeCommentFromCheckin
 Remove a comment from a checkin, if the acting user is the author or the owner of the checkin.
 
 | Field      | Type  | Description
@@ -675,7 +675,7 @@ Allows the acting user to like a checkin.
 | Field      | Type  | Description
 |------------|-------|----------
 | accessToken| String| Required: Access Token obtained from Foursquare OAuth.
-| checkingId | String| Required: 
+| checkingId | String| Required: Checking id to like
 
 ## Foursquare.unlikeCheckin
 Allows the acting user to unlike a checkin.
@@ -683,7 +683,7 @@ Allows the acting user to unlike a checkin.
 | Field      | Type  | Description
 |------------|-------|----------
 | accessToken| String| Required: Access Token obtained from Foursquare OAuth.
-| checkingId | String| Required: 
+| checkingId | String| Required: Checking id to unlike
 
 ## Foursquare.addPostToCheckin
 Post user generated content from an external app to a check-in. This post will be accessible to anyone who can view the details of the check-in. 
@@ -1009,7 +1009,7 @@ Returns a list of specials near the current location.
 | Field           | Type  | Description
 |-----------------|-------|----------
 | accessToken     | String| Required: Access Token obtained from Foursquare OAuth.
-| location        | String| Latitude and longitude to search near. Foramt: `lat,lng`. Example: `40.7,-74`
+| location        | String| Latitude and longitude to search near. Format: `lat,lng`. Example: `40.7,-74`
 | radius          | Number| Limit results to venues within this many meters of the specified location. Defaults to a city-wide area.
 | locationAccuracy| Float | Accuracy of latitude and longitude, in meters.
 | altitude        | Number| Altitude of the user's location, in meters.
@@ -1034,7 +1034,7 @@ Allows you to create a new special. As of November 2013, `mayor`, `regular`, `sw
 | text       | String| Required: Maximum length of 200 characters.
 | name       | String| A name for the special.
 | finePrint  | String| Maximum length of 200 characters. Fine print, shown in small type on the special detail page.
-| count1     | String| Specifier for special types.
+| count      | String| Specifier for special types.
 | type       | String| Required. The type of special. Valid values: `frequency`, `count`
 | offerId    | String| Maximum length of 16 characters. Internal id in your 3rd party system.
 | cost       | Float | The amount of money the user must spend to use this special in dollars and cents. For example, 5.50 meaning 5 dollars and 50 cents.

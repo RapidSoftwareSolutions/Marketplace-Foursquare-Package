@@ -33,7 +33,7 @@
             "String|email": "email",
             "String|twitter": "twitter",
             "String|twitterSource": "twitterSource",
-            "String|fbid": "fbid",
+            "String|facebookIds": "fbid",
             "String|name": "name",
             "Boolean|onlyPages": "onlyPages"
         }
@@ -649,7 +649,7 @@
             "String|checkinId": "$!checkinId"
         }
     },
-    "removeCommmentFromCheckin": {
+    "removeCommentFromCheckin": {
         "url": "https://api.foursquare.com/v2/checkins/:checkinId/deletecomment",
         "method": "POST",
         "args": {
@@ -1020,7 +1020,7 @@
             "String|text": "$text",
             "String|name": "name",
             "String|finePrint": "finePrint",
-            "String|count1": "count1",
+            "String|count": "count1",
             "String|type": "type",
             "String|offerId": "offerId",
             "Float|cost": "cost"

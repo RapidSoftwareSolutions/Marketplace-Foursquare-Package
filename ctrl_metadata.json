@@ -103,7 +103,8 @@
       "type": "String",
       "info": "A single Twitter handle. Results will be users that this handle follows on Twitter who use Foursquare."
     }, {
-      "name": "fbid",
+      "name": "facebookIds",
+      "orig": "fbid",
       "type": "String",
       "info": "A comma-delimited list of Facebook ID's to look for."
     }, {
@@ -1933,7 +1934,7 @@
       "info": "Success"
     }]
   }, {
-    "name": "removeCommmentFromCheckin",
+    "name": "removeCommentFromCheckin",
     "method": "POST",
     "description": "Remove a comment from a checkin, if the acting user is the author or the owner of the checkin.",
     "url": "https://api.foursquare.com/v2/checkins/:checkinId/deletecomment",
@@ -2974,7 +2975,7 @@
       "type": "String",
       "info": "Maximum length of 200 characters. Fine print, shown in small type on the special detail page."
     }, {
-      "name": "count1",
+      "name": "count",
       "type": "String",
       "info": "Specifier for special types."
     }, {

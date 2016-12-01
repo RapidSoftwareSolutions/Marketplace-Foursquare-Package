@@ -125,7 +125,7 @@
           "info": "A single Twitter handle. Results will be users that this handle follows on Twitter who use Foursquare."
         },
         {
-          "name": "fbid",
+          "name": "facebookIds",
           "type": "String",
           "info": "A comma-delimited list of Facebook ID's to look for."
         },
@@ -394,7 +394,7 @@
         {
           "name": "location",
           "type": "String",
-          "info": "Location of the user, required in order to receive the suggested group. Foramt: `lat,lng`. Example: `40.7,-74`"
+          "info": "Location of the user, required in order to receive the suggested group. Format: `lat,lng`. Example: `40.7,-74`"
         },
         {
           "name": "limit",
@@ -627,7 +627,7 @@
         {
           "name": "location",
           "type": "String",
-          "info": "Required unless near is provided: Latitude and longitude of the user's location. Foramt: `lat,lng`. Example: `40.7,-74`"
+          "info": "Required unless near is provided: Latitude and longitude of the user's location. Format: `lat,lng`. Example: `40.7,-74`"
         },
         {
           "name": "near",
@@ -728,7 +728,7 @@
         {
           "name": "location",
           "type": "String",
-          "info": "Required unless near is provided: Latitude and longitude of the user's location. Foramt: `lat,lng`. Example: `40.7,-74`"
+          "info": "Required unless near is provided: Latitude and longitude of the user's location. Format: `lat,lng`. Example: `40.7,-74`"
         },
         {
           "name": "near",
@@ -846,7 +846,7 @@
         {
           "name": "location",
           "type": "String",
-          "info": "Required: Location of the user. Foramt: `lat,lng`. Example: `40.7,-74`"
+          "info": "Required: Location of the user. Format: `lat,lng`. Example: `40.7,-74`"
         },
         {
           "name": "limit",
@@ -882,7 +882,7 @@
         {
           "name": "location",
           "type": "String",
-          "info": "Required unless near is provided: Latitude and longitude of the user's location. Foramt: `lat,lng`. Example: `40.7,-74`"
+          "info": "Required unless near is provided: Latitude and longitude of the user's location. Format: `lat,lng`. Example: `40.7,-74`"
         },
         {
           "name": "near",
@@ -1038,7 +1038,7 @@
         {
           "name": "location",
           "type": "String",
-          "info": "Latitude and longitude of the venue, as accurate as is known. Foramt: `lat,lng`. Example: `40.7,-74`"
+          "info": "Latitude and longitude of the venue, as accurate as is known. Format: `lat,lng`. Example: `40.7,-74`"
         },
         {
           "name": "primaryCategoryId",
@@ -1789,7 +1789,7 @@
         {
           "name": "location",
           "type": "String",
-          "info": "Location of the user, required in order to receive the suggested group. Foramt: `lat,lng`. Example: `40.7,-74`"
+          "info": "Location of the user, required in order to receive the suggested group. Format: `lat,lng`. Example: `40.7,-74`"
         },
         {
           "name": "primaryCategoryId",
@@ -2242,7 +2242,7 @@
         {
           "name": "location",
           "type": "String",
-          "info": "Latitude and longitude of the user's location, so response can include distance. Foramt: `lat,lng`. Example: `40.7,-74`"
+          "info": "Latitude and longitude of the user's location, so response can include distance. Format: `lat,lng`. Example: `40.7,-74`"
         },
         {
           "name": "limit",
@@ -2303,7 +2303,7 @@
         {
           "name": "location",
           "type": "String",
-          "info": "Latitude and longitude of the user's location. Only specify this field if you have a GPS or other device reported location for the user at the time of check-in. Foramt: `lat,lng`. Example: `40.7,-74`"
+          "info": "Latitude and longitude of the user's location. Only specify this field if you have a GPS or other device reported location for the user at the time of check-in. Format: `lat,lng`. Example: `40.7,-74`"
         },
         {
           "name": "locationAccuracy",
@@ -2349,7 +2349,7 @@
       ]
     },
     {
-      "name": "removeCommmentFromCheckin",
+      "name": "removeCommentFromCheckin",
       "description": "Remove a comment from a checkin, if the acting user is the author or the owner of the checkin.",
       "args": [
         {
@@ -2391,7 +2391,7 @@
         {
           "name": "checkingId",
           "type": "String",
-          "info": "Required: "
+          "info": "Required: Checking id to like"
         }
       ],
       "callbacks": [
@@ -2417,7 +2417,7 @@
         {
           "name": "checkingId",
           "type": "String",
-          "info": "Required: "
+          "info": "Required: Checking id to unlike"
         }
       ],
       "callbacks": [
@@ -3527,7 +3527,7 @@
         {
           "name": "location",
           "type": "String",
-          "info": "Latitude and longitude to search near. Foramt: `lat,lng`. Example: `40.7,-74`"
+          "info": "Latitude and longitude to search near. Format: `lat,lng`. Example: `40.7,-74`"
         },
         {
           "name": "radius",
@@ -3612,7 +3612,7 @@
           "info": "Maximum length of 200 characters. Fine print, shown in small type on the special detail page."
         },
         {
-          "name": "count1",
+          "name": "count",
           "type": "String",
           "info": "Specifier for special types."
         },
