@@ -675,7 +675,7 @@ Allows the acting user to like a checkin.
 | Field      | Type  | Description
 |------------|-------|----------
 | accessToken| String| Required: Access Token obtained from Foursquare OAuth.
-| checkingId | String| Required: Checking id to like
+| checkinId  | String| Required: Checking id to like
 
 ## Foursquare.unlikeCheckin
 Allows the acting user to unlike a checkin.
@@ -683,7 +683,7 @@ Allows the acting user to unlike a checkin.
 | Field      | Type  | Description
 |------------|-------|----------
 | accessToken| String| Required: Access Token obtained from Foursquare OAuth.
-| checkingId | String| Required: Checking id to unlike
+| checkinId  | String| Required: Checking id to unlike
 
 ## Foursquare.addPostToCheckin
 Post user generated content from an external app to a check-in. This post will be accessible to anyone who can view the details of the check-in. 

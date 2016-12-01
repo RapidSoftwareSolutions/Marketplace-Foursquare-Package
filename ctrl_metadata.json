@@ -1970,7 +1970,7 @@
       "type": "String",
       "info": "Required: Access Token obtained from Foursquare OAuth."
     }, {
-      "name": "checkingId",
+      "name": "checkinId",
       "type": "String",
       "info": "Required: "
     }],
@@ -1992,7 +1992,7 @@
       "type": "String",
       "info": "Required: Access Token obtained from Foursquare OAuth."
     }, {
-      "name": "checkingId",
+      "name": "checkinId",
       "type": "String",
       "info": "Required: "
     }],

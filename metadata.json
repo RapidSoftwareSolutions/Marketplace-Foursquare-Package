@@ -2389,7 +2389,7 @@
           "info": "Required: Access Token obtained from Foursquare OAuth."
         },
         {
-          "name": "checkingId",
+          "name": "checkinId",
           "type": "String",
           "info": "Required: Checking id to like"
         }
@@ -2415,7 +2415,7 @@
           "info": "Required: Access Token obtained from Foursquare OAuth."
         },
         {
-          "name": "checkingId",
+          "name": "checkinId",
           "type": "String",
           "info": "Required: Checking id to unlike"
         }
