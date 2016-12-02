@@ -1183,7 +1183,12 @@
           "name": "accessToken",
           "type": "String",
           "info": "Required: Access Token obtained from Foursquare OAuth."
-        }
+        },
+        {
+          "name": "venueId",
+          "type": "String",
+          "info": "Required: The venue id for which events are being requested."
+        },
       ],
       "callbacks": [
         {

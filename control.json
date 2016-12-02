@@ -318,7 +318,8 @@
         "url": "https://api.foursquare.com/v2/venues/:_venueId/events",
         "method": "GET",
         "args": {
-            "String|accessToken": "$oauth_token"
+            "String|accessToken": "$oauth_token",
+            "String|venueId": "$!_venueId"
         }
     },
     "getUsersWhoLikedVenue": {
@@ -609,7 +610,7 @@
     },
     "resolvePublicCheckinFromUrl": {
         "url": "https://api.foursquare.com/v2/checkins/resolve",
-        "method": "POST",
+        "method": "GET",
         "args": {
             "String|accessToken": "$oauth_token",
             "String|shortId": "$shortId"
