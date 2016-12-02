@@ -664,7 +664,7 @@
         "method": "POST",
         "args": {
             "String|accessToken": "$oauth_token",
-            "String|checkingId": "$checkingId"
+            "String|checkinId": "$checkinId"
         }
     },
     "unlikeCheckin": {
@@ -672,7 +672,7 @@
         "method": "POST",
         "args": {
             "String|accessToken": "$oauth_token",
-            "String|checkingId": "$checkingId"
+            "String|checkinId": "$checkinId"
         }
     },
     "addPostToCheckin": {
