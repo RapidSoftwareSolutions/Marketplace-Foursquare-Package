@@ -2979,6 +2979,10 @@
       "type": "String",
       "info": "Required: Access Token obtained from Foursquare OAuth."
     }, {
+      "name": "pageId",
+      "type": "String",
+      "info": "Required: The page whose venues to get venues for"
+    }, {
       "name": "location",
       "type": "String",
       "info": "Not valid with ne or sw. Limits results to venues near this latitude and longitude within an optional radius."

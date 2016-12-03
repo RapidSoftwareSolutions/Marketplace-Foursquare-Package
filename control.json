@@ -1124,6 +1124,7 @@
         "method": "GET",
         "args": {
             "String|accessToken": "$oauth_token",
+            "String|pageId": "pageId",
             "String|location": "ll",
             "Number|radius": "radius",
             "String|southWest": "sw",
