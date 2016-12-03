@@ -908,6 +908,7 @@
         "method": "POST",
         "args": {
             "String|accessToken": "$oauth_token",
+            "String|listId": "$!listId",
             "String|broadcast": "$broadcast",
             "String|message": "message"
         }

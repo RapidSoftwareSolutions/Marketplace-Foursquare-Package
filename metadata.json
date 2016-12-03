@@ -2435,6 +2435,10 @@
       "type": "String",
       "info": "Required: Access Token obtained from Foursquare OAuth."
     }, {
+      "name": "listId",
+      "type": "String",
+      "info": "Required: List id to share."
+    }, {
       "name": "broadcast",
       "type": "String",
       "info": "Required: Where to broadcast this list. Send `twitter` if you want to send to twitter, `facebook` if you want to send to facebook, or `twitter,facebook` if you want to send to both."
