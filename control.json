@@ -842,7 +842,7 @@
         }
     },
     "updatesList": {
-        "url": "https://api.foursquare.com/v2/lists/:list/update",
+        "url": "https://api.foursquare.com/v2/lists/:listId/update",
         "method": "POST",
         "args": {
             "String|accessToken": "$oauth_token",
