@@ -1135,19 +1135,19 @@
         }
     },
     "followPage": {
-        "url": "https://api.foursquare.com/v2/pages/USER_ID/follow?set=1",
+        "url": "https://api.foursquare.com/v2/pages/:userId/follow?set=1",
         "method": "POST",
         "args": {
             "String|accessToken": "$oauth_token",
-            "String|userId": "$userId"
+            "String|userId": "$!userId"
         }
     },
     "unfollowPage": {
-        "url": "https://api.foursquare.com/v2/pages/USER_ID/follow?set=0",
+        "url": "https://api.foursquare.com/v2/pages/:userId/follow?set=0",
         "method": "POST",
         "args": {
             "String|accessToken": "$oauth_token",
-            "String|userId": "$userId"
+            "String|userId": "$!userId"
         }
     },
     "getSinglePageUpdate": {
