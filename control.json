@@ -1135,7 +1135,7 @@
         }
     },
     "followPage": {
-        "url": "https://api.foursquare.com/v2/pages/USER_ID/follow",
+        "url": "https://api.foursquare.com/v2/pages/USER_ID/follow?set=1",
         "method": "POST",
         "args": {
             "String|accessToken": "$oauth_token",
@@ -1143,7 +1143,7 @@
         }
     },
     "unfollowPage": {
-        "url": "https://api.foursquare.com/v2/pages/USER_ID/follow",
+        "url": "https://api.foursquare.com/v2/pages/USER_ID/follow?set=0",
         "method": "POST",
         "args": {
             "String|accessToken": "$oauth_token",
