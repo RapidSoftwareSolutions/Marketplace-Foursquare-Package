@@ -2335,6 +2335,10 @@
       "type": "String",
       "info": "Required: Id for a user-created list."
     }, {
+      "name": "itemId",
+      "type": "String",
+      "info": "Id of the item to update."
+    }, {
       "name": "tipId",
       "type": "String",
       "info": "If present and a non-empty value, adds or replaces a tip on this item. If present and empty, will remove the tip on this item."

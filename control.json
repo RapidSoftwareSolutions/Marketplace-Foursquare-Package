@@ -870,6 +870,7 @@
         "args": {
             "String|accessToken": "$oauth_token",
             "String|listId": "$!listId",
+            "String|itemId": "itemId",
             "String|tipId": "tipId",
             "String|text": "text",
             "String|url": "url",
