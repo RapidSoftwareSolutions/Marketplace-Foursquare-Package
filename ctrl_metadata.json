@@ -2243,6 +2243,7 @@
     "args": [{
       "name": "accessToken",
       "orig": "oauth_token",
+      
       "type": "String",
       "info": "Required: Access Token obtained from Foursquare OAuth."
     }, {
