@@ -70,14 +70,6 @@ Returns photos from a user.
 | limit      | Number| Number of results to return, up to 500.
 | offset     | Number| Used to page through results.
 
-## Foursquare.getUserTastes
-Returns a list of a user's Foursquare tastes.
-
-| Field      | Type  | Description
-|------------|-------|----------
-| accessToken| String| Required: Access Token obtained from Foursquare OAuth.
-| userId     | String| Required: Identity of the user to get tastes for. Currently, only the user ID of the acting user is supported.
-
 ## Foursquare.getUserCheckins
 Returns a history of checkins for the authenticated user. 
 
@@ -124,23 +116,6 @@ A User's Lists.
 | limit      | Number| Number of results to return, up to 200.
 | offset     | String| The number of results to skip. Used to page through results.
 
-## Foursquare.denyFriendRequest
-Denies a pending friend request from another user.
-
-| Field      | Type  | Description
-|------------|-------|----------
-| accessToken| String| Required: Access Token obtained from Foursquare OAuth.
-| userId     | String| Required: The user ID of a pending friend.
-
-## Foursquare.setPings
-Changes whether the acting user will receive pings (phone notifications) when the specified user checks in.
-
-| Field      | Type   | Description
-|------------|--------|----------
-| accessToken| String | Required: Access Token obtained from Foursquare OAuth.
-| userId     | String | Required: The user ID of a friend.
-| value      | Boolean| Required: true or false.
-
 ## Foursquare.updateUserPhoto
 Updates the user's profile photo.
 
@@ -148,22 +123,6 @@ Updates the user's profile photo.
 |------------|-------|----------
 | accessToken| String| Required: Access Token obtained from Foursquare OAuth.
 | photo      | File  | Photo under `100KB` in multipart MIME encoding with content type `image/jpeg`, `image/gif`, or `image/png`.
-
-## Foursquare.removeFriend
-Cancels any relationship between the acting user and the specified user. Removes a friend, unfollows a celebrity, or cancels a pending friend request.
-
-| Field      | Type  | Description
-|------------|-------|----------
-| accessToken| String| Required: Access Token obtained from Foursquare OAuth.
-| userId     | String| Required: Identity of the user to unfriend.
-
-## Foursquare.approveFriendRequest
-Approves a pending friend request from another user.
-
-| Field      | Type  | Description
-|------------|-------|----------
-| accessToken| String| Required: Access Token obtained from Foursquare OAuth.
-| userId     | String| Required: The user ID of a pending friend.
 
 ## Foursquare.getUserFriends
 Returns an array of a user's friends.
@@ -226,17 +185,6 @@ Returns a hierarchical list of categories applied to venues.
 | Field      | Type  | Description
 |------------|-------|----------
 | accessToken| String| Required: Access Token obtained from Foursquare OAuth.
-
-## Foursquare.getVenueTimeSeriesData
-Get daily venue stats for a list of venues over a time range.
-
-| Field      | Type  | Description
-|------------|-------|----------
-| accessToken| String| Required: Access Token obtained from Foursquare OAuth.
-| startAt    | Number| Required. The start of the time range to retrieve stats for (seconds since epoch).
-| venueId    | String| A comma-separated list of venue ids to retrieve series data for. The current user must be the manager of all venues specified.
-| endAt      | Number| The end of the time range to retrieve stats for (seconds since epoch). If omitted, the current time is assumed.
-| fields     | String| Specifies which fields to return. May be one or more of `totalCheckins`, `newCheckins`, `uniqueVisitors`, `sharing`, `genders`, `ages`, `hours`, separated by commas.
 
 ## Foursquare.getTrendingVenues
 Returns a list of venues near the current location with the most people currently checked in. 
@@ -356,16 +304,6 @@ Returns hours for a venue.
 | accessToken| String| Required: Access Token obtained from Foursquare OAuth.
 | venueId    | String| Required: The venue id for which hours are being requested.
 
-## Foursquare.getVenueStats
-Get venue stats over a given time range. Only available to the manager of a venue.
-
-| Field      | Type  | Description
-|------------|-------|----------
-| accessToken| String| Required: Access Token obtained from Foursquare OAuth.
-| venueId    | String| Required The venue id to retrieve stats for.
-| startAt    | Number| The start of the time range to retrieve stats for (seconds since epoch). If omitted, all-time stats will be returned.
-| endAt      | Number| The end of the time range to retrieve stats for (seconds since epoch). If omitted, the current time is assumed.
-
 ## Foursquare.getVenueLinks
 Returns URLs or identifiers from third parties that have been applied to this venue, such as how the New York Times refers to this venue and a URL for additional information from nytimes.com. This is part of the foursquare Venue Map.
 
@@ -478,137 +416,12 @@ Allows the acting user to unlike a venue.
 | accessToken| String| Required: Access Token obtained from Foursquare OAuth.
 | venueId    | String| Required: The venue to unlike
 
-## Foursquare.setVenueRole
-Sets a user's or page's role for a venue.
-
-| Field      | Type   | Description
-|------------|--------|----------
-| accessToken| String | Required: Access Token obtained from Foursquare OAuth.
-| venueId    | String | Required: The venue for which you want to add branding.
-| userId     | String | Required: The id of the user or brand page for which we are changing roles at this venue
-| role       | String | Required: One of the values below, indicating the role that the user should receive at the venue. Valid values: `manager`, `employee`, `page`, `none`.
-| visible    | Boolean| Determines whether managers are visible on the venue profile. Only applies to manager role.
-
-## Foursquare.editVenue
-Allows you to make changes to a venue (acting user must be a superuser or venue manager). Any blank parameter deletes an old value, any unspecified parameter does nothing. 
-
-| Field            | Type  | Description
-|------------------|-------|----------
-| accessToken      | String| Required: Access Token obtained from Foursquare OAuth.
-| venueId          | String| Required: The venue id to edit.
-| name             | String| The name of the venue.
-| address          | String| The address of the venue.
-| crossStreet      | String| The nearest intersecting street or streets.
-| city             | String| The city name where this venue is.
-| state            | String| The nearest state or province to the venue.
-| zip              | String| The zip or postal code for the venue.
-| phone            | String| The phone number of the venue.
-| location         | String| Location of the user, required in order to receive the suggested group. Format: `lat,lng`. Example: `40.7,-74`
-| primaryCategoryId| String| The ID of the category to which you want to assign this venue.
-| addCategoryIds   | String| Comma-separated list of new category IDs to be assigned to this venue. If you are adding a new category to a venue and you want to make it primary, you should just use primaryCategoryId.
-| removeCategoryIds| String| Comma-separated list of new category IDs to be removed from this venue.
-| twitter          | String| The twitter handle of the venue.
-| description      | String| A freeform description of the venue, up to 300 characters.
-| url              | String| The url of the homepage of the venue.
-| storeId          | String| An identifier used by the manager of the venue to distinguish between venues of the same name. Only visible to managers.
-| hours            | String| The hours for the venue, as a semi-colon separated list of open segments and named segments (e.g., brunch or happy hour). Open segments are formatted as day,start,end. Named segments additionally have a label, formatted as day,start,end,label. Days are formatted as integers with Monday = 1,...,Sunday = 7. Start and End are formatted as [+]HHMM format. Use 24 hour format (no colon), prefix with 0 for HH or MM less than 10. Use '+' prefix, i.e., +0230 to represent 2:30 am past midnight into the following day.
-
-## Foursquare.setSingleLocationVenue
-Sets a venue as a single location (not part of a chain).
-
-| Field      | Type  | Description
-|------------|-------|----------
-| accessToken| String| Required: Access Token obtained from Foursquare OAuth.
-| venueId    | String| Required: The venue for which you want to set as a single location.
-
-## Foursquare.getVenueGroupDetails
-Get venue group details.
-
-| Field      | Type  | Description
-|------------|-------|----------
-| accessToken| String| Required: Access Token obtained from Foursquare OAuth.
-| groupId    | String| Required: The ID of the venue group to retrieve additional information for.
-
 ## Foursquare.getVenueGroups
 List all venue groups owned by the user.
 
 | Field      | Type  | Description
 |------------|-------|----------
 | accessToken| String| Required: Access Token obtained from Foursquare OAuth.
-
-## Foursquare.deleteVenueGroup
-Delete a venue group.
-
-| Field      | Type  | Description
-|------------|-------|----------
-| accessToken| String| Required: Access Token obtained from Foursquare OAuth.
-| groupId    | String| Required: The ID of the venue group to delete.
-
-## Foursquare.createVenueGroup
-Create a venue group. If the venueId parameter is specified, then the endpoint will add the specified venues to the venue group. If it is not possible to add all of the specified venues to the group, then creation of the venue group will fail entirely.
-
-| Field      | Type  | Description
-|------------|-------|----------
-| accessToken| String| Required: Access Token obtained from Foursquare OAuth.
-| name       | String| Required: The name to give the group.
-| venueId    | String| Comma-delimited list of venue IDs to add to the group. If this parameter is not specified, then the venue group will initially be empty.
-
-## Foursquare.getVenueGroupTimeSeriesData
-Get daily venue stats for the venues in a group over a time range.
-
-| Field      | Type  | Description
-|------------|-------|----------
-| accessToken| String| Required: Access Token obtained from Foursquare OAuth.
-| groupId    | String| Required: The venue group to retrieve series data for.
-| startAt    | Number| Required: The start of the time range to retrieve stats for (seconds since epoch).
-| endAt      | Number| The end of the time range to retrieve stats for (seconds since epoch). If omitted, the current time is assumed.
-| fields     | String| Specifies which fields to return. May be one or more of `totalCheckins`, `newCheckins`, `uniqueVisitors`, `sharing`, `genders`, `ages`, `hours`, separated by commas.
-
-## Foursquare.updateVenueGroup
-Updates a venue group. At least one of the name and venueId parameters must be specified.
-
-| Field      | Type  | Description
-|------------|-------|----------
-| accessToken| String| Required: Access Token obtained from Foursquare OAuth.
-| groupId    | String| Required: The ID of the venue group to modify.
-| name       | String| If specified, the new name to give to the group.
-| venueId    | String| If specified, a comma-delimited list of venue IDs that will become the new set of venue IDs for the group.
-
-## Foursquare.addVenueToGroup
-Add a venue to a venue group.
-
-| Field      | Type  | Description
-|------------|-------|----------
-| accessToken| String| Required: Access Token obtained from Foursquare OAuth.
-| groupId    | String| Required: The ID of the venue group to modify.
-| venueId    | String| Required: Comma-delimited list of venue IDs to add to the group.
-
-## Foursquare.editAllVenuesInGroup
-Allows you to make changes to all venues in a venue group. Acting user must be the owner of the group. Any blank parameter deletes an old value, any unspecified parameter does nothing.
-
-| Field       | Type  | Description
-|-------------|-------|----------
-| accessToken | String| Required: Access Token obtained from Foursquare OAuth.
-| venueGroupId| String| Required: The venue group id to edit
-| name        | String| The name of the venue.
-| city        | String| The city name where this venue is.
-| state       | String| The nearest state or province to the venue.
-| zip         | String| The zip or postal code for the venue.
-| phone       | String| The phone number for the venue.
-| categoryId  | String| The IDs of the category or categories to which you want to assign this venue (separate multiple IDs with commas).
-| twitter     | String| The twitter handle of the venue.
-| description | String| A freeform description of the venue, up to 300 characters.
-| url         | String| The url of the homepage of the venue.
-| hours       | String| The hours for the venue, as a semi-colon separated list of open segments and named segments (e.g., brunch or happy hour). Open segments are formatted as day,start,end. Named segments additionally have a label, formatted as day,start,end,label. Days are formatted as integers with Monday = 1,...,Sunday = 7. Start and End are formatted as [+]HHMM format. Use 24 hour format (no colon), prefix with 0 for HH or MM less than 10. Use '+' prefix, i.e., +0230 to represent 2:30 am past midnight into the following day.
-
-## Foursquare.removeVenueFromGroup
-Remove a venue from a venue group.
-
-| Field      | Type  | Description
-|------------|-------|----------
-| accessToken| String| Required: Access Token obtained from Foursquare OAuth.
-| groupId    | String| Required: The ID of the venue group to modify.
-| venueId    | String| Required: Comma-delimited list of venue IDs to remove from the group
 
 ## Foursquare.getCheckin
 Get details of a check-in.
@@ -993,16 +806,6 @@ Change a setting for the given user.
 | settingId  | String| Required: Name of setting to change, sendMayorshipsToTwitter, sendBadgesToTwitter, sendMayorshipsToFacebook, sendBadgesToFacebook, receivePings, receiveCommentPings.
 | value      | Number| 1 for true, and 0 for false.
 
-## Foursquare.getSpecialDetails
-Gives details about a special, including text and whether it is unlocked for the current or provided user.
-
-| Field      | Type  | Description
-|------------|-------|----------
-| accessToken| String| Required: Access Token obtained from Foursquare OAuth.
-| specialId  | String| Required: ID of special to retrieve
-| venueId    | String| Required: ID of a venue the special is running at
-| userId     | String| ID of the user to check whether the special is unlocked for. Only available if the current user is the manager of the venue. If not provided, checks wher the special is unlocked for the current user.
-
 ## Foursquare.searchSpecials
 Returns a list of specials near the current location.
 
@@ -1015,40 +818,6 @@ Returns a list of specials near the current location.
 | altitude        | Number| Altitude of the user's location, in meters.
 | altitudeAccuracy| Float | Accuracy of the user's altitude, in meters.
 | limit           | Number| Number of results to return, up to 50.
-
-## Foursquare.getAvailableSpecials
-List available specials.
-
-| Field      | Type  | Description
-|------------|-------|----------
-| accessToken| String| Required: Access Token obtained from Foursquare OAuth.
-| venueId    | String| Comma-separated list of venue IDs; filters results to the specials assigned to the venue(s).
-| status     | String| (optional, requires venueId) which specials to return: `pending`, `active`, `expired`, `all`
-
-## Foursquare.createSpecial
-Allows you to create a new special. As of November 2013, `mayor`, `regular`, `swarm`, `friends`, and `flash` specials are deprecated.
-
-| Field      | Type  | Description
-|------------|-------|----------
-| accessToken| String| Required: Access Token obtained from Foursquare OAuth.
-| text       | String| Required: Maximum length of 200 characters.
-| name       | String| A name for the special.
-| finePrint  | String| Maximum length of 200 characters. Fine print, shown in small type on the special detail page.
-| count      | String| Specifier for special types.
-| type       | String| Required. The type of special. Valid values: `frequency`, `count`
-| offerId    | String| Maximum length of 16 characters. Internal id in your 3rd party system.
-| cost       | Float | The amount of money the user must spend to use this special in dollars and cents. For example, 5.50 meaning 5 dollars and 50 cents.
-
-## Foursquare.flagSpecial
-Allows users to indicate a Special is improper in some way. 
-
-| Field      | Type  | Description
-|------------|-------|----------
-| accessToken| String| Required: Access Token obtained from Foursquare OAuth.
-| specialId  | String| Required: The id of the special being flagged.
-| venueId    | String| Required: One of `not_redeemable`, `not_valuable`, `other`.
-| problem    | String| Required: Additional text about why the user has flagged this special.
-| text       | String| Additional text about why the user has flagged this special.
 
 ## Foursquare.getSingleEvent
 Get details of a event.
@@ -1075,17 +844,6 @@ Returns a hierarchical list of categories applied to events.
 |------------|-------|----------
 | accessToken| String| Required: Access Token obtained from Foursquare OAuth.
 
-## Foursquare.addSingleEvent
-Create an event for a venue that you manage. You can see all your events in the tools tab when you're managing your venue. They're on the calendar. Events show up when users view your venue on mobile or the web. Users can also check in to events and share with their friends what they're up to in the present moment, and look back to see what they did in the days of yore.
-
-| Field      | Type  | Description
-|------------|-------|----------
-| accessToken| String| Required: Access Token obtained from Foursquare OAuth.
-| venueId    | String| The id of the venue where the event is being held.
-| name       | String| The name of the event.
-| startAt    | Number| Time when the event is scheduled to start, in seconds since Unix epoch.
-| endAt      | Number| Time when the event is scheduled to end, in seconds since Unix epoch.
-
 ## Foursquare.getUserManagedPages
 Returns an array of the pages a user manages.
 
@@ -1100,17 +858,6 @@ Allows users to create a new page. The creating user is added as a manager of th
 |------------|-------|----------
 | accessToken| String| Required: Access Token obtained from Foursquare OAuth.
 | name       | String| Required: The name of the page
-
-## Foursquare.getSimilarPages
-Returns a list of pages similar to the specified page. 
-
-| Field           | Type   | Description
-|-----------------|--------|----------
-| accessToken     | String | Required: Access Token obtained from Foursquare OAuth.
-| userId          | String | Required: The page you want similar pages for.
-| limit           | String | Number of results to return, up to 500.
-| offset          | String | Used to page through results.
-| includeFollowing| Boolean| Boolean indicating whether results include pages already being followed by the user.
 
 ## Foursquare.getPageVenuesTimeSeriesData
 Get daily venue stats for venues managed by a page over a time range.
@@ -1145,22 +892,6 @@ Allows you to get the page's venues.
 | limit      | Number| The number of venues to return. Defaults to 20, max of 100.
 | storeId    | Number|  Only return venues whose storeId matches. storeIds are defined by the page manager (and therefore namespaced to that particular page). They are the page's own internal identifier for that venue. *Cannot be used with any geo params*.
 
-## Foursquare.followPage
-Allows the acting user to follow a page. Following a page subscribes the acting user to updates from that page.
-
-| Field      | Type  | Description
-|------------|-------|----------
-| accessToken| String| Required: Access Token obtained from Foursquare OAuth.
-| userId     | String| Required: The page to follow or unfollow.
-
-## Foursquare.unfollowPage
-Allows the acting user to unfollow a page.
-
-| Field      | Type  | Description
-|------------|-------|----------
-| accessToken| String| Required: Access Token obtained from Foursquare OAuth.
-| userId     | String| Required: The page to follow or unfollow.
-
 ## Foursquare.getSinglePageUpdate
 Get page update details.
 
@@ -1178,19 +909,6 @@ Returns a list of page updates created by the current user.
 |------------|-------|----------
 | accessToken| String| Required: Access Token obtained from Foursquare OAuth.
 
-## Foursquare.addPageUpdate
-Broadcast an update as a page to followers of the page and associated venues. Venues can be specified either by the venueId, groupId or pageId (meaning all venues managed by the page) parameters. Broadcasts will show up on venue pages in our apps and website. 
-
-| Field      | Type  | Description
-|------------|-------|----------
-| accessToken| String| Required: Access Token obtained from Foursquare OAuth.
-| pageId     | String| Required: Id of the page to associate with the broadcast. To find the page for a venue you can look at the page object in the venue response.
-| groupId    | String| The venue group from which to broadcast an update.
-| venueId    | String| A venue from which to broadcast an update.
-| shout      | String| Text associated with the broadcast. 160 characters max, 10 characters min.
-| photoId    | String| An optional photo to attach to the broadcast. For a new photo, you should use the photo add endpoint and specify only the pageId parameter.
-| broadcast  | String| Additional places to send the broadcast to. Accepts a comma-delimited list of values: `facebook`, `twitter`, `private`
-
 ## Foursquare.likePageUpdate
 Causes the current user to 'like' a page update. If there is a campaign associated with the update, the like will propagate to the special as well.
 
@@ -1198,12 +916,3 @@ Causes the current user to 'like' a page update. If there is a campaign associat
 |------------|-------|----------
 | accessToken| String| Required: Access Token obtained from Foursquare OAuth.
 | updateId   | String| Required: The ID of the update to like.
-
-## Foursquare.deletePageUpdate
-Delete a page update created by the current user.
-
-| Field      | Type  | Description
-|------------|-------|----------
-| accessToken| String| Required: Access Token obtained from Foursquare OAuth.
-| updateId   | String| Required: The ID of the update to delete.
-

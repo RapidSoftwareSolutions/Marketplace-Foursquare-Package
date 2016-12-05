@@ -174,25 +174,6 @@
       "info": "Success"
     }]
   }, {
-    "name": "getUserTastes",
-    "description": "Returns a list of a user's Foursquare tastes.",
-    "args": [{
-      "name": "accessToken",
-      "type": "String",
-      "info": "Required: Access Token obtained from Foursquare OAuth."
-    }, {
-      "name": "userId",
-      "type": "String",
-      "info": "Required: Identity of the user to get tastes for. Currently, only the user ID of the acting user is supported."
-    }],
-    "callbacks": [{
-      "name": "error",
-      "info": "Error"
-    }, {
-      "name": "success",
-      "info": "Success"
-    }]
-  }, {
     "name": "getUserCheckins",
     "description": "Returns a history of checkins for the authenticated user. ",
     "args": [{
@@ -318,48 +299,6 @@
       "info": "Success"
     }]
   }, {
-    "name": "denyFriendRequest",
-    "description": "Denies a pending friend request from another user.",
-    "args": [{
-      "name": "accessToken",
-      "type": "String",
-      "info": "Required: Access Token obtained from Foursquare OAuth."
-    }, {
-      "name": "userId",
-      "type": "String",
-      "info": "Required: The user ID of a pending friend."
-    }],
-    "callbacks": [{
-      "name": "error",
-      "info": "Error"
-    }, {
-      "name": "success",
-      "info": "Success"
-    }]
-  }, {
-    "name": "setPings",
-    "description": "Changes whether the acting user will receive pings (phone notifications) when the specified user checks in.",
-    "args": [{
-      "name": "accessToken",
-      "type": "String",
-      "info": "Required: Access Token obtained from Foursquare OAuth."
-    }, {
-      "name": "userId",
-      "type": "String",
-      "info": "Required: The user ID of a friend."
-    }, {
-      "name": "value",
-      "type": "Boolean",
-      "info": "Required: true or false."
-    }],
-    "callbacks": [{
-      "name": "error",
-      "info": "Error"
-    }, {
-      "name": "success",
-      "info": "Success"
-    }]
-  }, {
     "name": "updateUserPhoto",
     "description": "Updates the user's profile photo.",
     "args": [{
@@ -370,44 +309,6 @@
       "name": "photo",
       "type": "File",
       "info": "Photo under `100KB` in multipart MIME encoding with content type `image/jpeg`, `image/gif`, or `image/png`."
-    }],
-    "callbacks": [{
-      "name": "error",
-      "info": "Error"
-    }, {
-      "name": "success",
-      "info": "Success"
-    }]
-  }, {
-    "name": "removeFriend",
-    "description": "Cancels any relationship between the acting user and the specified user. Removes a friend, unfollows a celebrity, or cancels a pending friend request.",
-    "args": [{
-      "name": "accessToken",
-      "type": "String",
-      "info": "Required: Access Token obtained from Foursquare OAuth."
-    }, {
-      "name": "userId",
-      "type": "String",
-      "info": "Required: Identity of the user to unfriend."
-    }],
-    "callbacks": [{
-      "name": "error",
-      "info": "Error"
-    }, {
-      "name": "success",
-      "info": "Success"
-    }]
-  }, {
-    "name": "approveFriendRequest",
-    "description": "Approves a pending friend request from another user.",
-    "args": [{
-      "name": "accessToken",
-      "type": "String",
-      "info": "Required: Access Token obtained from Foursquare OAuth."
-    }, {
-      "name": "userId",
-      "type": "String",
-      "info": "Required: The user ID of a pending friend."
     }],
     "callbacks": [{
       "name": "error",
@@ -591,37 +492,6 @@
       "name": "accessToken",
       "type": "String",
       "info": "Required: Access Token obtained from Foursquare OAuth."
-    }],
-    "callbacks": [{
-      "name": "error",
-      "info": "Error"
-    }, {
-      "name": "success",
-      "info": "Success"
-    }]
-  }, {
-    "name": "getVenueTimeSeriesData",
-    "description": "Get daily venue stats for a list of venues over a time range.",
-    "args": [{
-      "name": "accessToken",
-      "type": "String",
-      "info": "Required: Access Token obtained from Foursquare OAuth."
-    }, {
-      "name": "startAt",
-      "type": "Number",
-      "info": "Required. The start of the time range to retrieve stats for (seconds since epoch)."
-    }, {
-      "name": "venueId",
-      "type": "String",
-      "info": "A comma-separated list of venue ids to retrieve series data for. The current user must be the manager of all venues specified."
-    }, {
-      "name": "endAt",
-      "type": "Number",
-      "info": "The end of the time range to retrieve stats for (seconds since epoch). If omitted, the current time is assumed."
-    }, {
-      "name": "fields",
-      "type": "String",
-      "info": "Specifies which fields to return. May be one or more of `totalCheckins`, `newCheckins`, `uniqueVisitors`, `sharing`, `genders`, `ages`, `hours`, separated by commas."
     }],
     "callbacks": [{
       "name": "error",
@@ -970,33 +840,6 @@
       "info": "Success"
     }]
   }, {
-    "name": "getVenueStats",
-    "description": "Get venue stats over a given time range. Only available to the manager of a venue.",
-    "args": [{
-      "name": "accessToken",
-      "type": "String",
-      "info": "Required: Access Token obtained from Foursquare OAuth."
-    }, {
-      "name": "venueId",
-      "type": "String",
-      "info": "Required The venue id to retrieve stats for."
-    }, {
-      "name": "startAt",
-      "type": "Number",
-      "info": "The start of the time range to retrieve stats for (seconds since epoch). If omitted, all-time stats will be returned."
-    }, {
-      "name": "endAt",
-      "type": "Number",
-      "info": "The end of the time range to retrieve stats for (seconds since epoch). If omitted, the current time is assumed."
-    }],
-    "callbacks": [{
-      "name": "error",
-      "info": "Error"
-    }, {
-      "name": "success",
-      "info": "Success"
-    }]
-  }, {
     "name": "getVenueLinks",
     "description": "Returns URLs or identifiers from third parties that have been applied to this venue, such as how the New York Times refers to this venue and a URL for additional information from nytimes.com. This is part of the foursquare Venue Map.",
     "args": [{
@@ -1295,355 +1138,12 @@
       "info": "Success"
     }]
   }, {
-    "name": "setVenueRole",
-    "description": "Sets a user's or page's role for a venue.",
-    "args": [{
-      "name": "accessToken",
-      "type": "String",
-      "info": "Required: Access Token obtained from Foursquare OAuth."
-    }, {
-      "name": "venueId",
-      "type": "String",
-      "info": "Required: The venue for which you want to add branding."
-    }, {
-      "name": "userId",
-      "type": "String",
-      "info": "Required: The id of the user or brand page for which we are changing roles at this venue"
-    }, {
-      "name": "role",
-      "type": "String",
-      "info": "Required: One of the values below, indicating the role that the user should receive at the venue. Valid values: `manager`, `employee`, `page`, `none`."
-    }, {
-      "name": "visible",
-      "type": "Boolean",
-      "info": "Determines whether managers are visible on the venue profile. Only applies to manager role."
-    }]
-  }, {
-    "name": "editVenue",
-    "description": "Allows you to make changes to a venue (acting user must be a superuser or venue manager). Any blank parameter deletes an old value, any unspecified parameter does nothing. ",
-    "args": [{
-      "name": "accessToken",
-      "type": "String",
-      "info": "Required: Access Token obtained from Foursquare OAuth."
-    }, {
-      "name": "venueId",
-      "type": "String",
-      "info": "Required: The venue id to edit."
-    }, {
-      "name": "name",
-      "type": "String",
-      "info": "The name of the venue."
-    }, {
-      "name": "address",
-      "type": "String",
-      "info": "The address of the venue."
-    }, {
-      "name": "crossStreet",
-      "type": "String",
-      "info": "The nearest intersecting street or streets."
-    }, {
-      "name": "city",
-      "type": "String",
-      "info": "The city name where this venue is."
-    }, {
-      "name": "state",
-      "type": "String",
-      "info": "The nearest state or province to the venue."
-    }, {
-      "name": "zip",
-      "type": "String",
-      "info": "The zip or postal code for the venue."
-    }, {
-      "name": "phone",
-      "type": "String",
-      "info": "The phone number of the venue."
-    }, {
-      "name": "location",
-      "type": "String",
-      "info": "Location of the user, required in order to receive the suggested group. Format: `lat,lng`. Example: `40.7,-74`"
-    }, {
-      "name": "primaryCategoryId",
-      "type": "String",
-      "info": "The ID of the category to which you want to assign this venue."
-    }, {
-      "name": "addCategoryIds",
-      "type": "String",
-      "info": "Comma-separated list of new category IDs to be assigned to this venue. If you are adding a new category to a venue and you want to make it primary, you should just use primaryCategoryId."
-    }, {
-      "name": "removeCategoryIds",
-      "type": "String",
-      "info": "Comma-separated list of new category IDs to be removed from this venue."
-    }, {
-      "name": "twitter",
-      "type": "String",
-      "info": "The twitter handle of the venue."
-    }, {
-      "name": "description",
-      "type": "String",
-      "info": "A freeform description of the venue, up to 300 characters."
-    }, {
-      "name": "url",
-      "type": "String",
-      "info": "The url of the homepage of the venue."
-    }, {
-      "name": "storeId",
-      "type": "String",
-      "info": "An identifier used by the manager of the venue to distinguish between venues of the same name. Only visible to managers."
-    }, {
-      "name": "hours",
-      "type": "String",
-      "info": "The hours for the venue, as a semi-colon separated list of open segments and named segments (e.g., brunch or happy hour). Open segments are formatted as day,start,end. Named segments additionally have a label, formatted as day,start,end,label. Days are formatted as integers with Monday = 1,...,Sunday = 7. Start and End are formatted as [+]HHMM format. Use 24 hour format (no colon), prefix with 0 for HH or MM less than 10. Use '+' prefix, i.e., +0230 to represent 2:30 am past midnight into the following day."
-    }],
-    "callbacks": [{
-      "name": "error",
-      "info": "Error"
-    }, {
-      "name": "success",
-      "info": "Success"
-    }]
-  }, {
-    "name": "setSingleLocationVenue",
-    "description": "Sets a venue as a single location (not part of a chain).",
-    "args": [{
-      "name": "accessToken",
-      "type": "String",
-      "info": "Required: Access Token obtained from Foursquare OAuth."
-    }, {
-      "name": "venueId",
-      "type": "String",
-      "info": "Required: The venue for which you want to set as a single location."
-    }],
-    "callbacks": [{
-      "name": "error",
-      "info": "Error"
-    }, {
-      "name": "success",
-      "info": "Success"
-    }]
-  }, {
-    "name": "getVenueGroupDetails",
-    "description": "Get venue group details.",
-    "args": [{
-      "name": "accessToken",
-      "type": "String",
-      "info": "Required: Access Token obtained from Foursquare OAuth."
-    }, {
-      "name": "groupId",
-      "type": "String",
-      "info": "Required: The ID of the venue group to retrieve additional information for."
-    }],
-    "callbacks": [{
-      "name": "error",
-      "info": "Error"
-    }, {
-      "name": "success",
-      "info": "Success"
-    }]
-  }, {
     "name": "getVenueGroups",
     "description": "List all venue groups owned by the user.",
     "args": [{
       "name": "accessToken",
       "type": "String",
       "info": "Required: Access Token obtained from Foursquare OAuth."
-    }],
-    "callbacks": [{
-      "name": "error",
-      "info": "Error"
-    }, {
-      "name": "success",
-      "info": "Success"
-    }]
-  }, {
-    "name": "deleteVenueGroup",
-    "description": "Delete a venue group.",
-    "args": [{
-      "name": "accessToken",
-      "type": "String",
-      "info": "Required: Access Token obtained from Foursquare OAuth."
-    }, {
-      "name": "groupId",
-      "type": "String",
-      "info": "Required: The ID of the venue group to delete."
-    }],
-    "callbacks": [{
-      "name": "error",
-      "info": "Error"
-    }, {
-      "name": "success",
-      "info": "Success"
-    }]
-  }, {
-    "name": "createVenueGroup",
-    "description": "Create a venue group. If the venueId parameter is specified, then the endpoint will add the specified venues to the venue group. If it is not possible to add all of the specified venues to the group, then creation of the venue group will fail entirely.",
-    "args": [{
-      "name": "accessToken",
-      "type": "String",
-      "info": "Required: Access Token obtained from Foursquare OAuth."
-    }, {
-      "name": "name",
-      "type": "String",
-      "info": "Required: The name to give the group."
-    }, {
-      "name": "venueId",
-      "type": "String",
-      "info": "Comma-delimited list of venue IDs to add to the group. If this parameter is not specified, then the venue group will initially be empty."
-    }],
-    "callbacks": [{
-      "name": "error",
-      "info": "Error"
-    }, {
-      "name": "success",
-      "info": "Success"
-    }]
-  }, {
-    "name": "getVenueGroupTimeSeriesData",
-    "description": "Get daily venue stats for the venues in a group over a time range.",
-    "args": [{
-      "name": "accessToken",
-      "type": "String",
-      "info": "Required: Access Token obtained from Foursquare OAuth."
-    }, {
-      "name": "groupId",
-      "type": "String",
-      "info": "Required: The venue group to retrieve series data for."
-    }, {
-      "name": "startAt",
-      "type": "Number",
-      "info": "Required: The start of the time range to retrieve stats for (seconds since epoch)."
-    }, {
-      "name": "endAt",
-      "type": "Number",
-      "info": "The end of the time range to retrieve stats for (seconds since epoch). If omitted, the current time is assumed."
-    }, {
-      "name": "fields",
-      "type": "String",
-      "info": "Specifies which fields to return. May be one or more of `totalCheckins`, `newCheckins`, `uniqueVisitors`, `sharing`, `genders`, `ages`, `hours`, separated by commas."
-    }],
-    "callbacks": [{
-      "name": "error",
-      "info": "Error"
-    }, {
-      "name": "success",
-      "info": "Success"
-    }]
-  }, {
-    "name": "updateVenueGroup",
-    "description": "Updates a venue group. At least one of the name and venueId parameters must be specified.",
-    "args": [{
-      "name": "accessToken",
-      "type": "String",
-      "info": "Required: Access Token obtained from Foursquare OAuth."
-    }, {
-      "name": "groupId",
-      "type": "String",
-      "info": "Required: The ID of the venue group to modify."
-    }, {
-      "name": "name",
-      "type": "String",
-      "info": "If specified, the new name to give to the group."
-    }, {
-      "name": "venueId",
-      "type": "String",
-      "info": "If specified, a comma-delimited list of venue IDs that will become the new set of venue IDs for the group."
-    }],
-    "callbacks": [{
-      "name": "error",
-      "info": "Error"
-    }, {
-      "name": "success",
-      "info": "Success"
-    }]
-  }, {
-    "name": "addVenueToGroup",
-    "description": "Add a venue to a venue group.",
-    "args": [{
-      "name": "accessToken",
-      "type": "String",
-      "info": "Required: Access Token obtained from Foursquare OAuth."
-    }, {
-      "name": "groupId",
-      "type": "String",
-      "info": "Required: The ID of the venue group to modify."
-    }, {
-      "name": "venueId",
-      "type": "String",
-      "info": "Required: Comma-delimited list of venue IDs to add to the group."
-    }],
-    "callbacks": [{
-      "name": "error",
-      "info": "Error"
-    }, {
-      "name": "success",
-      "info": "Success"
-    }]
-  }, {
-    "name": "editAllVenuesInGroup",
-    "description": "Allows you to make changes to all venues in a venue group. Acting user must be the owner of the group. Any blank parameter deletes an old value, any unspecified parameter does nothing.",
-    "args": [{
-      "name": "accessToken",
-      "type": "String",
-      "info": "Required: Access Token obtained from Foursquare OAuth."
-    }, {
-      "name": "venueGroupId",
-      "type": "String",
-      "info": "Required: The venue group id to edit"
-    }, {
-      "name": "name",
-      "type": "String",
-      "info": "The name of the venue."
-    }, {
-      "name": "city",
-      "type": "String",
-      "info": "The city name where this venue is."
-    }, {
-      "name": "state",
-      "type": "String",
-      "info": "The nearest state or province to the venue."
-    }, {
-      "name": "zip",
-      "type": "String",
-      "info": "The zip or postal code for the venue."
-    }, {
-      "name": "phone",
-      "type": "String",
-      "info": "The phone number for the venue."
-    }, {
-      "name": "categoryId",
-      "type": "String",
-      "info": "The IDs of the category or categories to which you want to assign this venue (separate multiple IDs with commas)."
-    }, {
-      "name": "twitter",
-      "type": "String",
-      "info": "The twitter handle of the venue."
-    }, {
-      "name": "description",
-      "type": "String",
-      "info": "A freeform description of the venue, up to 300 characters."
-    }, {
-      "name": "url",
-      "type": "String",
-      "info": "The url of the homepage of the venue."
-    }, {
-      "name": "hours",
-      "type": "String",
-      "info": "The hours for the venue, as a semi-colon separated list of open segments and named segments (e.g., brunch or happy hour). Open segments are formatted as day,start,end. Named segments additionally have a label, formatted as day,start,end,label. Days are formatted as integers with Monday = 1,...,Sunday = 7. Start and End are formatted as [+]HHMM format. Use 24 hour format (no colon), prefix with 0 for HH or MM less than 10. Use '+' prefix, i.e., +0230 to represent 2:30 am past midnight into the following day."
-    }]
-  }, {
-    "name": "removeVenueFromGroup",
-    "description": "Remove a venue from a venue group.",
-    "args": [{
-      "name": "accessToken",
-      "type": "String",
-      "info": "Required: Access Token obtained from Foursquare OAuth."
-    }, {
-      "name": "groupId",
-      "type": "String",
-      "info": "Required: The ID of the venue group to modify."
-    }, {
-      "name": "venueId",
-      "type": "String",
-      "info": "Required: Comma-delimited list of venue IDs to remove from the group"
     }],
     "callbacks": [{
       "name": "error",
@@ -2631,33 +2131,6 @@
       "info": "Success"
     }]
   }, {
-    "name": "getSpecialDetails",
-    "description": "Gives details about a special, including text and whether it is unlocked for the current or provided user.",
-    "args": [{
-      "name": "accessToken",
-      "type": "String",
-      "info": "Required: Access Token obtained from Foursquare OAuth."
-    }, {
-      "name": "specialId",
-      "type": "String",
-      "info": "Required: ID of special to retrieve"
-    }, {
-      "name": "venueId",
-      "type": "String",
-      "info": "Required: ID of a venue the special is running at"
-    }, {
-      "name": "userId",
-      "type": "String",
-      "info": "ID of the user to check whether the special is unlocked for. Only available if the current user is the manager of the venue. If not provided, checks wher the special is unlocked for the current user."
-    }],
-    "callbacks": [{
-      "name": "error",
-      "info": "Error"
-    }, {
-      "name": "success",
-      "info": "Success"
-    }]
-  }, {
     "name": "searchSpecials",
     "description": "Returns a list of specials near the current location.",
     "args": [{
@@ -2688,103 +2161,6 @@
       "name": "limit",
       "type": "Number",
       "info": "Number of results to return, up to 50."
-    }]
-  }, {
-    "name": "getAvailableSpecials",
-    "description": "List available specials.",
-    "args": [{
-      "name": "accessToken",
-      "type": "String",
-      "info": "Required: Access Token obtained from Foursquare OAuth."
-    }, {
-      "name": "venueId",
-      "type": "String",
-      "info": "Comma-separated list of venue IDs; filters results to the specials assigned to the venue(s)."
-    }, {
-      "name": "status",
-      "type": "String",
-      "info": "(optional, requires venueId) which specials to return: `pending`, `active`, `expired`, `all`"
-    }],
-    "callbacks": [{
-      "name": "error",
-      "info": "Error"
-    }, {
-      "name": "success",
-      "info": "Success"
-    }]
-  }, {
-    "name": "createSpecial",
-    "description": "Allows you to create a new special. As of November 2013, `mayor`, `regular`, `swarm`, `friends`, and `flash` specials are deprecated.",
-    "args": [{
-      "name": "accessToken",
-      "type": "String",
-      "info": "Required: Access Token obtained from Foursquare OAuth."
-    }, {
-      "name": "text",
-      "type": "String",
-      "info": "Required: Maximum length of 200 characters."
-    }, {
-      "name": "name",
-      "type": "String",
-      "info": "A name for the special."
-    }, {
-      "name": "finePrint",
-      "type": "String",
-      "info": "Maximum length of 200 characters. Fine print, shown in small type on the special detail page."
-    }, {
-      "name": "count",
-      "type": "String",
-      "info": "Specifier for special types."
-    }, {
-      "name": "type",
-      "type": "String",
-      "info": "Required. The type of special. Valid values: `frequency`, `count`"
-    }, {
-      "name": "offerId",
-      "type": "String",
-      "info": "Maximum length of 16 characters. Internal id in your 3rd party system."
-    }, {
-      "name": "cost",
-      "type": "Float",
-      "info": "The amount of money the user must spend to use this special in dollars and cents. For example, 5.50 meaning 5 dollars and 50 cents."
-    }],
-    "callbacks": [{
-      "name": "error",
-      "info": "Error"
-    }, {
-      "name": "success",
-      "info": "Success"
-    }]
-  }, {
-    "name": "flagSpecial",
-    "description": "Allows users to indicate a Special is improper in some way. ",
-    "args": [{
-      "name": "accessToken",
-      "type": "String",
-      "info": "Required: Access Token obtained from Foursquare OAuth."
-    }, {
-      "name": "specialId",
-      "type": "String",
-      "info": "Required: The id of the special being flagged."
-    }, {
-      "name": "venueId",
-      "type": "String",
-      "info": "Required: One of `not_redeemable`, `not_valuable`, `other`."
-    }, {
-      "name": "problem",
-      "type": "String",
-      "info": "Required: Additional text about why the user has flagged this special."
-    }, {
-      "name": "text",
-      "type": "String",
-      "info": "Additional text about why the user has flagged this special."
-    }],
-    "callbacks": [{
-      "name": "error",
-      "info": "Error"
-    }, {
-      "name": "success",
-      "info": "Success"
     }]
   }, {
     "name": "getSingleEvent",
@@ -2848,37 +2224,6 @@
       "info": "Success"
     }]
   }, {
-    "name": "addSingleEvent",
-    "description": "Create an event for a venue that you manage. You can see all your events in the tools tab when you're managing your venue. They're on the calendar. Events show up when users view your venue on mobile or the web. Users can also check in to events and share with their friends what they're up to in the present moment, and look back to see what they did in the days of yore.",
-    "args": [{
-      "name": "accessToken",
-      "type": "String",
-      "info": "Required: Access Token obtained from Foursquare OAuth."
-    }, {
-      "name": "venueId",
-      "type": "String",
-      "info": "The id of the venue where the event is being held."
-    }, {
-      "name": "name",
-      "type": "String",
-      "info": "The name of the event."
-    }, {
-      "name": "startAt",
-      "type": "Number",
-      "info": "Time when the event is scheduled to start, in seconds since Unix epoch."
-    }, {
-      "name": "endAt",
-      "type": "Number",
-      "info": "Time when the event is scheduled to end, in seconds since Unix epoch."
-    }],
-    "callbacks": [{
-      "name": "error",
-      "info": "Error"
-    }, {
-      "name": "success",
-      "info": "Success"
-    }]
-  }, {
     "name": "getUserManagedPages",
     "description": "Returns an array of the pages a user manages.",
     "args": [{
@@ -2897,37 +2242,6 @@
       "name": "name",
       "type": "String",
       "info": "Required: The name of the page"
-    }],
-    "callbacks": [{
-      "name": "error",
-      "info": "Error"
-    }, {
-      "name": "success",
-      "info": "Success"
-    }]
-  }, {
-    "name": "getSimilarPages",
-    "description": "Returns a list of pages similar to the specified page. ",
-    "args": [{
-      "name": "accessToken",
-      "type": "String",
-      "info": "Required: Access Token obtained from Foursquare OAuth."
-    }, {
-      "name": "userId",
-      "type": "String",
-      "info": "Required: The page you want similar pages for."
-    }, {
-      "name": "limit",
-      "type": "String",
-      "info": "Number of results to return, up to 500."
-    }, {
-      "name": "offset",
-      "type": "String",
-      "info": "Used to page through results."
-    }, {
-      "name": "includeFollowing",
-      "type": "Boolean",
-      "info": "Boolean indicating whether results include pages already being followed by the user."
     }],
     "callbacks": [{
       "name": "error",
@@ -3027,44 +2341,6 @@
       "info": "Success"
     }]
   }, {
-    "name": "followPage",
-    "description": "Allows the acting user to follow a page. Following a page subscribes the acting user to updates from that page.",
-    "args": [{
-      "name": "accessToken",
-      "type": "String",
-      "info": "Required: Access Token obtained from Foursquare OAuth."
-    }, {
-      "name": "userId",
-      "type": "String",
-      "info": "Required: The page to follow or unfollow."
-    }],
-    "callbacks": [{
-      "name": "error",
-      "info": "Error"
-    }, {
-      "name": "success",
-      "info": "Success"
-    }]
-  }, {
-    "name": "unfollowPage",
-    "description": "Allows the acting user to unfollow a page.",
-    "args": [{
-      "name": "accessToken",
-      "type": "String",
-      "info": "Required: Access Token obtained from Foursquare OAuth."
-    }, {
-      "name": "userId",
-      "type": "String",
-      "info": "Required: The page to follow or unfollow."
-    }],
-    "callbacks": [{
-      "name": "error",
-      "info": "Error"
-    }, {
-      "name": "success",
-      "info": "Success"
-    }]
-  }, {
     "name": "getSinglePageUpdate",
     "description": "Get page update details.",
     "args": [{
@@ -3100,45 +2376,6 @@
       "info": "Required: Access Token obtained from Foursquare OAuth."
     }]
   }, {
-    "name": "addPageUpdate",
-    "description": "Broadcast an update as a page to followers of the page and associated venues. Venues can be specified either by the venueId, groupId or pageId (meaning all venues managed by the page) parameters. Broadcasts will show up on venue pages in our apps and website. ",
-    "args": [{
-      "name": "accessToken",
-      "type": "String",
-      "info": "Required: Access Token obtained from Foursquare OAuth."
-    }, {
-      "name": "pageId",
-      "type": "String",
-      "info": "Required: Id of the page to associate with the broadcast. To find the page for a venue you can look at the page object in the venue response."
-    }, {
-      "name": "groupId",
-      "type": "String",
-      "info": "The venue group from which to broadcast an update."
-    }, {
-      "name": "venueId",
-      "type": "String",
-      "info": "A venue from which to broadcast an update."
-    }, {
-      "name": "shout",
-      "type": "String",
-      "info": "Text associated with the broadcast. 160 characters max, 10 characters min."
-    }, {
-      "name": "photoId",
-      "type": "String",
-      "info": "An optional photo to attach to the broadcast. For a new photo, you should use the photo add endpoint and specify only the pageId parameter."
-    }, {
-      "name": "broadcast",
-      "type": "String",
-      "info": "Additional places to send the broadcast to. Accepts a comma-delimited list of values: `facebook`, `twitter`, `private`"
-    }],
-    "callbacks": [{
-      "name": "error",
-      "info": "Error"
-    }, {
-      "name": "success",
-      "info": "Success"
-    }]
-  }, {
     "name": "likePageUpdate",
     "description": "Causes the current user to 'like' a page update. If there is a campaign associated with the update, the like will propagate to the special as well.",
     "args": [{
@@ -3149,25 +2386,6 @@
       "name": "updateId",
       "type": "String",
       "info": "Required: The ID of the update to like."
-    }],
-    "callbacks": [{
-      "name": "error",
-      "info": "Error"
-    }, {
-      "name": "success",
-      "info": "Success"
-    }]
-  }, {
-    "name": "deletePageUpdate",
-    "description": "Delete a page update created by the current user.",
-    "args": [{
-      "name": "accessToken",
-      "type": "String",
-      "info": "Required: Access Token obtained from Foursquare OAuth."
-    }, {
-      "name": "updateId",
-      "type": "String",
-      "info": "Required: The ID of the update to delete."
     }],
     "callbacks": [{
       "name": "error",
