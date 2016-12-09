@@ -1,5 +1,5 @@
 # Foursquare Package
-The Foursquare API gives you access to our world-class places database and the ability to interact with Foursquare users and merchants. Start using the only location API you'll ever need.
+Add Foursquare venue and user information to your app.
 * Domain: foursquare.com
 * Credentials: clientId, clientSecret
 

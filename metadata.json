@@ -2,7 +2,7 @@
   "package": "Foursquare",
   "tagline": "Foursquare API Package",
   "keywords": ["API", "geo-target", "geo-targeted", "local", "location", "marketing", "shop", "small", "smb", "social"],
-  "description": "The Foursquare API gives you access to our world-class places database and the ability to interact with Foursquare users and merchants. Start using the only location API you'll ever need.",
+  "description": "Add Foursquare venue and user information to your app.",
   "image": "http://logo.clearbit.com/foursquare.com",
   "repo": "https://github.com/RapidSoftwareSolutions/Marketplace-Foursquare-Package",
   "accounts": {
