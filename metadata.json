@@ -1,6 +1,7 @@
 {
   "package": "Foursquare",
   "tagline": "Foursquare API Package",
+  "keywords": ["API", "geo-target", "geo-targeted", "local", "location", "marketing", "shop", "small", "smb", "social"],
   "description": "The Foursquare API gives you access to our world-class places database and the ability to interact with Foursquare users and merchants. Start using the only location API you'll ever need.",
   "image": "http://logo.clearbit.com/foursquare.com",
   "repo": "https://github.com/RapidSoftwareSolutions/Marketplace-Foursquare-Package",
@@ -17,19 +18,23 @@
     "args": [{
       "name": "clientId",
       "type": "credentials",
-      "info": "Required: Application client id."
+      "info": "Application client id.",
+      "required": true
     }, {
       "name": "clientSecret",
       "type": "credentials",
-      "info": "Required: Application client secret key."
+      "info": "Application client secret key.",
+      "required": true
     }, {
       "name": "code",
       "type": "String",
-      "info": "Required: The authorization code."
+      "info": "The authorization code.",
+      "required": true
     }, {
       "name": "redirectUri",
       "type": "String",
-      "info": "Required: Application redirect url."
+      "info": "Application redirect url.",
+      "required": true
     }],
     "callbacks": [{
       "name": "error",
@@ -44,11 +49,13 @@
     "args": [{
       "name": "accessToken",
       "type": "String",
-      "info": "Required: Access Token obtained from Foursquare OAuth."
+      "info": "Access Token obtained from Foursquare OAuth.",
+      "required": true
     }, {
       "name": "userId",
       "type": "String",
-      "info": "Required: Identity of the user to get details for. Pass `self` to get details of the acting user."
+      "info": "Identity of the user to get details for. Pass `self` to get details of the acting user.",
+      "required": true
     }],
     "callbacks": [{
       "name": "error",
@@ -63,7 +70,8 @@
     "args": [{
       "name": "accessToken",
       "type": "String",
-      "info": "Required: Access Token obtained from Foursquare OAuth."
+      "info": "Access Token obtained from Foursquare OAuth.",
+      "required": true
     }],
     "callbacks": [{
       "name": "error",
@@ -78,35 +86,43 @@
     "args": [{
       "name": "accessToken",
       "type": "String",
-      "info": "Required: Access Token obtained from Foursquare OAuth."
+      "info": "Access Token obtained from Foursquare OAuth.",
+      "required": true
     }, {
       "name": "phone",
       "type": "String",
-      "info": "A comma-delimited list of phone numbers to look for."
+      "info": "A comma-delimited list of phone numbers to look for.",
+      "required": false
     }, {
       "name": "email",
       "type": "String",
-      "info": "A comma-delimited list of email addresses to look for."
+      "info": "A comma-delimited list of email addresses to look for.",
+      "required": false
     }, {
       "name": "twitter",
       "type": "String",
-      "info": "A comma-delimited list of Twitter handles to look for."
+      "info": "A comma-delimited list of Twitter handles to look for.",
+      "required": false
     }, {
       "name": "twitterSource",
       "type": "String",
-      "info": "A single Twitter handle. Results will be users that this handle follows on Twitter who use Foursquare."
+      "info": "A single Twitter handle. Results will be users that this handle follows on Twitter who use Foursquare.",
+      "required": false
     }, {
       "name": "facebookIds",
       "type": "String",
-      "info": "A comma-delimited list of Facebook ID's to look for."
+      "info": "A comma-delimited list of Facebook ID's to look for.",
+      "required": false
     }, {
       "name": "name",
       "type": "String",
-      "info": "A single string to search for in users' names."
+      "info": "A single string to search for in users' names.",
+      "required": false
     }, {
       "name": "onlyPages",
       "type": "Boolean",
-      "info": "(default false) Indicates whether to only return pages. This replaces the functionality of the old dedicated pages/search endpoint."
+      "info": "(default false) Indicates whether to only return pages. This replaces the functionality of the old dedicated pages/search endpoint.",
+      "required": false
     }],
     "callbacks": [{
       "name": "error",
@@ -121,23 +137,28 @@
     "args": [{
       "name": "accessToken",
       "type": "String",
-      "info": "Required: Access Token obtained from Foursquare OAuth."
+      "info": "Access Token obtained from Foursquare OAuth.",
+      "required": true
     }, {
       "name": "userId",
       "type": "String",
-      "info": "For now, only `self` is supported."
+      "info": "For now, only `self` is supported.",
+      "required": false
     }, {
       "name": "beforeTimestamp",
       "type": "Number",
-      "info": "Seconds since epoch."
+      "info": "Seconds since epoch.",
+      "required": false
     }, {
       "name": "afterTimestamp",
       "type": "Number",
-      "info": "Seconds after epoch."
+      "info": "Seconds after epoch.",
+      "required": false
     }, {
       "name": "categoryId",
       "type": "String",
-      "info": "Limits returned venues to those in this category. If specifying a top-level category, all sub-categories will also match the query."
+      "info": "Limits returned venues to those in this category. If specifying a top-level category, all sub-categories will also match the query.",
+      "required": false
     }],
     "callbacks": [{
       "name": "error",
@@ -152,19 +173,23 @@
     "args": [{
       "name": "accessToken",
       "type": "String",
-      "info": "Required: Access Token obtained from Foursquare OAuth."
+      "info": "Access Token obtained from Foursquare OAuth.",
+      "required": true
     }, {
       "name": "userId",
       "type": "String",
-      "info": "Required: User ID to retrieve photos for."
+      "info": "User ID to retrieve photos for.",
+      "required": true
     }, {
       "name": "limit",
       "type": "Number",
-      "info": "Number of results to return, up to 500."
+      "info": "Number of results to return, up to 500.",
+      "required": false
     }, {
       "name": "offset",
       "type": "Number",
-      "info": "Used to page through results."
+      "info": "Used to page through results.",
+      "required": false
     }],
     "callbacks": [{
       "name": "error",
@@ -179,31 +204,38 @@
     "args": [{
       "name": "accessToken",
       "type": "String",
-      "info": "Required: Access Token obtained from Foursquare OAuth."
+      "info": "Access Token obtained from Foursquare OAuth.",
+      "required": true
     }, {
       "name": "userId",
       "type": "String",
-      "info": "For now, only `self` is supported"
+      "info": "For now, only `self` is supported",
+      "required": false
     }, {
       "name": "limit",
       "type": "Number",
-      "info": "Number of results to return, up to 250."
+      "info": "Number of results to return, up to 250.",
+      "required": false
     }, {
       "name": "offset",
       "type": "Number",
-      "info": "The number of results to skip. Used to page through results."
+      "info": "The number of results to skip. Used to page through results.",
+      "required": false
     }, {
       "name": "sort",
       "type": "String",
-      "info": "How to sort the returned checkins. Can be `newestfirst` or `oldestfirst`."
+      "info": "How to sort the returned checkins. Can be `newestfirst` or `oldestfirst`.",
+      "required": false
     }, {
       "name": "afterTimestamp",
       "type": "Number",
-      "info": "Retrieve the first results to follow these seconds since epoch. This should be useful for paging forward in time, or when polling for changes. To avoid missing results when polling, we recommend subtracting several seconds from the last poll time and then de-duplicating."
+      "info": "Retrieve the first results to follow these seconds since epoch. This should be useful for paging forward in time, or when polling for changes. To avoid missing results when polling, we recommend subtracting several seconds from the last poll time and then de-duplicating.",
+      "required": false
     }, {
       "name": "beforeTimestamp",
       "type": "Number",
-      "info": "Retrieve the first results prior to these seconds since epoch. Useful for paging backward in time."
+      "info": "Retrieve the first results prior to these seconds since epoch. Useful for paging backward in time.",
+      "required": false
     }],
     "callbacks": [{
       "name": "error",
@@ -218,31 +250,38 @@
     "args": [{
       "name": "accessToken",
       "type": "String",
-      "info": "Required: Access Token obtained from Foursquare OAuth."
+      "info": "Access Token obtained from Foursquare OAuth.",
+      "required": true
     }, {
       "name": "userId",
       "type": "String",
-      "info": "Required: User ID or `self`"
+      "info": "User ID or `self`",
+      "required": true
     }, {
       "name": "beforeTimestamp",
       "type": "String",
-      "info": "Seconds since epoch."
+      "info": "Seconds since epoch.",
+      "required": false
     }, {
       "name": "afterTimestamp",
       "type": "String",
-      "info": "Seconds after epoch."
+      "info": "Seconds after epoch.",
+      "required": false
     }, {
       "name": "categoryId",
       "type": "String",
-      "info": "Limits returned venues to those in this category. If specifying a top-level category, all sub-categories will also match the query."
+      "info": "Limits returned venues to those in this category. If specifying a top-level category, all sub-categories will also match the query.",
+      "required": false
     }, {
       "name": "limit",
       "type": "Number",
-      "info": "Number of results to return."
+      "info": "Number of results to return.",
+      "required": false
     }, {
       "name": "offset",
       "type": "Number",
-      "info": "Used to page through results."
+      "info": "Used to page through results.",
+      "required": false
     }]
   }, {
     "name": "getUserMayorships",
@@ -250,11 +289,13 @@
     "args": [{
       "name": "accessToken",
       "type": "String",
-      "info": "Required: Access Token obtained from Foursquare OAuth."
+      "info": "Access Token obtained from Foursquare OAuth.",
+      "required": true
     }, {
       "name": "userId",
       "type": "String",
-      "info": "Required: Identity of the user to get mayorships for. Pass `self` to get friends of the acting user."
+      "info": "Identity of the user to get mayorships for. Pass `self` to get friends of the acting user.",
+      "required": true
     }],
     "callbacks": [{
       "name": "error",
@@ -269,27 +310,33 @@
     "args": [{
       "name": "accessToken",
       "type": "String",
-      "info": "Required: Access Token obtained from Foursquare OAuth."
+      "info": "Access Token obtained from Foursquare OAuth.",
+      "required": true
     }, {
       "name": "userId",
       "type": "String",
-      "info": "Required: Identity of the user to get lists for. Pass `self` to get lists of the acting user."
+      "info": "Identity of the user to get lists for. Pass `self` to get lists of the acting user.",
+      "required": true
     }, {
       "name": "group",
       "type": "String",
-      "info": "Can be `created` (lists created by this user), `edited` (other people's lists this user has edited), `followed` (lists this user follows), `friends` (lists from this user's friends), and `suggested` (lists relevant to the user's current location)."
+      "info": "Can be `created` (lists created by this user), `edited` (other people's lists this user has edited), `followed` (lists this user follows), `friends` (lists from this user's friends), and `suggested` (lists relevant to the user's current location).",
+      "required": false
     }, {
       "name": "location",
       "type": "String",
-      "info": "Location of the user, required in order to receive the suggested group. Format: `lat,lng`. Example: `40.7,-74`"
+      "info": "Location of the user, required in order to receive the suggested group. Format: `lat,lng`. Example: `40.7,-74`",
+      "required": false
     }, {
       "name": "limit",
       "type": "Number",
-      "info": "Number of results to return, up to 200."
+      "info": "Number of results to return, up to 200.",
+      "required": false
     }, {
       "name": "offset",
       "type": "String",
-      "info": "The number of results to skip. Used to page through results."
+      "info": "The number of results to skip. Used to page through results.",
+      "required": false
     }],
     "callbacks": [{
       "name": "error",
@@ -304,11 +351,13 @@
     "args": [{
       "name": "accessToken",
       "type": "String",
-      "info": "Required: Access Token obtained from Foursquare OAuth."
+      "info": "Access Token obtained from Foursquare OAuth.",
+      "required": true
     }, {
       "name": "photo",
       "type": "File",
-      "info": "Photo under `100KB` in multipart MIME encoding with content type `image/jpeg`, `image/gif`, or `image/png`."
+      "info": "Photo under `100KB` in multipart MIME encoding with content type `image/jpeg`, `image/gif`, or `image/png`.",
+      "required": false
     }],
     "callbacks": [{
       "name": "error",
@@ -323,19 +372,23 @@
     "args": [{
       "name": "accessToken",
       "type": "String",
-      "info": "Required: Access Token obtained from Foursquare OAuth."
+      "info": "Access Token obtained from Foursquare OAuth.",
+      "required": true
     }, {
       "name": "userId",
       "type": "String",
-      "info": "Required: Identity of the user to get friends of. Pass `self` to get friends of the acting user."
+      "info": "Identity of the user to get friends of. Pass `self` to get friends of the acting user.",
+      "required": true
     }, {
       "name": "limit",
       "type": "Number",
-      "info": "Number of results to return, up to 500."
+      "info": "Number of results to return, up to 500.",
+      "required": false
     }, {
       "name": "offset",
       "type": "Number",
-      "info": "Used to page through results."
+      "info": "Used to page through results.",
+      "required": false
     }],
     "callbacks": [{
       "name": "error",
@@ -350,11 +403,13 @@
     "args": [{
       "name": "accessToken",
       "type": "String",
-      "info": "Required: Access Token obtained from Foursquare OAuth."
+      "info": "Access Token obtained from Foursquare OAuth.",
+      "required": true
     }, {
       "name": "venueId",
       "type": "String",
-      "info": "Required: ID of venue to retrieve"
+      "info": "ID of venue to retrieve",
+      "required": true
     }],
     "callbacks": [{
       "name": "error",
@@ -369,67 +424,83 @@
     "args": [{
       "name": "accessToken",
       "type": "String",
-      "info": "Required: Access Token obtained from Foursquare OAuth."
+      "info": "Access Token obtained from Foursquare OAuth.",
+      "required": true
     }, {
       "name": "location",
       "type": "String",
-      "info": "Required unless near is provided: Latitude and longitude of the user's location. Format: `lat,lng`. Example: `40.7,-74`"
+      "info": "Required unless near is provided: Latitude and longitude of the user's location. Format: `lat,lng`. Example: `40.7,-74`",
+      "required": false
     }, {
       "name": "near",
       "type": "String",
-      "info": "Required unless location is provided:  A string naming a place in the world. If the near string is not geocodable, returns a failed_geocode error. Otherwise, searches within the bounds of the geocode. Adds a geocode object to the response. (Required for query searches)"
+      "info": "Required unless location is provided:  A string naming a place in the world. If the near string is not geocodable, returns a failed_geocode error. Otherwise, searches within the bounds of the geocode. Adds a geocode object to the response. (Required for query searches)",
+      "required": false
     }, {
       "name": "locationAccuracy",
       "type": "Float",
-      "info": "Accuracy of latitude and longitude, in meters. (Does not currently affect search results.)"
+      "info": "Accuracy of latitude and longitude, in meters. (Does not currently affect search results.)",
+      "required": false
     }, {
       "name": "altitude",
       "type": "Number",
-      "info": "Altitude of the user's location, in meters. (Does not currently affect search results.)"
+      "info": "Altitude of the user's location, in meters. (Does not currently affect search results.)",
+      "required": false
     }, {
       "name": "altitudeAccuracy",
       "type": "Float",
-      "info": "Accuracy of the user's altitude, in meters. (Does not currently affect search results.)"
+      "info": "Accuracy of the user's altitude, in meters. (Does not currently affect search results.)",
+      "required": false
     }, {
       "name": "query",
       "type": "String",
-      "info": "A search term to be applied against venue names."
+      "info": "A search term to be applied against venue names.",
+      "required": false
     }, {
       "name": "limit",
       "type": "String",
-      "info": "Number of results to return, up to 50."
+      "info": "Number of results to return, up to 50.",
+      "required": false
     }, {
       "name": "intent",
       "type": "String",
-      "info": "One of the values below, indicating your intent in performing the search. If no value is specified, defaults to `checkin`. See README for more info."
+      "info": "One of the values below, indicating your intent in performing the search. If no value is specified, defaults to `checkin`. See README for more info.",
+      "required": false
     }, {
       "name": "radius",
       "type": "Number",
-      "info": "Limit results to venues within this many meters of the specified location. Defaults to a city-wide area. Only valid for requests with intent=browse, or requests with intent=checkin and categoryId or query. Does not apply to match intent requests. The maximum supported radius is currently 100,000 meters."
+      "info": "Limit results to venues within this many meters of the specified location. Defaults to a city-wide area. Only valid for requests with intent=browse, or requests with intent=checkin and categoryId or query. Does not apply to match intent requests. The maximum supported radius is currently 100,000 meters.",
+      "required": false
     }, {
       "name": "southWest",
       "type": "String",
-      "info": "Example: `44.3,37.2`. With northEast, limits results to the bounding quadrangle defined by the latitude and longitude given by sw as its south-west corner, and ne as its north-east corner. The bounding quadrangle is only supported for intent=browse searches. Not valid with ll or radius. Bounding quadrangles with an area up to approximately 10,000 square kilometers are supported."
+      "info": "Example: `44.3,37.2`. With northEast, limits results to the bounding quadrangle defined by the latitude and longitude given by sw as its south-west corner, and ne as its north-east corner. The bounding quadrangle is only supported for intent=browse searches. Not valid with ll or radius. Bounding quadrangles with an area up to approximately 10,000 square kilometers are supported.",
+      "required": false
     }, {
       "name": "northEast",
       "type": "String",
-      "info": "See `southWest`."
+      "info": "See `southWest`.",
+      "required": false
     }, {
       "name": "categoryId",
       "type": "String",
-      "info": "A comma separated list of categories to limit results to. If you specify categoryId specifying a radius may improve results. If specifying a top-level category, all sub-categories will also match the query. Does not apply to match intent requests."
+      "info": "A comma separated list of categories to limit results to. If you specify categoryId specifying a radius may improve results. If specifying a top-level category, all sub-categories will also match the query. Does not apply to match intent requests.",
+      "required": false
     }, {
       "name": "url",
       "type": "String",
-      "info": "A third-party URL which we will attempt to match against our map of venues to URLs."
+      "info": "A third-party URL which we will attempt to match against our map of venues to URLs.",
+      "required": false
     }, {
       "name": "providerId",
       "type": "String",
-      "info": "Identifier for a known third party that is part of our map of venues to URLs, used in conjunction with `linkedId`."
+      "info": "Identifier for a known third party that is part of our map of venues to URLs, used in conjunction with `linkedId`.",
+      "required": false
     }, {
       "name": "linkedId",
       "type": "String",
-      "info": "1002207971611 Identifier used by third party specified in `providerId`, which we will attempt to match against our map of venues to URLs."
+      "info": "1002207971611 Identifier used by third party specified in `providerId`, which we will attempt to match against our map of venues to URLs.",
+      "required": false
     }],
     "callbacks": [{
       "name": "error",
@@ -444,39 +515,48 @@
     "args": [{
       "name": "accessToken",
       "type": "String",
-      "info": "Required: Access Token obtained from Foursquare OAuth."
+      "info": "Access Token obtained from Foursquare OAuth.",
+      "required": true
     }, {
       "name": "query",
       "type": "String",
-      "info": "Required: A search term to be applied against titles. Must be at least 3 characters long."
+      "info": "A search term to be applied against titles. Must be at least 3 characters long.",
+      "required": true
     }, {
       "name": "location",
       "type": "String",
-      "info": "Required unless near is provided: Latitude and longitude of the user's location. Format: `lat,lng`. Example: `40.7,-74`"
+      "info": "Required unless near is provided: Latitude and longitude of the user's location. Format: `lat,lng`. Example: `40.7,-74`",
+      "required": false
     }, {
       "name": "near",
       "type": "String",
-      "info": "Required unless location is provided:  A string naming a place in the world. If the near string is not geocodable, returns a failed_geocode error. Otherwise, searches within the bounds of the geocode. Adds a geocode object to the response. (Required for query searches)"
+      "info": "Required unless location is provided:  A string naming a place in the world. If the near string is not geocodable, returns a failed_geocode error. Otherwise, searches within the bounds of the geocode. Adds a geocode object to the response. (Required for query searches)",
+      "required": false
     }, {
       "name": "locationAccuracy",
       "type": "Float",
-      "info": "Accuracy of latitude and longitude, in meters. (Does not currently affect search results.)"
+      "info": "Accuracy of latitude and longitude, in meters. (Does not currently affect search results.)",
+      "required": false
     }, {
       "name": "limit",
       "type": "String",
-      "info": "Number of results to return, up to 100."
+      "info": "Number of results to return, up to 100.",
+      "required": false
     }, {
       "name": "radius",
       "type": "String",
-      "info": "Limit results to venues within this many meters of the specified location. Defaults to a city-wide area. The maximum supported radius is currently 80,000 meters."
+      "info": "Limit results to venues within this many meters of the specified location. Defaults to a city-wide area. The maximum supported radius is currently 80,000 meters.",
+      "required": false
     }, {
       "name": "southWest",
       "type": "String",
-      "info": "Example: `44.3,37.2`. With northEast, limits results to the bounding quadrangle defined by the latitude and longitude given by sw as its south-west corner, and ne as its north-east corner. The bounding quadrangle is only supported for intent=browse searches. Not valid with ll or radius. Bounding quadrangles with an area up to approximately 10,000 square kilometers are supported."
+      "info": "Example: `44.3,37.2`. With northEast, limits results to the bounding quadrangle defined by the latitude and longitude given by sw as its south-west corner, and ne as its north-east corner. The bounding quadrangle is only supported for intent=browse searches. Not valid with ll or radius. Bounding quadrangles with an area up to approximately 10,000 square kilometers are supported.",
+      "required": false
     }, {
       "name": "northEast",
       "type": "String",
-      "info": "See `southWest`."
+      "info": "See `southWest`.",
+      "required": false
     }],
     "callbacks": [{
       "name": "error",
@@ -491,7 +571,8 @@
     "args": [{
       "name": "accessToken",
       "type": "String",
-      "info": "Required: Access Token obtained from Foursquare OAuth."
+      "info": "Access Token obtained from Foursquare OAuth.",
+      "required": true
     }],
     "callbacks": [{
       "name": "error",
@@ -506,19 +587,23 @@
     "args": [{
       "name": "accessToken",
       "type": "String",
-      "info": "Required: Access Token obtained from Foursquare OAuth."
+      "info": "Access Token obtained from Foursquare OAuth.",
+      "required": true
     }, {
       "name": "location",
       "type": "String",
-      "info": "Required: Location of the user. Format: `lat,lng`. Example: `40.7,-74`"
+      "info": "Location of the user. Format: `lat,lng`. Example: `40.7,-74`",
+      "required": true
     }, {
       "name": "limit",
       "type": "Number",
-      "info": "Number of results to return, up to 50."
+      "info": "Number of results to return, up to 50.",
+      "required": false
     }, {
       "name": "radius",
       "type": "String",
-      "info": "Radius in meters, up to approximately 2000 meters."
+      "info": "Radius in meters, up to approximately 2000 meters.",
+      "required": false
     }],
     "callbacks": [{
       "name": "error",
@@ -533,91 +618,113 @@
     "args": [{
       "name": "accessToken",
       "type": "String",
-      "info": "Required: Access Token obtained from Foursquare OAuth."
+      "info": "Access Token obtained from Foursquare OAuth.",
+      "required": true
     }, {
       "name": "location",
       "type": "String",
-      "info": "Required unless near is provided: Latitude and longitude of the user's location. Format: `lat,lng`. Example: `40.7,-74`"
+      "info": "Required unless near is provided: Latitude and longitude of the user's location. Format: `lat,lng`. Example: `40.7,-74`",
+      "required": false
     }, {
       "name": "near",
       "type": "String",
-      "info": "Required unless location is provided:  A string naming a place in the world. If the near string is not geocodable, returns a failed_geocode error. Otherwise, searches within the bounds of the geocode. Adds a geocode object to the response. (Required for query searches)"
+      "info": "Required unless location is provided:  A string naming a place in the world. If the near string is not geocodable, returns a failed_geocode error. Otherwise, searches within the bounds of the geocode. Adds a geocode object to the response. (Required for query searches)",
+      "required": false
     }, {
       "name": "locationAccuracy",
       "type": "Float",
-      "info": "Accuracy of latitude and longitude, in meters. (Does not currently affect search results.)"
+      "info": "Accuracy of latitude and longitude, in meters. (Does not currently affect search results.)",
+      "required": false
     }, {
       "name": "altitude",
       "type": "Number",
-      "info": "Altitude of the user's location, in meters. (Does not currently affect search results.)"
+      "info": "Altitude of the user's location, in meters. (Does not currently affect search results.)",
+      "required": false
     }, {
       "name": "altitudeAccuracy",
       "type": "Float",
-      "info": "Accuracy of the user's altitude, in meters. (Does not currently affect search results.)"
+      "info": "Accuracy of the user's altitude, in meters. (Does not currently affect search results.)",
+      "required": false
     }, {
       "name": "query",
       "type": "String",
-      "info": "A search term to be applied against venue names."
+      "info": "A search term to be applied against venue names.",
+      "required": false
     }, {
       "name": "radius",
       "type": "Number",
-      "info": "Radius to search within, in meters. If radius is not specified, a suggested radius will be used based on the density of venues in the area."
+      "info": "Radius to search within, in meters. If radius is not specified, a suggested radius will be used based on the density of venues in the area.",
+      "required": false
     }, {
       "name": "section",
       "type": "String",
-      "info": "One of `food`, `drinks`, `coffee`, `shops`, `arts`, `outdoors`, `sights`, `trending` or `specials`, `nextVenues` (venues frequently visited after a given venue), or topPicks (a mix of recommendations generated without a query from the user). Choosing one of these limits results to venues with the specified category or property."
+      "info": "One of `food`, `drinks`, `coffee`, `shops`, `arts`, `outdoors`, `sights`, `trending` or `specials`, `nextVenues` (venues frequently visited after a given venue), or topPicks (a mix of recommendations generated without a query from the user). Choosing one of these limits results to venues with the specified category or property.",
+      "required": false
     }, {
       "name": "limit",
       "type": "Number",
-      "info": "Number of results to return, up to 50."
+      "info": "Number of results to return, up to 50.",
+      "required": false
     }, {
       "name": "offset",
       "type": "String",
-      "info": "Used to page through results."
+      "info": "Used to page through results.",
+      "required": false
     }, {
       "name": "novelty",
       "type": "String",
-      "info": "Pass `new `or `old` to limit results to places the acting user hasn't been or has been, respectively. Omitting this parameter returns a mixture of old and new venues."
+      "info": "Pass `new `or `old` to limit results to places the acting user hasn't been or has been, respectively. Omitting this parameter returns a mixture of old and new venues.",
+      "required": false
     }, {
       "name": "friendVisits",
       "type": "String",
-      "info": "Pass `visited` or `notvisited` to limit results to places the acting user's friends have or haven't been, respectively. Omitting this parameter returns a mixture of venues to which the user's friends have or haven't been."
+      "info": "Pass `visited` or `notvisited` to limit results to places the acting user's friends have or haven't been, respectively. Omitting this parameter returns a mixture of venues to which the user's friends have or haven't been.",
+      "required": false
     }, {
       "name": "time",
       "type": "String",
-      "info": "Pass `any` to retrieve results for any time of day. Omitting this parameter returns results targeted to the current time of day."
+      "info": "Pass `any` to retrieve results for any time of day. Omitting this parameter returns results targeted to the current time of day.",
+      "required": false
     }, {
       "name": "day",
       "type": "String",
-      "info": "Pass `any` to retrieve results for any day of the week. Omitting this parameter returns results targeted to the current day of the week."
+      "info": "Pass `any` to retrieve results for any day of the week. Omitting this parameter returns results targeted to the current day of the week.",
+      "required": false
     }, {
       "name": "venuePhotos",
       "type": "Number",
-      "info": "Boolean flag to include a photo in the response for each venue, if one is available. Default is `0` (no photos). Photos are returned as part of the venue JSON object."
+      "info": "Boolean flag to include a photo in the response for each venue, if one is available. Default is `0` (no photos). Photos are returned as part of the venue JSON object.",
+      "required": false
     }, {
       "name": "lastVenue",
       "type": "String",
-      "info": "A venue ID to use in combination with the intent=nextVenues parameter, which returns venues users often visit after a given venue. If intent=nextVenues is specified but lastVenue is not, the user's last check-in will be used if it is within 2 hours. If the user has not checked in within the last 2 hours, no results will be returned."
+      "info": "A venue ID to use in combination with the intent=nextVenues parameter, which returns venues users often visit after a given venue. If intent=nextVenues is specified but lastVenue is not, the user's last check-in will be used if it is within 2 hours. If the user has not checked in within the last 2 hours, no results will be returned.",
+      "required": false
     }, {
       "name": "openNow",
       "type": "Boolean",
-      "info": "Boolean flag to only include venues that are open now. This prefers official provider hours but falls back to popular check-in hours."
+      "info": "Boolean flag to only include venues that are open now. This prefers official provider hours but falls back to popular check-in hours.",
+      "required": false
     }, {
       "name": "sortByDistance",
       "type": "Boolean",
-      "info": "Boolean flag to sort the results by distance instead of relevance. Example: `1`"
+      "info": "Boolean flag to sort the results by distance instead of relevance. Example: `1`",
+      "required": false
     }, {
       "name": "price",
       "type": "String",
-      "info": "Comma separated list of price points. Currently the valid range of price points are [1,2,3,4], 1 being the least expensive, 4 being the most expensive. For food venues, in the United States, 1 is < $10 an entree, 2 is $10-$20 an entree, 3 is $20-$30 an entree, 4 is > $30 an entree."
+      "info": "Comma separated list of price points. Currently the valid range of price points are [1,2,3,4], 1 being the least expensive, 4 being the most expensive. For food venues, in the United States, 1 is < $10 an entree, 2 is $10-$20 an entree, 3 is $20-$30 an entree, 4 is > $30 an entree.",
+      "required": false
     }, {
       "name": "saved",
       "type": "Boolean",
-      "info": "Boolean flag to only include venues that the user has saved on their To-Do list or to another list."
+      "info": "Boolean flag to only include venues that the user has saved on their To-Do list or to another list.",
+      "required": false
     }, {
       "name": "specials",
       "type": "Boolean",
-      "info": "Boolean flag to only include venues that have a special."
+      "info": "Boolean flag to only include venues that have a special.",
+      "required": false
     }]
   }, {
     "name": "addVenue",
@@ -625,63 +732,78 @@
     "args": [{
       "name": "accessToken",
       "type": "String",
-      "info": "Required: Access Token obtained from Foursquare OAuth."
+      "info": "Access Token obtained from Foursquare OAuth.",
+      "required": true
     }, {
       "name": "name",
       "type": "String",
-      "info": "Required: the name of the venue"
+      "info": "the name of the venue",
+      "required": true
     }, {
       "name": "address",
       "type": "String",
-      "info": "The address of the venue."
+      "info": "The address of the venue.",
+      "required": false
     }, {
       "name": "crossStreet",
       "type": "String",
-      "info": "The nearest intersecting street or streets."
+      "info": "The nearest intersecting street or streets.",
+      "required": false
     }, {
       "name": "city",
       "type": "String",
-      "info": "The city name where this venue is."
+      "info": "The city name where this venue is.",
+      "required": false
     }, {
       "name": "state",
       "type": "String",
-      "info": "The nearest state or province to the venue."
+      "info": "The nearest state or province to the venue.",
+      "required": false
     }, {
       "name": "zip",
       "type": "String",
-      "info": "The zip or postal code for the venue."
+      "info": "The zip or postal code for the venue.",
+      "required": false
     }, {
       "name": "phone",
       "type": "String",
-      "info": "The phone number of the venue."
+      "info": "The phone number of the venue.",
+      "required": false
     }, {
       "name": "twitter",
       "type": "String",
-      "info": "The twitter handle of the venue."
+      "info": "The twitter handle of the venue.",
+      "required": false
     }, {
       "name": "location",
       "type": "String",
-      "info": "Latitude and longitude of the venue, as accurate as is known. Format: `lat,lng`. Example: `40.7,-74`"
+      "info": "Latitude and longitude of the venue, as accurate as is known. Format: `lat,lng`. Example: `40.7,-74`",
+      "required": false
     }, {
       "name": "primaryCategoryId",
       "type": "String",
-      "info": "The ID of the category to which you want to assign this venue."
+      "info": "The ID of the category to which you want to assign this venue.",
+      "required": false
     }, {
       "name": "description",
       "type": "String",
-      "info": "A freeform description of the venue, up to 160 characters."
+      "info": "A freeform description of the venue, up to 160 characters.",
+      "required": false
     }, {
       "name": "url",
       "type": "String",
-      "info": "The url of the homepage of the venue."
+      "info": "The url of the homepage of the venue.",
+      "required": false
     }, {
       "name": "ignoreDuplicates",
       "type": "Boolean",
-      "info": "A boolean flag telling the server to ignore duplicates and force the addition of this venue."
+      "info": "A boolean flag telling the server to ignore duplicates and force the addition of this venue.",
+      "required": false
     }, {
       "name": "ignoreDuplicatesKey",
       "type": "String",
-      "info": "Required if ignoreDuplicates is true. This key will be available in the response of the HTTP 409 error of the first (failed) attempt to add venue."
+      "info": "Required if ignoreDuplicates is true. This key will be available in the response of the HTTP 409 error of the first (failed) attempt to add venue.",
+      "required": false
     }],
     "callbacks": [{
       "name": "error",
@@ -696,15 +818,18 @@
     "args": [{
       "name": "accessToken",
       "type": "String",
-      "info": "Required: Access Token obtained from Foursquare OAuth."
+      "info": "Access Token obtained from Foursquare OAuth.",
+      "required": true
     }, {
       "name": "limit",
       "type": "Number",
-      "info": "Number of managed venues to return. Defaults to 100, maximum is 1000."
+      "info": "Number of managed venues to return. Defaults to 100, maximum is 1000.",
+      "required": false
     }, {
       "name": "offset",
       "type": "Number",
-      "info": "Number of venues to skip over for paging. Defaults to 0."
+      "info": "Number of venues to skip over for paging. Defaults to 0.",
+      "required": false
     }],
     "callbacks": [{
       "name": "error",
@@ -719,11 +844,13 @@
     "args": [{
       "name": "accessToken",
       "type": "String",
-      "info": "Required: Access Token obtained from Foursquare OAuth."
+      "info": "Access Token obtained from Foursquare OAuth.",
+      "required": true
     }, {
       "name": "venueId",
       "type": "String",
-      "info": "Required: The venue you want similar venues for."
+      "info": "The venue you want similar venues for.",
+      "required": true
     }],
     "callbacks": [{
       "name": "error",
@@ -738,23 +865,28 @@
     "args": [{
       "name": "accessToken",
       "type": "String",
-      "info": "Required: Access Token obtained from Foursquare OAuth."
+      "info": "Access Token obtained from Foursquare OAuth.",
+      "required": true
     }, {
       "name": "venueId",
       "type": "String",
-      "info": "Required: The venue you want photos for."
+      "info": "The venue you want photos for.",
+      "required": true
     }, {
       "name": "group",
       "type": "String",
-      "info": "If not specified, public venue photos are returned ordered by relevance. Pass venue for public venue photos, ordered by recency. Pass checkin for venue photos from friends (including non-public photos from recent checkins), ordered by recency. See our documentation on photos for information on how to handle the response and construct actual photo URLs."
+      "info": "If not specified, public venue photos are returned ordered by relevance. Pass venue for public venue photos, ordered by recency. Pass checkin for venue photos from friends (including non-public photos from recent checkins), ordered by recency. See our documentation on photos for information on how to handle the response and construct actual photo URLs.",
+      "required": false
     }, {
       "name": "limit",
       "type": "Number",
-      "info": "Number of results to return, up to 200."
+      "info": "Number of results to return, up to 200.",
+      "required": false
     }, {
       "name": "offset",
       "type": "Number",
-      "info": "Used to page through results."
+      "info": "Used to page through results.",
+      "required": false
     }],
     "callbacks": [{
       "name": "error",
@@ -769,11 +901,13 @@
     "args": [{
       "name": "accessToken",
       "type": "String",
-      "info": "Required: Access Token obtained from Foursquare OAuth."
+      "info": "Access Token obtained from Foursquare OAuth.",
+      "required": true
     }, {
       "name": "venueId",
       "type": "String",
-      "info": "Required: The venue id for which events are being requested."
+      "info": "The venue id for which events are being requested.",
+      "required": true
     }],
     "callbacks": [{
       "name": "error",
@@ -788,11 +922,13 @@
     "args": [{
       "name": "accessToken",
       "type": "String",
-      "info": "Required: Access Token obtained from Foursquare OAuth."
+      "info": "Access Token obtained from Foursquare OAuth.",
+      "required": true
     }, {
       "name": "venueId",
       "type": "String",
-      "info": "Required: The ID of the venue to get likes for."
+      "info": "The ID of the venue to get likes for.",
+      "required": true
     }],
     "callbacks": [{
       "name": "error",
@@ -807,11 +943,13 @@
     "args": [{
       "name": "accessToken",
       "type": "String",
-      "info": "Required: Access Token obtained from Foursquare OAuth."
+      "info": "Access Token obtained from Foursquare OAuth.",
+      "required": true
     }, {
       "name": "venueId",
       "type": "String",
-      "info": "Required: ID of the venue you want to see next venue information about"
+      "info": "ID of the venue you want to see next venue information about",
+      "required": true
     }],
     "callbacks": [{
       "name": "error",
@@ -826,11 +964,13 @@
     "args": [{
       "name": "accessToken",
       "type": "String",
-      "info": "Required: Access Token obtained from Foursquare OAuth."
+      "info": "Access Token obtained from Foursquare OAuth.",
+      "required": true
     }, {
       "name": "venueId",
       "type": "String",
-      "info": "Required: The venue id for which hours are being requested."
+      "info": "The venue id for which hours are being requested.",
+      "required": true
     }],
     "callbacks": [{
       "name": "error",
@@ -845,11 +985,13 @@
     "args": [{
       "name": "accessToken",
       "type": "String",
-      "info": "Required: Access Token obtained from Foursquare OAuth."
+      "info": "Access Token obtained from Foursquare OAuth.",
+      "required": true
     }, {
       "name": "venueId",
       "type": "String",
-      "info": "Required: The venue you want annotations for."
+      "info": "The venue you want annotations for.",
+      "required": true
     }],
     "callbacks": [{
       "name": "error",
@@ -864,11 +1006,13 @@
     "args": [{
       "name": "accessToken",
       "type": "String",
-      "info": "Required: Access Token obtained from Foursquare OAuth."
+      "info": "Access Token obtained from Foursquare OAuth.",
+      "required": true
     }, {
       "name": "venueId",
       "type": "String",
-      "info": "Required: The venue id for which menu is being requested."
+      "info": "The venue id for which menu is being requested.",
+      "required": true
     }],
     "callbacks": [{
       "name": "error",
@@ -883,23 +1027,28 @@
     "args": [{
       "name": "accessToken",
       "type": "String",
-      "info": "Required: Access Token obtained from Foursquare OAuth."
+      "info": "Access Token obtained from Foursquare OAuth.",
+      "required": true
     }, {
       "name": "venueId",
       "type": "String",
-      "info": "Required: The venue you want tips for."
+      "info": "The venue you want tips for.",
+      "required": true
     }, {
       "name": "sort",
       "type": "String",
-      "info": "One of `friends`, `recent`, or `popular`."
+      "info": "One of `friends`, `recent`, or `popular`.",
+      "required": false
     }, {
       "name": "limit",
       "type": "String",
-      "info": "Number of results to return, up to 500."
+      "info": "Number of results to return, up to 500.",
+      "required": false
     }, {
       "name": "offset",
       "type": "String",
-      "info": "Used to page through results."
+      "info": "Used to page through results.",
+      "required": false
     }],
     "callbacks": [{
       "name": "error",
@@ -914,19 +1063,23 @@
     "args": [{
       "name": "accessToken",
       "type": "String",
-      "info": "Required: Access Token obtained from Foursquare OAuth."
+      "info": "Access Token obtained from Foursquare OAuth.",
+      "required": true
     }, {
       "name": "venueId",
       "type": "String",
-      "info": "Required: ID of venue to retrieve"
+      "info": "ID of venue to retrieve",
+      "required": true
     }, {
       "name": "limit",
       "type": "Number",
-      "info": "Number of results to return, up to 500."
+      "info": "Number of results to return, up to 500.",
+      "required": false
     }, {
       "name": "offset",
       "type": "Number",
-      "info": "Used to page through results."
+      "info": "Used to page through results.",
+      "required": false
     }],
     "callbacks": [{
       "name": "error",
@@ -941,11 +1094,13 @@
     "args": [{
       "name": "accessToken",
       "type": "String",
-      "info": "Required: Access Token obtained from Foursquare OAuth."
+      "info": "Access Token obtained from Foursquare OAuth.",
+      "required": true
     }, {
       "name": "visible",
       "type": "Boolean",
-      "info": "(optional, default `true`) whether role as manager is visible on the venue page"
+      "info": "(optional, default `true`) whether role as manager is visible on the venue page",
+      "required": false
     }],
     "callbacks": [{
       "name": "error",
@@ -960,11 +1115,13 @@
     "args": [{
       "name": "accessToken",
       "type": "String",
-      "info": "Required: Access Token obtained from Foursquare OAuth."
+      "info": "Access Token obtained from Foursquare OAuth.",
+      "required": true
     }, {
       "name": "venueId",
       "type": "String",
-      "info": "Required: The venue to dislike for"
+      "info": "The venue to dislike for",
+      "required": true
     }],
     "callbacks": [{
       "name": "error",
@@ -979,11 +1136,13 @@
     "args": [{
       "name": "accessToken",
       "type": "String",
-      "info": "Required: Access Token obtained from Foursquare OAuth."
+      "info": "Access Token obtained from Foursquare OAuth.",
+      "required": true
     }, {
       "name": "venueId",
       "type": "String",
-      "info": "Required: The venue to undo a dislike for"
+      "info": "The venue to undo a dislike for",
+      "required": true
     }],
     "callbacks": [{
       "name": "error",
@@ -998,19 +1157,23 @@
     "args": [{
       "name": "accessToken",
       "type": "String",
-      "info": "Required: Access Token obtained from Foursquare OAuth."
+      "info": "Access Token obtained from Foursquare OAuth.",
+      "required": true
     }, {
       "name": "venueId",
       "type": "String",
-      "info": "Required: The venue id for which an edit is being proposed."
+      "info": "The venue id for which an edit is being proposed.",
+      "required": true
     }, {
       "name": "problem",
       "type": "String",
-      "info": "Required: One of `mislocated`, `closed`, `duplicate`, `inappropriate`, `doesnt_exist`, `event_over`"
+      "info": "One of `mislocated`, `closed`, `duplicate`, `inappropriate`, `doesnt_exist`, `event_over`",
+      "required": true
     }, {
       "name": "dublicatedVenue",
       "type": "String",
-      "info": "ID of the duplicated venue (for problem `duplicate`)"
+      "info": "ID of the duplicated venue (for problem `duplicate`)",
+      "required": false
     }],
     "callbacks": [{
       "name": "error",
@@ -1025,79 +1188,98 @@
     "args": [{
       "name": "accessToken",
       "type": "String",
-      "info": "Required: Access Token obtained from Foursquare OAuth."
+      "info": "Access Token obtained from Foursquare OAuth.",
+      "required": true
     }, {
       "name": "venueId",
       "type": "String",
-      "info": "Required: The venue id for which an edit is being proposed."
+      "info": "The venue id for which an edit is being proposed.",
+      "required": true
     }, {
       "name": "name",
       "type": "String",
-      "info": "The name of the venue."
+      "info": "The name of the venue.",
+      "required": false
     }, {
       "name": "address",
       "type": "String",
-      "info": "The address of the venue."
+      "info": "The address of the venue.",
+      "required": false
     }, {
       "name": "crossStreet",
       "type": "String",
-      "info": "The nearest intersecting street or streets."
+      "info": "The nearest intersecting street or streets.",
+      "required": false
     }, {
       "name": "city",
       "type": "String",
-      "info": "The city name where this venue is."
+      "info": "The city name where this venue is.",
+      "required": false
     }, {
       "name": "state",
       "type": "String",
-      "info": "The nearest state or province to the venue."
+      "info": "The nearest state or province to the venue.",
+      "required": false
     }, {
       "name": "zip",
       "type": "String",
-      "info": "The zip or postal code for the venue."
+      "info": "The zip or postal code for the venue.",
+      "required": false
     }, {
       "name": "phone",
       "type": "String",
-      "info": "The phone number of the venue."
+      "info": "The phone number of the venue.",
+      "required": false
     }, {
       "name": "twitter",
       "type": "String",
-      "info": "The twitter handle of the venue."
+      "info": "The twitter handle of the venue.",
+      "required": false
     }, {
       "name": "description",
       "type": "String",
-      "info": "A freeform description of the venue, up to 300 characters."
+      "info": "A freeform description of the venue, up to 300 characters.",
+      "required": false
     }, {
       "name": "url",
       "type": "String",
-      "info": "The url of the homepage of the venue."
+      "info": "The url of the homepage of the venue.",
+      "required": false
     }, {
       "name": "menuUrl",
       "type": "String",
-      "info": "A url where the menu of the venue can be found."
+      "info": "A url where the menu of the venue can be found.",
+      "required": false
     }, {
       "name": "facebookUrl",
       "type": "String",
-      "info": "The url for this venue's Facebook Page."
+      "info": "The url for this venue's Facebook Page.",
+      "required": false
     }, {
       "name": "venueLocation",
       "type": "String",
-      "info": "Latitude and longitude at which the venue should be located. Example: `44.3,37.2`"
+      "info": "Latitude and longitude at which the venue should be located. Example: `44.3,37.2`",
+      "required": false
     }, {
       "name": "primaryCategoryId",
       "type": "String",
-      "info": "The ID of the category to which you want to assign this venue."
+      "info": "The ID of the category to which you want to assign this venue.",
+      "required": false
     }, {
       "name": "addCategoryIds",
       "type": "String",
-      "info": "Comma-separated list of new category IDs to be assigned to this venue. If you are adding a new category to a venue and you want to make it primary, you should just use primaryCategoryId."
+      "info": "Comma-separated list of new category IDs to be assigned to this venue. If you are adding a new category to a venue and you want to make it primary, you should just use primaryCategoryId.",
+      "required": false
     }, {
       "name": "removeCategoryIds",
       "type": "String",
-      "info": "Comma-separated list of new category IDs to be removed from this venue."
+      "info": "Comma-separated list of new category IDs to be removed from this venue.",
+      "required": false
     }, {
       "name": "hours",
       "type": "String",
-      "info": "The hours for the venue, as a semi-colon separated list of open segments and named segments (e.g., brunch or happy hour). Open segments are formatted as day,start,end. Named segments additionally have a label, formatted as day,start,end,label. Days are formatted as integers with Monday = 1,...,Sunday = 7. Start and End are formatted as [+]HHMM format. Use 24 hour format (no colon), prefix with 0 for HH or MM less than 10. Use '+' prefix, i.e., +0230 to represent 2:30 am past midnight into the following day."
+      "info": "The hours for the venue, as a semi-colon separated list of open segments and named segments (e.g., brunch or happy hour). Open segments are formatted as day,start,end. Named segments additionally have a label, formatted as day,start,end,label. Days are formatted as integers with Monday = 1,...,Sunday = 7. Start and End are formatted as [+]HHMM format. Use 24 hour format (no colon), prefix with 0 for HH or MM less than 10. Use '+' prefix, i.e., +0230 to represent 2:30 am past midnight into the following day.",
+      "required": false
     }]
   }, {
     "name": "likeVenue",
@@ -1105,11 +1287,13 @@
     "args": [{
       "name": "accessToken",
       "type": "String",
-      "info": "Required: Access Token obtained from Foursquare OAuth."
+      "info": "Access Token obtained from Foursquare OAuth.",
+      "required": true
     }, {
       "name": "venueId",
       "type": "String",
-      "info": "Required: The venue to like"
+      "info": "The venue to like",
+      "required": true
     }],
     "callbacks": [{
       "name": "error",
@@ -1124,11 +1308,13 @@
     "args": [{
       "name": "accessToken",
       "type": "String",
-      "info": "Required: Access Token obtained from Foursquare OAuth."
+      "info": "Access Token obtained from Foursquare OAuth.",
+      "required": true
     }, {
       "name": "venueId",
       "type": "String",
-      "info": "Required: The venue to unlike"
+      "info": "The venue to unlike",
+      "required": true
     }],
     "callbacks": [{
       "name": "error",
@@ -1143,7 +1329,8 @@
     "args": [{
       "name": "accessToken",
       "type": "String",
-      "info": "Required: Access Token obtained from Foursquare OAuth."
+      "info": "Access Token obtained from Foursquare OAuth.",
+      "required": true
     }],
     "callbacks": [{
       "name": "error",
@@ -1158,11 +1345,13 @@
     "args": [{
       "name": "accessToken",
       "type": "String",
-      "info": "Required: Access Token obtained from Foursquare OAuth."
+      "info": "Access Token obtained from Foursquare OAuth.",
+      "required": true
     }, {
       "name": "checkinId",
       "type": "String",
-      "info": "The ID of the check-in to retrieve additional information for."
+      "info": "The ID of the check-in to retrieve additional information for.",
+      "required": false
     }],
     "callbacks": [{
       "name": "error",
@@ -1177,11 +1366,13 @@
     "args": [{
       "name": "accessToken",
       "type": "String",
-      "info": "Required: Access Token obtained from Foursquare OAuth."
+      "info": "Access Token obtained from Foursquare OAuth.",
+      "required": true
     }, {
       "name": "shortId",
       "type": "String",
-      "info": "Required: The short ID at the end of a swarmapp.com link, e.g., https://swarmapp.com/c/abc123ZYX"
+      "info": "The short ID at the end of a swarmapp.com link, e.g., https://swarmapp.com/c/abc123ZYX",
+      "required": true
     }],
     "callbacks": [{
       "name": "error",
@@ -1196,19 +1387,23 @@
     "args": [{
       "name": "accessToken",
       "type": "String",
-      "info": "Required: Access Token obtained from Foursquare OAuth."
+      "info": "Access Token obtained from Foursquare OAuth.",
+      "required": true
     }, {
       "name": "location",
       "type": "String",
-      "info": "Latitude and longitude of the user's location, so response can include distance. Format: `lat,lng`. Example: `40.7,-74`"
+      "info": "Latitude and longitude of the user's location, so response can include distance. Format: `lat,lng`. Example: `40.7,-74`",
+      "required": false
     }, {
       "name": "limit",
       "type": "Number",
-      "info": "Number of results to return, up to 100."
+      "info": "Number of results to return, up to 100.",
+      "required": false
     }, {
       "name": "afterTimestamp",
       "type": "Number",
-      "info": "Seconds after which to look for checkins, e.g. for looking for new checkins since the last fetch. If more than limit results are new since then, this is ignored. Checkins created prior to this timestamp will still be returned if they have new comments or photos, making it easier to poll for all new activity."
+      "info": "Seconds after which to look for checkins, e.g. for looking for new checkins since the last fetch. If more than limit results are new since then, this is ignored. Checkins created prior to this timestamp will still be returned if they have new comments or photos, making it easier to poll for all new activity.",
+      "required": false
     }],
     "callbacks": [{
       "name": "error",
@@ -1223,43 +1418,53 @@
     "args": [{
       "name": "accessToken",
       "type": "String",
-      "info": "Required: Access Token obtained from Foursquare OAuth."
+      "info": "Access Token obtained from Foursquare OAuth.",
+      "required": true
     }, {
       "name": "venueId",
       "type": "String",
-      "info": "Required: The venue where the user is checking in. Find venue IDs by searching or from historical APIs."
+      "info": "The venue where the user is checking in. Find venue IDs by searching or from historical APIs.",
+      "required": true
     }, {
       "name": "eventId",
       "type": "String",
-      "info": "The event the user is checking in to."
+      "info": "The event the user is checking in to.",
+      "required": false
     }, {
       "name": "shout",
       "type": "String",
-      "info": "A message about your check-in. The maximum length of this field is 140 characters."
+      "info": "A message about your check-in. The maximum length of this field is 140 characters.",
+      "required": false
     }, {
       "name": "mentions",
       "type": "String",
-      "info": "Mentions in your check-in. This parameter is a semicolon-delimited list of mentions. A single mention is of the form `start,end,userid`, where start is the index of the first character in the shout representing the mention, end is the index of the first character in the shout after the mention, and userid is the userid of the user being mentioned. If userid is prefixed with 'fbu-', this indicates a Facebook userid that is being mention. Character indices in shouts are 0-based."
+      "info": "Mentions in your check-in. This parameter is a semicolon-delimited list of mentions. A single mention is of the form `start,end,userid`, where start is the index of the first character in the shout representing the mention, end is the index of the first character in the shout after the mention, and userid is the userid of the user being mentioned. If userid is prefixed with 'fbu-', this indicates a Facebook userid that is being mention. Character indices in shouts are 0-based.",
+      "required": false
     }, {
       "name": "broadcast",
       "type": "String",
-      "info": "Who to broadcast this check-in to. Accepts a comma-delimited list of values: `private`, `public`, `facebook`, `twitter`, `followers`"
+      "info": "Who to broadcast this check-in to. Accepts a comma-delimited list of values: `private`, `public`, `facebook`, `twitter`, `followers`",
+      "required": false
     }, {
       "name": "location",
       "type": "String",
-      "info": "Latitude and longitude of the user's location. Only specify this field if you have a GPS or other device reported location for the user at the time of check-in. Format: `lat,lng`. Example: `40.7,-74`"
+      "info": "Latitude and longitude of the user's location. Only specify this field if you have a GPS or other device reported location for the user at the time of check-in. Format: `lat,lng`. Example: `40.7,-74`",
+      "required": false
     }, {
       "name": "locationAccuracy",
       "type": "Float",
-      "info": "Accuracy of latitude and longitude, in meters."
+      "info": "Accuracy of latitude and longitude, in meters.",
+      "required": false
     }, {
       "name": "altitude",
       "type": "Number",
-      "info": "Altitude of the user's location, in meters."
+      "info": "Altitude of the user's location, in meters.",
+      "required": false
     }, {
       "name": "altitudeAccuracy",
       "type": "Float",
-      "info": "Accuracy of the user's altitude, in meters."
+      "info": "Accuracy of the user's altitude, in meters.",
+      "required": false
     }]
   }, {
     "name": "getUsersWhoLikedCheckin",
@@ -1267,11 +1472,13 @@
     "args": [{
       "name": "accessToken",
       "type": "String",
-      "info": "Required: Access Token obtained from Foursquare OAuth."
+      "info": "Access Token obtained from Foursquare OAuth.",
+      "required": true
     }, {
       "name": "checkinId",
       "type": "String",
-      "info": "Required: The ID of the checkin to get likes for."
+      "info": "The ID of the checkin to get likes for.",
+      "required": true
     }],
     "callbacks": [{
       "name": "error",
@@ -1286,15 +1493,18 @@
     "args": [{
       "name": "accessToken",
       "type": "String",
-      "info": "Required: Access Token obtained from Foursquare OAuth."
+      "info": "Access Token obtained from Foursquare OAuth.",
+      "required": true
     }, {
       "name": "checkinId",
       "type": "String",
-      "info": "Required: The ID of the checkin to remove a comment from."
+      "info": "The ID of the checkin to remove a comment from.",
+      "required": true
     }, {
       "name": "commentId",
       "type": "String",
-      "info": "Required: The id of the comment to remove."
+      "info": "The id of the comment to remove.",
+      "required": true
     }],
     "callbacks": [{
       "name": "error",
@@ -1309,11 +1519,13 @@
     "args": [{
       "name": "accessToken",
       "type": "String",
-      "info": "Required: Access Token obtained from Foursquare OAuth."
+      "info": "Access Token obtained from Foursquare OAuth.",
+      "required": true
     }, {
       "name": "checkinId",
       "type": "String",
-      "info": "Required: Checking id to like"
+      "info": "Checking id to like",
+      "required": true
     }],
     "callbacks": [{
       "name": "error",
@@ -1328,11 +1540,13 @@
     "args": [{
       "name": "accessToken",
       "type": "String",
-      "info": "Required: Access Token obtained from Foursquare OAuth."
+      "info": "Access Token obtained from Foursquare OAuth.",
+      "required": true
     }, {
       "name": "checkinId",
       "type": "String",
-      "info": "Required: Checking id to unlike"
+      "info": "Checking id to unlike",
+      "required": true
     }],
     "callbacks": [{
       "name": "error",
@@ -1347,23 +1561,28 @@
     "args": [{
       "name": "accessToken",
       "type": "String",
-      "info": "Required: Access Token obtained from Foursquare OAuth."
+      "info": "Access Token obtained from Foursquare OAuth.",
+      "required": true
     }, {
       "name": "checkinId",
       "type": "String",
-      "info": "Required: The ID of the checkin to add a post to."
+      "info": "The ID of the checkin to add a post to.",
+      "required": true
     }, {
       "name": "text",
       "type": "String",
-      "info": "The text of the post, up to 200 characters."
+      "info": "The text of the post, up to 200 characters.",
+      "required": false
     }, {
       "name": "url",
       "type": "String",
-      "info": "Link for more details. This page will be opened in an embedded web view in the foursquare application, unless contentId is specified and a native link handler is registered and present. We support the following URL schemes: http, https, foursquare, mailto, tel, and sms."
+      "info": "Link for more details. This page will be opened in an embedded web view in the foursquare application, unless contentId is specified and a native link handler is registered and present. We support the following URL schemes: http, https, foursquare, mailto, tel, and sms.",
+      "required": false
     }, {
       "name": "contentId",
       "type": "String",
-      "info": "Identifier for the post to be used in a native link, up to 50 characters. A url must also be specified in the request."
+      "info": "Identifier for the post to be used in a native link, up to 50 characters. A url must also be specified in the request.",
+      "required": false
     }],
     "callbacks": [{
       "name": "error",
@@ -1378,19 +1597,23 @@
     "args": [{
       "name": "accessToken",
       "type": "String",
-      "info": "Required: Access Token obtained from Foursquare OAuth."
+      "info": "Access Token obtained from Foursquare OAuth.",
+      "required": true
     }, {
       "name": "checkinId",
       "type": "String",
-      "info": "Required: The ID of the checkin to add a comment to."
+      "info": "The ID of the checkin to add a comment to.",
+      "required": true
     }, {
       "name": "text",
       "type": "String",
-      "info": "The text of the comment, up to 200 characters."
+      "info": "The text of the comment, up to 200 characters.",
+      "required": false
     }, {
       "name": "mentions",
       "type": "String",
-      "info": "Mentions in your check-in. This parameter is a semicolon-delimited list of mentions. A single mention is of the form `start,end,userid`, where start is the index of the first character in the shout representing the mention, end is the index of the first character in the shout after the mention, and userid is the userid of the user being mentioned. Character indices in shouts are 0-based."
+      "info": "Mentions in your check-in. This parameter is a semicolon-delimited list of mentions. A single mention is of the form `start,end,userid`, where start is the index of the first character in the shout representing the mention, end is the index of the first character in the shout after the mention, and userid is the userid of the user being mentioned. Character indices in shouts are 0-based.",
+      "required": false
     }],
     "callbacks": [{
       "name": "error",
@@ -1405,11 +1628,13 @@
     "args": [{
       "name": "accessToken",
       "type": "String",
-      "info": "Required: Access Token obtained from Foursquare OAuth."
+      "info": "Access Token obtained from Foursquare OAuth.",
+      "required": true
     }, {
       "name": "tipId",
       "type": "String",
-      "info": "Required: ID of tip to retrieve"
+      "info": "ID of tip to retrieve",
+      "required": true
     }],
     "callbacks": [{
       "name": "error",
@@ -1424,23 +1649,28 @@
     "args": [{
       "name": "accessToken",
       "type": "String",
-      "info": "Required: Access Token obtained from Foursquare OAuth."
+      "info": "Access Token obtained from Foursquare OAuth.",
+      "required": true
     }, {
       "name": "venueId",
       "type": "String",
-      "info": "Required: The venue where you want to add this tip."
+      "info": "The venue where you want to add this tip.",
+      "required": true
     }, {
       "name": "text",
       "type": "String",
-      "info": "Required: The text of the tip, up to 200 characters."
+      "info": "The text of the tip, up to 200 characters.",
+      "required": true
     }, {
       "name": "url",
       "type": "String",
-      "info": "A URL related to this tip."
+      "info": "A URL related to this tip.",
+      "required": false
     }, {
       "name": "broadcast",
       "type": "String",
-      "info": "Whether to broadcast this tip. Send twitter if you want to send to twitter, facebook if you want to send to facebook, or twitter,facebook if you want to send to both."
+      "info": "Whether to broadcast this tip. Send twitter if you want to send to twitter, facebook if you want to send to facebook, or twitter,facebook if you want to send to both.",
+      "required": false
     }],
     "callbacks": [{
       "name": "error",
@@ -1455,11 +1685,13 @@
     "args": [{
       "name": "accessToken",
       "type": "String",
-      "info": "Required: Access Token obtained from Foursquare OAuth."
+      "info": "Access Token obtained from Foursquare OAuth.",
+      "required": true
     }, {
       "name": "tipId",
       "type": "String",
-      "info": "Required: The ID of the tip to get likes for."
+      "info": "The ID of the tip to get likes for.",
+      "required": true
     }],
     "callbacks": [{
       "name": "error",
@@ -1474,11 +1706,13 @@
     "args": [{
       "name": "accessToken",
       "type": "String",
-      "info": "Required: Access Token obtained from Foursquare OAuth."
+      "info": "Access Token obtained from Foursquare OAuth.",
+      "required": true
     }, {
       "name": "tipId",
       "type": "String",
-      "info": "Required: The ID of the tip to get saves for."
+      "info": "The ID of the tip to get saves for.",
+      "required": true
     }],
     "callbacks": [{
       "name": "error",
@@ -1493,15 +1727,18 @@
     "args": [{
       "name": "accessToken",
       "type": "String",
-      "info": "Required: Access Token obtained from Foursquare OAuth."
+      "info": "Access Token obtained from Foursquare OAuth.",
+      "required": true
     }, {
       "name": "tipId",
       "type": "String",
-      "info": "Required: Identity of a tip to get lists for."
+      "info": "Identity of a tip to get lists for.",
+      "required": true
     }, {
       "name": "group",
       "type": "String",
-      "info": "can be `created`, `edited`, `followed`, `friends`, `other`. If no acting user is present, only other is supported."
+      "info": "can be `created`, `edited`, `followed`, `friends`, `other`. If no acting user is present, only other is supported.",
+      "required": false
     }],
     "callbacks": [{
       "name": "error",
@@ -1516,11 +1753,13 @@
     "args": [{
       "name": "accessToken",
       "type": "String",
-      "info": "Required: Access Token obtained from Foursquare OAuth."
+      "info": "Access Token obtained from Foursquare OAuth.",
+      "required": true
     }, {
       "name": "tipId",
       "type": "String",
-      "info": "Required: The tip you want to unmark."
+      "info": "The tip you want to unmark.",
+      "required": true
     }],
     "callbacks": [{
       "name": "error",
@@ -1535,19 +1774,23 @@
     "args": [{
       "name": "accessToken",
       "type": "String",
-      "info": "Required: Access Token obtained from Foursquare OAuth."
+      "info": "Access Token obtained from Foursquare OAuth.",
+      "required": true
     }, {
       "name": "tipId",
       "type": "String",
-      "info": "Required: The tip to flag."
+      "info": "The tip to flag.",
+      "required": true
     }, {
       "name": "comment",
       "type": "String",
-      "info": "A comment explaining the flag."
+      "info": "A comment explaining the flag.",
+      "required": false
     }, {
       "name": "problem",
       "type": "String",
-      "info": "The specific problem with the tip. Must be one of `offensive`, `spam`, or `nolongerrelevant`."
+      "info": "The specific problem with the tip. Must be one of `offensive`, `spam`, or `nolongerrelevant`.",
+      "required": false
     }]
   }, {
     "name": "likeTip",
@@ -1555,11 +1798,13 @@
     "args": [{
       "name": "accessToken",
       "type": "String",
-      "info": "Required: Access Token obtained from Foursquare OAuth."
+      "info": "Access Token obtained from Foursquare OAuth.",
+      "required": true
     }, {
       "name": "tipId",
       "type": "String",
-      "info": "Required: The tip to like."
+      "info": "The tip to like.",
+      "required": true
     }],
     "callbacks": [{
       "name": "error",
@@ -1574,11 +1819,13 @@
     "args": [{
       "name": "accessToken",
       "type": "String",
-      "info": "Required: Access Token obtained from Foursquare OAuth."
+      "info": "Access Token obtained from Foursquare OAuth.",
+      "required": true
     }, {
       "name": "tipId",
       "type": "String",
-      "info": "Required: The tip to unlike."
+      "info": "The tip to unlike.",
+      "required": true
     }],
     "callbacks": [{
       "name": "error",
@@ -1593,31 +1840,38 @@
     "args": [{
       "name": "accessToken",
       "type": "String",
-      "info": "Required: Access Token obtained from Foursquare OAuth."
+      "info": "Access Token obtained from Foursquare OAuth.",
+      "required": true
     }, {
       "name": "listId",
       "type": "String",
-      "info": "Required: Id for a user-created (e.g. /v2/lists/12381902N) or followed list or one of either USER_ID/tips (e.g. /v2/lists/32/tips) or USER_ID/todos."
+      "info": "Id for a user-created (e.g. /v2/lists/12381902N) or followed list or one of either USER_ID/tips (e.g. /v2/lists/32/tips) or USER_ID/todos.",
+      "required": true
     }, {
       "name": "limit",
       "type": "String",
-      "info": "Number of results to return, up to 200."
+      "info": "Number of results to return, up to 200.",
+      "required": false
     }, {
       "name": "offset",
       "type": "String",
-      "info": "The number of results to skip. Used to page through results."
+      "info": "The number of results to skip. Used to page through results.",
+      "required": false
     }, {
       "name": "locationBounds",
       "type": "String",
-      "info": "The number of results to skip. Used to page through results. Example: `30.13800,-98.16009,30.40485,-97.28118`"
+      "info": "The number of results to skip. Used to page through results. Example: `30.13800,-98.16009,30.40485,-97.28118`",
+      "required": false
     }, {
       "name": "categoryId",
       "type": "String",
-      "info": "Restricts the returned results to venues matching the input category id."
+      "info": "Restricts the returned results to venues matching the input category id.",
+      "required": false
     }, {
       "name": "sort",
       "type": "String",
-      "info": "Sorts the list items. Possible values are recent and nearby. recent sorts the list items by the date added to the list. nearby sorts the list items by the distance from the center of the provided llBounds."
+      "info": "Sorts the list items. Possible values are recent and nearby. recent sorts the list items by the date added to the list. nearby sorts the list items by the distance from the center of the provided llBounds.",
+      "required": false
     }],
     "callbacks": [{
       "name": "error",
@@ -1632,23 +1886,28 @@
     "args": [{
       "name": "accessToken",
       "type": "String",
-      "info": "Required: Access Token obtained from Foursquare OAuth."
+      "info": "Access Token obtained from Foursquare OAuth.",
+      "required": true
     }, {
       "name": "name",
       "type": "String",
-      "info": "Required The name of the list."
+      "info": "Required The name of the list.",
+      "required": false
     }, {
       "name": "description",
       "type": "String",
-      "info": "The description of the list."
+      "info": "The description of the list.",
+      "required": false
     }, {
       "name": "collaborative",
       "type": "String",
-      "info": "Boolean indicating if this list can be edited by friends."
+      "info": "Boolean indicating if this list can be edited by friends.",
+      "required": false
     }, {
       "name": "photoId",
       "type": "String",
-      "info": "The id of a photo that should be set as the list photo."
+      "info": "The id of a photo that should be set as the list photo.",
+      "required": false
     }]
   }, {
     "name": "getListFollowers",
@@ -1656,11 +1915,13 @@
     "args": [{
       "name": "accessToken",
       "type": "String",
-      "info": "Required: Access Token obtained from Foursquare OAuth."
+      "info": "Access Token obtained from Foursquare OAuth.",
+      "required": true
     }, {
       "name": "listId",
       "type": "String",
-      "info": "Required: Id for a user-created list"
+      "info": "Id for a user-created list",
+      "required": true
     }],
     "callbacks": [{
       "name": "error",
@@ -1675,15 +1936,18 @@
     "args": [{
       "name": "accessToken",
       "type": "String",
-      "info": "Required: Access Token obtained from Foursquare OAuth."
+      "info": "Access Token obtained from Foursquare OAuth.",
+      "required": true
     }, {
       "name": "listId",
       "type": "String",
-      "info": "Required: Id for a user-created list."
+      "info": "Id for a user-created list.",
+      "required": true
     }, {
       "name": "itemId",
       "type": "String",
-      "info": "Id of item on this list."
+      "info": "Id of item on this list.",
+      "required": false
     }],
     "callbacks": [{
       "name": "error",
@@ -1698,15 +1962,18 @@
     "args": [{
       "name": "accessToken",
       "type": "String",
-      "info": "Required: Access Token obtained from Foursquare OAuth."
+      "info": "Access Token obtained from Foursquare OAuth.",
+      "required": true
     }, {
       "name": "listId",
       "type": "String",
-      "info": "Required: Id for a user-created list."
+      "info": "Id for a user-created list.",
+      "required": true
     }, {
       "name": "itemId",
       "type": "String",
-      "info": "Required: Id of item."
+      "info": "Id of item.",
+      "required": true
     }],
     "callbacks": [{
       "name": "error",
@@ -1721,15 +1988,18 @@
     "args": [{
       "name": "accessToken",
       "type": "String",
-      "info": "Required: Access Token obtained from Foursquare OAuth."
+      "info": "Access Token obtained from Foursquare OAuth.",
+      "required": true
     }, {
       "name": "listId",
       "type": "String",
-      "info": "Required: Id for a user-created or followed list."
+      "info": "Id for a user-created or followed list.",
+      "required": true
     }, {
       "name": "itemId",
       "type": "String",
-      "info": "Required: Id for an item in the parent list."
+      "info": "Id for an item in the parent list.",
+      "required": true
     }],
     "callbacks": [{
       "name": "error",
@@ -1744,11 +2014,13 @@
     "args": [{
       "name": "accessToken",
       "type": "String",
-      "info": "Required: Access Token obtained from Foursquare OAuth."
+      "info": "Access Token obtained from Foursquare OAuth.",
+      "required": true
     }, {
       "name": "listId",
       "type": "String",
-      "info": "Required: Id for a user-created list"
+      "info": "Id for a user-created list",
+      "required": true
     }],
     "callbacks": [{
       "name": "error",
@@ -1763,27 +2035,33 @@
     "args": [{
       "name": "accessToken",
       "type": "String",
-      "info": "Required: Access Token obtained from Foursquare OAuth."
+      "info": "Access Token obtained from Foursquare OAuth.",
+      "required": true
     }, {
       "name": "listId",
       "type": "String",
-      "info": "Required: Id for a user-created list."
+      "info": "Id for a user-created list.",
+      "required": true
     }, {
       "name": "name",
       "type": "String",
-      "info": "If present and a non-empty value, updates the List name."
+      "info": "If present and a non-empty value, updates the List name.",
+      "required": false
     }, {
       "name": "description",
       "type": "String",
-      "info": "If present and a non-empty value, updates the List description. If present and empty, will remove the List description."
+      "info": "If present and a non-empty value, updates the List description. If present and empty, will remove the List description.",
+      "required": false
     }, {
       "name": "collaborative",
       "type": "String",
-      "info": "Boolean indicating if this list can be edited by friends. Once this has been set to true for a list, authenticated friends can edit the list via additem, deleteitem, etc."
+      "info": "Boolean indicating if this list can be edited by friends. Once this has been set to true for a list, authenticated friends can edit the list via additem, deleteitem, etc.",
+      "required": false
     }, {
       "name": "photoId",
       "type": "String",
-      "info": "If present and a non-empty value, updates the List photo. If present and empty, will remove the List photo."
+      "info": "If present and a non-empty value, updates the List photo. If present and empty, will remove the List photo.",
+      "required": false
     }],
     "callbacks": [{
       "name": "error",
@@ -1798,23 +2076,28 @@
     "args": [{
       "name": "accessToken",
       "type": "String",
-      "info": "Required: Access Token obtained from Foursquare OAuth."
+      "info": "Access Token obtained from Foursquare OAuth.",
+      "required": true
     }, {
       "name": "listId",
       "type": "String",
-      "info": "Required: Id for a user-created or followed list or one of either USER_ID/tips or USER_ID/todos."
+      "info": "Id for a user-created or followed list or one of either USER_ID/tips or USER_ID/todos.",
+      "required": true
     }, {
       "name": "itemId",
       "type": "String",
-      "info": "Id of the item to delete."
+      "info": "Id of the item to delete.",
+      "required": false
     }, {
       "name": "venueId",
       "type": "String",
-      "info": "Id of a venue to be deleted. If the venue is on the list multiple times, e.g. multiple tips at the same venue, all items will be removed."
+      "info": "Id of a venue to be deleted. If the venue is on the list multiple times, e.g. multiple tips at the same venue, all items will be removed.",
+      "required": false
     }, {
       "name": "tipId",
       "type": "String",
-      "info": "Id of a tip to be deleted."
+      "info": "Id of a tip to be deleted.",
+      "required": false
     }],
     "callbacks": [{
       "name": "error",
@@ -1829,31 +2112,38 @@
     "args": [{
       "name": "accessToken",
       "type": "String",
-      "info": "Required: Access Token obtained from Foursquare OAuth."
+      "info": "Access Token obtained from Foursquare OAuth.",
+      "required": true
     }, {
       "name": "listId",
       "type": "String",
-      "info": "Required: Id for a user-created list."
+      "info": "Id for a user-created list.",
+      "required": true
     }, {
       "name": "itemId",
       "type": "String",
-      "info": "Id of the item to update."
+      "info": "Id of the item to update.",
+      "required": false
     }, {
       "name": "tipId",
       "type": "String",
-      "info": "If present and a non-empty value, adds or replaces a tip on this item. If present and empty, will remove the tip on this item."
+      "info": "If present and a non-empty value, adds or replaces a tip on this item. If present and empty, will remove the tip on this item.",
+      "required": false
     }, {
       "name": "text",
       "type": "String",
-      "info": "If present creates a public tip on the venue and replaces any existing tip on the item. Cannot be used in conjuction with tipId or photoId"
+      "info": "If present creates a public tip on the venue and replaces any existing tip on the item. Cannot be used in conjuction with tipId or photoId",
+      "required": false
     }, {
       "name": "url",
       "type": "String",
-      "info": "If adding a new tip via text, this can associate a url with the tip."
+      "info": "If adding a new tip via text, this can associate a url with the tip.",
+      "required": false
     }, {
       "name": "photoId",
       "type": "String",
-      "info": "If present and a non-empty value, adds a photo to this item. If present and empty, will remove the photo on this item. If the photo was a private checkin photo, it will be promoted to a public venue photo."
+      "info": "If present and a non-empty value, adds a photo to this item. If present and empty, will remove the photo on this item. If the photo was a private checkin photo, it will be promoted to a public venue photo.",
+      "required": false
     }],
     "callbacks": [{
       "name": "error",
@@ -1868,11 +2158,13 @@
     "args": [{
       "name": "accessToken",
       "type": "String",
-      "info": "Required: Access Token obtained from Foursquare OAuth."
+      "info": "Access Token obtained from Foursquare OAuth.",
+      "required": true
     }, {
       "name": "listId",
       "type": "String",
-      "info": "Required: Id of a user-created list."
+      "info": "Id of a user-created list.",
+      "required": true
     }],
     "callbacks": [{
       "name": "error",
@@ -1887,11 +2179,13 @@
     "args": [{
       "name": "accessToken",
       "type": "String",
-      "info": "Required: Access Token obtained from Foursquare OAuth."
+      "info": "Access Token obtained from Foursquare OAuth.",
+      "required": true
     }, {
       "name": "listId",
       "type": "String",
-      "info": "Required: Id of a user-created list."
+      "info": "Id of a user-created list.",
+      "required": true
     }],
     "callbacks": [{
       "name": "error",
@@ -1906,23 +2200,28 @@
     "args": [{
       "name": "accessToken",
       "type": "String",
-      "info": "Required: Access Token obtained from Foursquare OAuth."
+      "info": "Access Token obtained from Foursquare OAuth.",
+      "required": true
     }, {
       "name": "listId",
       "type": "String",
-      "info": "Required: Id of a user-created list."
+      "info": "Id of a user-created list.",
+      "required": true
     }, {
       "name": "itemId",
       "type": "String",
-      "info": "Required: Id of the item on this list to move."
+      "info": "Id of the item on this list to move.",
+      "required": true
     }, {
       "name": "beforeId",
       "type": "String",
-      "info": "Move `itemId` before `beforeId`."
+      "info": "Move `itemId` before `beforeId`.",
+      "required": false
     }, {
       "name": "afterId",
       "type": "String",
-      "info": "Move `itemId` after `afterId`."
+      "info": "Move `itemId` after `afterId`.",
+      "required": false
     }],
     "callbacks": [{
       "name": "error",
@@ -1937,19 +2236,23 @@
     "args": [{
       "name": "accessToken",
       "type": "String",
-      "info": "Required: Access Token obtained from Foursquare OAuth."
+      "info": "Access Token obtained from Foursquare OAuth.",
+      "required": true
     }, {
       "name": "listId",
       "type": "String",
-      "info": "Required: List id to share."
+      "info": "List id to share.",
+      "required": true
     }, {
       "name": "broadcast",
       "type": "String",
-      "info": "Required: Where to broadcast this list. Send `twitter` if you want to send to twitter, `facebook` if you want to send to facebook, or `twitter,facebook` if you want to send to both."
+      "info": "Where to broadcast this list. Send `twitter` if you want to send to twitter, `facebook` if you want to send to facebook, or `twitter,facebook` if you want to send to both.",
+      "required": true
     }, {
       "name": "message",
       "type": "String",
-      "info": "A personal note to include with the share."
+      "info": "A personal note to include with the share.",
+      "required": false
     }],
     "callbacks": [{
       "name": "error",
@@ -1964,31 +2267,38 @@
     "args": [{
       "name": "accessToken",
       "type": "String",
-      "info": "Required: Access Token obtained from Foursquare OAuth."
+      "info": "Access Token obtained from Foursquare OAuth.",
+      "required": true
     }, {
       "name": "followedListId",
       "type": "String",
-      "info": "Required: Id for a user-created or followed list as well as one of either USER_ID/tips or USER_ID/todos."
+      "info": "Id for a user-created or followed list as well as one of either USER_ID/tips or USER_ID/todos.",
+      "required": true
     }, {
       "name": "venueId",
       "type": "String",
-      "info": "A venue to add to the list."
+      "info": "A venue to add to the list.",
+      "required": false
     }, {
       "name": "url",
       "type": "String",
-      "info": "If adding a new tip via text, this can associate a url with the tip."
+      "info": "If adding a new tip via text, this can associate a url with the tip.",
+      "required": false
     }, {
       "name": "tipId",
       "type": "String",
-      "info": "Used to add a tip to a list. Cannot be used in conjunction with the text and url fields."
+      "info": "Used to add a tip to a list. Cannot be used in conjunction with the text and url fields.",
+      "required": false
     }, {
       "name": "listId",
       "type": "String",
-      "info": "Used in conjuction with itemId, the id for a user created or followed list as well as one of either USER_ID/tips or USER_ID/todos."
+      "info": "Used in conjuction with itemId, the id for a user created or followed list as well as one of either USER_ID/tips or USER_ID/todos.",
+      "required": false
     }, {
       "name": "itemId",
       "type": "String",
-      "info": "Used in conjuction with listId, the id of an item on that list that we wish to copy to this list."
+      "info": "Used in conjuction with listId, the id of an item on that list that we wish to copy to this list.",
+      "required": false
     }],
     "callbacks": [{
       "name": "error",
@@ -2003,11 +2313,13 @@
     "args": [{
       "name": "accessToken",
       "type": "String",
-      "info": "Required: Access Token obtained from Foursquare OAuth."
+      "info": "Access Token obtained from Foursquare OAuth.",
+      "required": true
     }, {
       "name": "updateId",
       "type": "String",
-      "info": "Required: The ID of the update to retrieve"
+      "info": "The ID of the update to retrieve",
+      "required": true
     }],
     "callbacks": [{
       "name": "error",
@@ -2022,11 +2334,13 @@
     "args": [{
       "name": "accessToken",
       "type": "String",
-      "info": "Required: Access Token obtained from Foursquare OAuth."
+      "info": "Access Token obtained from Foursquare OAuth.",
+      "required": true
     }, {
       "name": "limit",
       "type": "String",
-      "info": "Required: Maximum number of results to return, up to 99. Notifications are grouped over time, so there will usually be fewer than 99 results available at any given time. offset 0 Used to page through results. Only the 99 most recent notifications are visible, so offset must be no more than 99 - limit."
+      "info": "Maximum number of results to return, up to 99. Notifications are grouped over time, so there will usually be fewer than 99 results available at any given time. offset 0 Used to page through results. Only the 99 most recent notifications are visible, so offset must be no more than 99 - limit.",
+      "required": true
     }],
     "callbacks": [{
       "name": "error",
@@ -2041,11 +2355,13 @@
     "args": [{
       "name": "accessToken",
       "type": "String",
-      "info": "Required: Access Token obtained from Foursquare OAuth."
+      "info": "Access Token obtained from Foursquare OAuth.",
+      "required": true
     }, {
       "name": "highWatermark",
       "type": "String",
-      "info": "Required: The timestamp of the most recent notification that the user viewed."
+      "info": "The timestamp of the most recent notification that the user viewed.",
+      "required": true
     }],
     "callbacks": [{
       "name": "error",
@@ -2060,11 +2376,13 @@
     "args": [{
       "name": "accessToken",
       "type": "String",
-      "info": "Required: Access Token obtained from Foursquare OAuth."
+      "info": "Access Token obtained from Foursquare OAuth.",
+      "required": true
     }, {
       "name": "photoId",
       "type": "String",
-      "info": "Required: The ID of the photo to retrieve additional information for."
+      "info": "The ID of the photo to retrieve additional information for.",
+      "required": true
     }],
     "callbacks": [{
       "name": "error",
@@ -2079,11 +2397,13 @@
     "args": [{
       "name": "accessToken",
       "type": "String",
-      "info": "Required: Access Token obtained from Foursquare OAuth."
+      "info": "Access Token obtained from Foursquare OAuth.",
+      "required": true
     }, {
       "name": "settingId",
       "type": "String",
-      "info": "Required: The name of a setting."
+      "info": "The name of a setting.",
+      "required": true
     }],
     "callbacks": [{
       "name": "error",
@@ -2098,7 +2418,8 @@
     "args": [{
       "name": "accessToken",
       "type": "String",
-      "info": "Required: Access Token obtained from Foursquare OAuth."
+      "info": "Access Token obtained from Foursquare OAuth.",
+      "required": true
     }],
     "callbacks": [{
       "name": "error",
@@ -2113,15 +2434,18 @@
     "args": [{
       "name": "accessToken",
       "type": "String",
-      "info": "Required: Access Token obtained from Foursquare OAuth."
+      "info": "Access Token obtained from Foursquare OAuth.",
+      "required": true
     }, {
       "name": "settingId",
       "type": "String",
-      "info": "Required: Name of setting to change, sendMayorshipsToTwitter, sendBadgesToTwitter, sendMayorshipsToFacebook, sendBadgesToFacebook, receivePings, receiveCommentPings."
+      "info": "Name of setting to change, sendMayorshipsToTwitter, sendBadgesToTwitter, sendMayorshipsToFacebook, sendBadgesToFacebook, receivePings, receiveCommentPings.",
+      "required": true
     }, {
       "name": "value",
       "type": "Number",
-      "info": "1 for true, and 0 for false."
+      "info": "1 for true, and 0 for false.",
+      "required": false
     }],
     "callbacks": [{
       "name": "error",
@@ -2136,31 +2460,38 @@
     "args": [{
       "name": "accessToken",
       "type": "String",
-      "info": "Required: Access Token obtained from Foursquare OAuth."
+      "info": "Access Token obtained from Foursquare OAuth.",
+      "required": true
     }, {
       "name": "location",
       "type": "String",
-      "info": "Latitude and longitude to search near. Format: `lat,lng`. Example: `40.7,-74`"
+      "info": "Latitude and longitude to search near. Format: `lat,lng`. Example: `40.7,-74`",
+      "required": false
     }, {
       "name": "radius",
       "type": "Number",
-      "info": "Limit results to venues within this many meters of the specified location. Defaults to a city-wide area."
+      "info": "Limit results to venues within this many meters of the specified location. Defaults to a city-wide area.",
+      "required": false
     }, {
       "name": "locationAccuracy",
       "type": "Float",
-      "info": "Accuracy of latitude and longitude, in meters."
+      "info": "Accuracy of latitude and longitude, in meters.",
+      "required": false
     }, {
       "name": "altitude",
       "type": "Number",
-      "info": "Altitude of the user's location, in meters."
+      "info": "Altitude of the user's location, in meters.",
+      "required": false
     }, {
       "name": "altitudeAccuracy",
       "type": "Float",
-      "info": "Accuracy of the user's altitude, in meters."
+      "info": "Accuracy of the user's altitude, in meters.",
+      "required": false
     }, {
       "name": "limit",
       "type": "Number",
-      "info": "Number of results to return, up to 50."
+      "info": "Number of results to return, up to 50.",
+      "required": false
     }]
   }, {
     "name": "getSingleEvent",
@@ -2168,11 +2499,13 @@
     "args": [{
       "name": "accessToken",
       "type": "String",
-      "info": "Required: Access Token obtained from Foursquare OAuth."
+      "info": "Access Token obtained from Foursquare OAuth.",
+      "required": true
     }, {
       "name": "eventId",
       "type": "String",
-      "info": "Required: The ID of the event to retrieve additional information for."
+      "info": "The ID of the event to retrieve additional information for.",
+      "required": true
     }],
     "callbacks": [{
       "name": "error",
@@ -2187,19 +2520,23 @@
     "args": [{
       "name": "accessToken",
       "type": "String",
-      "info": "Required: Access Token obtained from Foursquare OAuth."
+      "info": "Access Token obtained from Foursquare OAuth.",
+      "required": true
     }, {
       "name": "domain",
       "type": "String",
-      "info": "Required:  Identifier for a known third-party event provider. This is used in conjunction with id. Currently songkick.com is the only supported value."
+      "info": " Identifier for a known third-party event provider. This is used in conjunction with id. Currently songkick.com is the only supported value.",
+      "required": true
     }, {
       "name": "eventId",
       "type": "String",
-      "info": "Identifier used by third-party specifed in domain, which we will attempt to match against our events listings. eventId is the id of an event, participantId is the id of a participant, like a band or sports team."
+      "info": "Identifier used by third-party specifed in domain, which we will attempt to match against our events listings. eventId is the id of an event, participantId is the id of a participant, like a band or sports team.",
+      "required": false
     }, {
       "name": "participantId",
       "type": "String",
-      "info": "Identifier used by third-party specifed in domain, which we will attempt to match against our events listings. eventId is the id of an event, participantId is the id of a participant, like a band or sports team."
+      "info": "Identifier used by third-party specifed in domain, which we will attempt to match against our events listings. eventId is the id of an event, participantId is the id of a participant, like a band or sports team.",
+      "required": false
     }],
     "callbacks": [{
       "name": "error",
@@ -2214,7 +2551,8 @@
     "args": [{
       "name": "accessToken",
       "type": "String",
-      "info": "Required: Access Token obtained from Foursquare OAuth."
+      "info": "Access Token obtained from Foursquare OAuth.",
+      "required": true
     }],
     "callbacks": [{
       "name": "error",
@@ -2229,7 +2567,8 @@
     "args": [{
       "name": "accessToken",
       "type": "String",
-      "info": "Required: Access Token obtained from Foursquare OAuth."
+      "info": "Access Token obtained from Foursquare OAuth.",
+      "required": true
     }]
   }, {
     "name": "addPage",
@@ -2237,11 +2576,13 @@
     "args": [{
       "name": "accessToken",
       "type": "String",
-      "info": "Required: Access Token obtained from Foursquare OAuth."
+      "info": "Access Token obtained from Foursquare OAuth.",
+      "required": true
     }, {
       "name": "name",
       "type": "String",
-      "info": "Required: The name of the page"
+      "info": "The name of the page",
+      "required": true
     }],
     "callbacks": [{
       "name": "error",
@@ -2256,23 +2597,28 @@
     "args": [{
       "name": "accessToken",
       "type": "String",
-      "info": "Required: Access Token obtained from Foursquare OAuth."
+      "info": "Access Token obtained from Foursquare OAuth.",
+      "required": true
     }, {
       "name": "pageId",
       "type": "String",
-      "info": "Required: The page whose venues to get timeseries data for"
+      "info": "The page whose venues to get timeseries data for",
+      "required": true
     }, {
       "name": "startAt",
       "type": "String",
-      "info": "Required: The start of the time range to retrieve stats for (seconds since epoch)."
+      "info": "The start of the time range to retrieve stats for (seconds since epoch).",
+      "required": true
     }, {
       "name": "endAt",
       "type": "String",
-      "info": "The end of the time range to retrieve stats for (seconds since epoch). If omitted, the current time is assumed."
+      "info": "The end of the time range to retrieve stats for (seconds since epoch). If omitted, the current time is assumed.",
+      "required": false
     }, {
       "name": "fields",
       "type": "String",
-      "info": "Specifies which fields to return. May be one or more of totalCheckins, newCheckins, uniqueVisitors, sharing, genders, ages, hours, separated by commas."
+      "info": "Specifies which fields to return. May be one or more of totalCheckins, newCheckins, uniqueVisitors, sharing, genders, ages, hours, separated by commas.",
+      "required": false
     }]
   }, {
     "name": "getPageAccessToken",
@@ -2280,11 +2626,13 @@
     "args": [{
       "name": "accessToken",
       "type": "String",
-      "info": "Required: Access Token obtained from Foursquare OAuth."
+      "info": "Access Token obtained from Foursquare OAuth.",
+      "required": true
     }, {
       "name": "userId",
       "type": "String",
-      "info": "Required: The page you want similar pages for."
+      "info": "The page you want similar pages for.",
+      "required": true
     }],
     "callbacks": [{
       "name": "error",
@@ -2299,39 +2647,48 @@
     "args": [{
       "name": "accessToken",
       "type": "String",
-      "info": "Required: Access Token obtained from Foursquare OAuth."
+      "info": "Access Token obtained from Foursquare OAuth.",
+      "required": true
     }, {
       "name": "pageId",
       "type": "String",
-      "info": "Required: The page whose venues to get venues for"
+      "info": "The page whose venues to get venues for",
+      "required": true
     }, {
       "name": "location",
       "type": "String",
-      "info": "Not valid with ne or sw. Limits results to venues near this latitude and longitude within an optional radius."
+      "info": "Not valid with ne or sw. Limits results to venues near this latitude and longitude within an optional radius.",
+      "required": false
     }, {
       "name": "radius",
       "type": "Number",
-      "info": "Can be used when including ll. Not valid with ne or sw. Limit results to venues within this many meters of the specified ll. The maximum supported radius is currently 100,000 meters."
+      "info": "Can be used when including ll. Not valid with ne or sw. Limit results to venues within this many meters of the specified ll. The maximum supported radius is currently 100,000 meters.",
+      "required": false
     }, {
       "name": "southWest",
       "type": "String",
-      "info": "Example: `44.3,37.2`. With northEast, limits results to the bounding quadrangle defined by the latitude and longitude given by sw as its south-west corner, and ne as its north-east corner. The bounding quadrangle is only supported for intent=browse searches. Not valid with ll or radius. Bounding quadrangles with an area up to approximately 10,000 square kilometers are supported."
+      "info": "Example: `44.3,37.2`. With northEast, limits results to the bounding quadrangle defined by the latitude and longitude given by sw as its south-west corner, and ne as its north-east corner. The bounding quadrangle is only supported for intent=browse searches. Not valid with ll or radius. Bounding quadrangles with an area up to approximately 10,000 square kilometers are supported.",
+      "required": false
     }, {
       "name": "northEast",
       "type": "String",
-      "info": "See `southWest`."
+      "info": "See `southWest`.",
+      "required": false
     }, {
       "name": "offset",
       "type": "Number",
-      "info": "The offset of which venues to return. Defaults to 0."
+      "info": "The offset of which venues to return. Defaults to 0.",
+      "required": false
     }, {
       "name": "limit",
       "type": "Number",
-      "info": "The number of venues to return. Defaults to 20, max of 100."
+      "info": "The number of venues to return. Defaults to 20, max of 100.",
+      "required": false
     }, {
       "name": "storeId",
       "type": "Number",
-      "info": " Only return venues whose storeId matches. storeIds are defined by the page manager (and therefore namespaced to that particular page). They are the page's own internal identifier for that venue. *Cannot be used with any geo params*."
+      "info": "Only return venues whose storeId matches. storeIds are defined by the page manager (and therefore namespaced to that particular page). They are the page's own internal identifier for that venue. *Cannot be used with any geo params*.",
+      "required": false
     }],
     "callbacks": [{
       "name": "error",
@@ -2346,19 +2703,23 @@
     "args": [{
       "name": "accessToken",
       "type": "String",
-      "info": "Required: Access Token obtained from Foursquare OAuth."
+      "info": "Access Token obtained from Foursquare OAuth.",
+      "required": true
     }, {
       "name": "updateId",
       "type": "String",
-      "info": "Required: The ID of the update to retrieve additional information for."
+      "info": "The ID of the update to retrieve additional information for.",
+      "required": true
     }, {
       "name": "limit",
       "type": "String",
-      "info": "The number of nearby venues to show (default 20)."
+      "info": "The number of nearby venues to show (default 20).",
+      "required": false
     }, {
       "name": "location",
       "type": "String",
-      "info": "The location of the current user."
+      "info": "The location of the current user.",
+      "required": false
     }],
     "callbacks": [{
       "name": "error",
@@ -2373,7 +2734,8 @@
     "args": [{
       "name": "accessToken",
       "type": "String",
-      "info": "Required: Access Token obtained from Foursquare OAuth."
+      "info": "Access Token obtained from Foursquare OAuth.",
+      "required": true
     }]
   }, {
     "name": "likePageUpdate",
@@ -2381,11 +2743,13 @@
     "args": [{
       "name": "accessToken",
       "type": "String",
-      "info": "Required: Access Token obtained from Foursquare OAuth."
+      "info": "Access Token obtained from Foursquare OAuth.",
+      "required": true
     }, {
       "name": "updateId",
       "type": "String",
-      "info": "Required: The ID of the update to like."
+      "info": "The ID of the update to like.",
+      "required": true
     }],
     "callbacks": [{
       "name": "error",
