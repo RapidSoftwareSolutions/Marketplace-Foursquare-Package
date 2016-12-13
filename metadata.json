@@ -898,6 +898,11 @@
       "info": "Application client secret key.",
       "required": true
     }, {
+      "name": "venueId",
+      "type": "String",
+      "info": "The venue id for which photos are being requested.",
+      "required": true
+    }, {
       "name": "group",
       "type": "String",
       "info": "If not specified, public venue photos are returned ordered by relevance. Pass venue for public venue photos, ordered by recency. Pass checkin for venue photos from friends (including non-public photos from recent checkins), ordered by recency. See our documentation on photos for information on how to handle the response and construct actual photo URLs.",
