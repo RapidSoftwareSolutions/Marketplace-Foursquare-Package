@@ -176,7 +176,8 @@
         "url": "https://api.foursquare.com/v2/venues/search",
         "method": "GET",
         "args": {
-            "String|accessToken": "$oauth_token",
+            "String|clientId": "$client_id",
+            "String|clientSecret": "$client_secret",
             "String|location": "ll",
             "String|near": "near",
             "Float|locationAccuracy": "llAcc",
@@ -198,7 +199,8 @@
         "url": "https://api.foursquare.com/v2/venues/suggestcompletion",
         "method": "GET",
         "args": {
-            "String|accessToken": "$oauth_token",
+            "String|clientId": "$client_id",
+            "String|clientSecret": "$client_secret",
             "String|query": "$query",
             "String|location": "ll",
             "String|near": "near",
@@ -213,7 +215,8 @@
         "url": "https://api.foursquare.com/v2/venues/categories",
         "method": "GET",
         "args": {
-            "String|accessToken": "$oauth_token"
+            "String|clientId": "$client_id",
+            "String|clientSecret": "$client_secret"
         }
     },
     "getVenueTimeSeriesData": {
@@ -231,7 +234,8 @@
         "url": "https://api.foursquare.com/v2/venues/trending",
         "method": "GET",
         "args": {
-            "String|accessToken": "$oauth_token",
+            "String|clientId": "$client_id",
+            "String|clientSecret": "$client_secret",
             "String|location": "$ll",
             "Number|limit": "limit",
             "String|radius": "radius"
@@ -241,7 +245,8 @@
         "url": "https://api.foursquare.com/v2/venues/explore",
         "method": "GET",
         "args": {
-            "String|accessToken": "$oauth_token",
+            "String|clientId": "$client_id",
+            "String|clientSecret": "$client_secret",
             "String|location": "ll",
             "String|near": "near",
             "Float|locationAccuracy": "llAcc",
@@ -307,7 +312,8 @@
         "url": "https://api.foursquare.com/v2/venues/:_venueId/photos",
         "method": "GET",
         "args": {
-            "String|accessToken": "$oauth_token",
+            "String|clientId": "$client_id",
+            "String|clientSecret": "$client_secret",
             "String|venueId": "$!_venueId",
             "String|group": "group",
             "Number|limit": "limit",
@@ -318,7 +324,8 @@
         "url": "https://api.foursquare.com/v2/venues/:_venueId/events",
         "method": "GET",
         "args": {
-            "String|accessToken": "$oauth_token",
+            "String|clientId": "$client_id",
+            "String|clientSecret": "$client_secret",
             "String|venueId": "$!_venueId"
         }
     },
@@ -326,7 +333,8 @@
         "url": "https://api.foursquare.com/v2/venues/:_venueId/likes",
         "method": "GET",
         "args": {
-            "String|accessToken": "$oauth_token",
+            "String|clientId": "$client_id",
+            "String|clientSecret": "$client_secret",
             "String|venueId": "$!_venueId"
         }
     },
@@ -334,7 +342,8 @@
         "url": "https://api.foursquare.com/v2/venues/:_venueId/nextvenues",
         "method": "GET",
         "args": {
-            "String|accessToken": "$oauth_token",
+            "String|clientId": "$client_id",
+            "String|clientSecret": "$client_secret",
             "String|venueId": "$!_venueId"
         }
     },
@@ -342,7 +351,8 @@
         "url": "https://api.foursquare.com/v2/venues/:_venueId/hours",
         "method": "GET",
         "args": {
-            "String|accessToken": "$oauth_token",
+            "String|clientId": "$client_id",
+            "String|clientSecret": "$client_secret",
             "String|venueId": "$!_venueId"
         }
     },
@@ -360,7 +370,8 @@
         "url": "https://api.foursquare.com/v2/venues/:_venueId/links",
         "method": "GET",
         "args": {
-            "String|accessToken": "$oauth_token",
+            "String|clientId": "$client_id",
+            "String|clientSecret": "$client_secret",
             "String|venueId": "$!_venueId"
         }
     },
@@ -368,7 +379,8 @@
         "url": "https://api.foursquare.com/v2/venues/:_venueId/menu",
         "method": "GET",
         "args": {
-            "String|accessToken": "$oauth_token",
+            "String|clientId": "$client_id",
+            "String|clientSecret": "$client_secret",
             "String|venueId": "$!_venueId"
         }
     },
@@ -376,7 +388,8 @@
         "url": "https://api.foursquare.com/v2/venues/:_venueId/tips",
         "method": "GET",
         "args": {
-            "String|accessToken": "$oauth_token",
+            "String|clientId": "$client_id",
+            "String|clientSecret": "$client_secret",
             "String|venueId": "$!_venueId",
             "String|sort": "sort",
             "String|limit": "limit",
@@ -646,7 +659,8 @@
         "url": "https://api.foursquare.com/v2/checkins/:checkinId/likes",
         "method": "GET",
         "args": {
-            "String|accessToken": "$oauth_token",
+            "String|clientId": "$client_id",
+            "String|clientSecret": "$client_secret",
             "String|checkinId": "$!checkinId"
         }
     },
@@ -719,7 +733,8 @@
         "url": "https://api.foursquare.com/v2/tips/:tipId/likes",
         "method": "GET",
         "args": {
-            "String|accessToken": "$oauth_token",
+            "String|clientId": "$client_id",
+            "String|clientSecret": "$client_secret",
             "String|tipId": "$!tipId"
         }
     },
@@ -727,7 +742,8 @@
         "url": "https://api.foursquare.com/v2/tips/:tipId/saves",
         "method": "GET",
         "args": {
-            "String|accessToken": "$oauth_token",
+            "String|clientId": "$client_id",
+            "String|clientSecret": "$client_secret",
             "String|tipId": "$!tipId"
         }
     },
@@ -735,7 +751,8 @@
         "url": "https://api.foursquare.com/v2/tips/:tipId/listed",
         "method": "GET",
         "args": {
-            "String|accessToken": "$oauth_token",
+            "String|clientId": "$client_id",
+            "String|clientSecret": "$client_secret",
             "String|tipId": "$!tipId",
             "String|group": "group"
         }
@@ -802,7 +819,8 @@
         "url": "https://api.foursquare.com/v2/lists/:listId/followers",
         "method": "GET",
         "args": {
-            "String|accessToken": "$oauth_token",
+            "String|clientId": "$client_id",
+            "String|clientSecret": "$client_secret",
             "String|listId": "$!listId"
         }
     },
@@ -997,7 +1015,8 @@
         "url": "https://api.foursquare.com/v2/specials/search",
         "method": "GET",
         "args": {
-            "String|accessToken": "$oauth_token",
+            "String|clientId": "$client_id",
+            "String|clientSecret": "$client_secret",
             "String|location": "ll",
             "Number|radius": "radius",
             "Float|locationAccuracy": "llAcc",
@@ -1052,7 +1071,8 @@
         "url": "https://api.foursquare.com/v2/events/search",
         "method": "GET",
         "args": {
-            "String|accessToken": "$oauth_token",
+            "String|clientId": "$client_id",
+            "String|clientSecret": "$client_secret",
             "String|domain": "$domain",
             "String|eventId": "eventId",
             "String|participantId": "participantId"
@@ -1062,7 +1082,8 @@
         "url": "https://api.foursquare.com/v2/events/categories",
         "method": "GET",
         "args": {
-            "String|accessToken": "$oauth_token"
+            "String|clientId": "$client_id",
+            "String|clientSecret": "$client_secret"
         }
     },
     "addSingleEvent": {
@@ -1125,7 +1146,8 @@
         "url": "https://api.foursquare.com/v2/pages/:pageId/venues",
         "method": "GET",
         "args": {
-            "String|accessToken": "$oauth_token",
+            "String|clientId": "$client_id",
+            "String|clientSecret": "$client_secret",
             "String|pageId": "pageId",
             "String|location": "ll",
             "Number|radius": "radius",
