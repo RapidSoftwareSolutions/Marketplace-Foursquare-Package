@@ -1,3 +1,5 @@
+[![](https://scdn.rapidapi.com/RapidAPI_banner.png)](https://rapidapi.com/package/Foursquare/functions?utm_source=RapidAPIGitHub_FoursquareFunctions&utm_medium=button&utm_content=RapidAPI_GitHub)
+
 # Foursquare Package
 Add Foursquare venue and user information to your app.
 * Domain: foursquare.com
