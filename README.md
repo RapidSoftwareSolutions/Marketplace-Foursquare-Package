@@ -6,8 +6,13 @@ Add Foursquare venue and user information to your app.
 * Credentials: clientId, clientSecret
 
 ## How to get credentials: 
-0. Create new [Foursquare Application](https://foursquare.com/developers/register)
-1. Copy and save your clientId, clientSecret, redirectUrl
+
+Navigate to our [OAuth Generator](https://rapidoauth.com/foursquare) and follow the instructions there.
+
+or
+
+1. Create a new [Foursquare Application](https://foursquare.com/developers/register)
+2. Copy and save your clientId, clientSecret, redirectUrl
 3. Direct user to foursquare.com/oauth2/authenticate?client_id=`clientId`&response_type=code&redirect_uri=`redirectUrl`
 4. If the user accepts, they will be redirected back to http://YOUR_REGISTERED_REDIRECT_URI/?code=`code`
 5. Use getAccessToken method to get users's `accessToken`.
