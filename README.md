@@ -9,7 +9,9 @@ Add Foursquare venue and user information to your app.
 
 Navigate to our [OAuth Generator](https://rapidoauth.com/foursquare) and follow the instructions there.
 
-or
+OR
+
+Follow these steps:
 
 1. Create a new [Foursquare Application](https://foursquare.com/developers/register)
 2. Copy and save your clientId, clientSecret, redirectUrl
