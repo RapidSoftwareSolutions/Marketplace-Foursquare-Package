@@ -229,7 +229,8 @@
       "required": false
     }, {
       "name": "sort",
-      "type": "String",
+      "type": "Select",
+      "options": ["newestfirst","oldestfirst"],
       "info": "How to sort the returned checkins. Can be `newestfirst` or `oldestfirst`.",
       "required": false
     }, {
@@ -328,12 +329,13 @@
       "required": true
     }, {
       "name": "group",
-      "type": "String",
+      "type": "Select",
+      "options": ["created","edited","followed","friends","suggested"],
       "info": "Can be `created` (lists created by this user), `edited` (other people's lists this user has edited), `followed` (lists this user follows), `friends` (lists from this user's friends), and `suggested` (lists relevant to the user's current location).",
       "required": false
     }, {
       "name": "location",
-      "type": "String",
+      "type": "Map",
       "info": "Location of the user, required in order to receive the suggested group. Format: `lat,lng`. Example: `40.7,-74`",
       "required": false
     }, {
@@ -445,7 +447,7 @@
       "required": true
     }, {
       "name": "location",
-      "type": "String",
+      "type": "Map",
       "info": "Required unless near is provided: Latitude and longitude of the user's location. Format: `lat,lng`. Example: `40.7,-74`",
       "required": false
     }, {
@@ -546,7 +548,7 @@
       "required": true
     }, {
       "name": "location",
-      "type": "String",
+      "type": "Map",
       "info": "Required unless near is provided: Latitude and longitude of the user's location. Format: `lat,lng`. Example: `40.7,-74`",
       "required": false
     }, {
@@ -623,7 +625,7 @@
       "required": true
     }, {
       "name": "location",
-      "type": "String",
+      "type": "Map",
       "info": "Location of the user. Format: `lat,lng`. Example: `40.7,-74`",
       "required": true
     }, {
@@ -659,7 +661,7 @@
       "required": true
     }, {
       "name": "location",
-      "type": "String",
+      "type": "Map",
       "info": "Required unless near is provided: Latitude and longitude of the user's location. Format: `lat,lng`. Example: `40.7,-74`",
       "required": false
     }, {
@@ -694,7 +696,8 @@
       "required": false
     }, {
       "name": "section",
-      "type": "String",
+      "type": "Select",
+      "options": ["food","drinks","coffee","shops","arts","outdoors","sights","trending","specials","nextVenues","topPicks"],
       "info": "One of `food`, `drinks`, `coffee`, `shops`, `arts`, `outdoors`, `sights`, `trending` or `specials`, `nextVenues` (venues frequently visited after a given venue), or topPicks (a mix of recommendations generated without a query from the user). Choosing one of these limits results to venues with the specified category or property.",
       "required": false
     }, {
@@ -709,12 +712,14 @@
       "required": false
     }, {
       "name": "novelty",
-      "type": "String",
+      "type": "Select",
+      "options": ["new","old"],
       "info": "Pass `new `or `old` to limit results to places the acting user hasn't been or has been, respectively. Omitting this parameter returns a mixture of old and new venues.",
       "required": false
     }, {
       "name": "friendVisits",
-      "type": "String",
+      "type": "Select",
+      "options": ["visited","notvisited"],
       "info": "Pass `visited` or `notvisited` to limit results to places the acting user's friends have or haven't been, respectively. Omitting this parameter returns a mixture of venues to which the user's friends have or haven't been.",
       "required": false
     }, {
@@ -814,7 +819,7 @@
       "required": false
     }, {
       "name": "location",
-      "type": "String",
+      "type": "Map",
       "info": "Latitude and longitude of the venue, as accurate as is known. Format: `lat,lng`. Example: `40.7,-74`",
       "required": false
     }, {
@@ -1116,7 +1121,8 @@
       "required": true
     }, {
       "name": "sort",
-      "type": "String",
+      "type": "Select",
+      "options": ["friends","recent","popular"],
       "info": "One of `friends`, `recent`, or `popular`.",
       "required": false
     }, {
@@ -1251,7 +1257,8 @@
       "required": true
     }, {
       "name": "problem",
-      "type": "String",
+      "type": "Select",
+      "options": ["mislocated","closed","duplicate","inappropriate","doesnt_exist","event_over"],
       "info": "One of `mislocated`, `closed`, `duplicate`, `inappropriate`, `doesnt_exist`, `event_over`",
       "required": true
     }, {
@@ -1343,7 +1350,7 @@
       "required": false
     }, {
       "name": "venueLocation",
-      "type": "String",
+      "type": "Map",
       "info": "Latitude and longitude at which the venue should be located. Example: `44.3,37.2`",
       "required": false
     }, {
@@ -1483,7 +1490,7 @@
       "generator":"https://rapidoauth.com/foursquare"
     }, {
       "name": "location",
-      "type": "String",
+      "type": "Map",
       "info": "Latitude and longitude of the user's location, so response can include distance. Format: `lat,lng`. Example: `40.7,-74`",
       "required": false
     }, {
@@ -1535,12 +1542,13 @@
       "required": false
     }, {
       "name": "broadcast",
-      "type": "String",
+      "type": "Select",
+      "options": ["private","public","facebook","twitter","followers"],
       "info": "Who to broadcast this check-in to. Accepts a comma-delimited list of values: `private`, `public`, `facebook`, `twitter`, `followers`",
       "required": false
     }, {
       "name": "location",
-      "type": "String",
+      "type": "Map",
       "info": "Latitude and longitude of the user's location. Only specify this field if you have a GPS or other device reported location for the user at the time of check-in. Format: `lat,lng`. Example: `40.7,-74`",
       "required": false
     }, {
@@ -1773,7 +1781,8 @@
       "required": false
     }, {
       "name": "broadcast",
-      "type": "String",
+      "type": "Select",
+      "options": ["twitter","facebook","twitter,facebook"],
       "info": "Whether to broadcast this tip. Send twitter if you want to send to twitter, facebook if you want to send to facebook, or twitter,facebook if you want to send to both.",
       "required": false
     }],
@@ -1856,7 +1865,8 @@
       "required": true
     }, {
       "name": "group",
-      "type": "String",
+      "type": "Select",
+      "options": ["created","edited","followed","friends","other"],
       "info": "can be `created`, `edited`, `followed`, `friends`, `other`. If no acting user is present, only other is supported.",
       "required": false
     }],
@@ -1910,7 +1920,8 @@
       "required": false
     }, {
       "name": "problem",
-      "type": "String",
+      "type": "Select",
+      "options": ["offensive","spam","nolongerrelevant"],
       "info": "The specific problem with the tip. Must be one of `offensive`, `spam`, or `nolongerrelevant`.",
       "required": false
     }]
@@ -2387,7 +2398,8 @@
       "required": true
     }, {
       "name": "broadcast",
-      "type": "String",
+      "type": "Select",
+      "options":["twitter","facebook","twitter,facebook"],
       "info": "Where to broadcast this list. Send `twitter` if you want to send to twitter, `facebook` if you want to send to facebook, or `twitter,facebook` if you want to send to both.",
       "required": true
     }, {
@@ -2588,7 +2600,8 @@
       "generator":"https://rapidoauth.com/foursquare"
     }, {
       "name": "settingId",
-      "type": "String",
+      "type": "Select",
+      "options": ["sendMayorshipsToTwitter","sendBadgesToTwitter","sendMayorshipsToFacebook","sendBadgesToFacebook","receivePings","receiveCommentPings"],
       "info": "Name of setting to change, sendMayorshipsToTwitter, sendBadgesToTwitter, sendMayorshipsToFacebook, sendBadgesToFacebook, receivePings, receiveCommentPings.",
       "required": true
     }, {
@@ -2619,7 +2632,7 @@
       "required": true
     }, {
       "name": "location",
-      "type": "String",
+      "type": "Map",
       "info": "Latitude and longitude to search near. Format: `lat,lng`. Example: `40.7,-74`",
       "required": false
     }, {
@@ -2831,7 +2844,7 @@
       "required": true
     }, {
       "name": "location",
-      "type": "String",
+      "type": "Map",
       "info": "Not valid with ne or sw. Limits results to venues near this latitude and longitude within an optional radius.",
       "required": false
     }, {
@@ -2841,7 +2854,7 @@
       "required": false
     }, {
       "name": "southWest",
-      "type": "String",
+      "type": "Map",
       "info": "Example: `44.3,37.2`. With northEast, limits results to the bounding quadrangle defined by the latitude and longitude given by sw as its south-west corner, and ne as its north-east corner. The bounding quadrangle is only supported for intent=browse searches. Not valid with ll or radius. Bounding quadrangles with an area up to approximately 10,000 square kilometers are supported.",
       "required": false
     }, {
@@ -2893,7 +2906,7 @@
       "required": false
     }, {
       "name": "location",
-      "type": "String",
+      "type": "Map",
       "info": "The location of the current user.",
       "required": false
     }],

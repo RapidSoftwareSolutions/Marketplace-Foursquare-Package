@@ -19,6 +19,15 @@ Follow these steps:
 4. If the user accepts, they will be redirected back to http://YOUR_REGISTERED_REDIRECT_URI/?code=`code`
 5. Use getAccessToken method to get users's `accessToken`.
 
+## Custom datatypes:
+ |Datatype|Description|Example
+ |--------|-----------|----------
+ |Datepicker|String which includes date and time|```2016-05-28 00:00:00```
+ |Map|String which includes latitude and longitude coma separated|```50.37, 26.56```
+ |List|Simple array|```["123", "sample"]```
+ |Select|String with predefined values|```sample```
+ |Array|Array of objects|```[{"Second name":"123","Age":"12","Photo":"sdf","Draft":"sdfsdf"},{"name":"adi","Second name":"bla","Age":"4","Photo":"asfserwe","Draft":"sdfsdf"}] ```
+
 ## Foursquare.getAccessToken
 Access tokens allow apps to make requests to Foursquare on the behalf of a user. Each access token is unique to the user and consumer key.
 
@@ -88,7 +97,7 @@ Returns a history of checkins for the authenticated user.
 | userId         | String| For now, only `self` is supported
 | limit          | Number| Number of results to return, up to 250.
 | offset         | Number| The number of results to skip. Used to page through results.
-| sort           | String| How to sort the returned checkins. Can be `newestfirst` or `oldestfirst`.
+| sort           | Select| How to sort the returned checkins. Can be `newestfirst` or `oldestfirst`.
 | afterTimestamp | Number| Retrieve the first results to follow these seconds since epoch. This should be useful for paging forward in time, or when polling for changes. To avoid missing results when polling, we recommend subtracting several seconds from the last poll time and then de-duplicating.
 | beforeTimestamp| Number| Retrieve the first results prior to these seconds since epoch. Useful for paging backward in time.
 
@@ -120,8 +129,8 @@ A User's Lists.
 |----------------|-------|----------
 | accessToken    | String| Access Token obtained from Foursquare OAuth.
 | userId         | String| Identity of the user to get lists for. Pass `self` to get lists of the acting user.
-| group          | String| Can be `created` (lists created by this user), `edited` (other people's lists this user has edited), `followed` (lists this user follows), `friends` (lists from this user's friends), and `suggested` (lists relevant to the user's current location).
-| location       | String| Location of the user, required in order to receive the suggested group. Format: `lat,lng`. Example: `40.7,-74`
+| group          | Select| Can be `created` (lists created by this user), `edited` (other people's lists this user has edited), `followed` (lists this user follows), `friends` (lists from this user's friends), and `suggested` (lists relevant to the user's current location).
+| location       | Map| Location of the user, required in order to receive the suggested group. Format: `lat,lng`. Example: `40.7,-74`
 | limit          | Number| Number of results to return, up to 200.
 | offset         | String| The number of results to skip. Used to page through results.
 
@@ -158,7 +167,7 @@ Returns a list of venues near the current location, optionally matching a search
 |-----------------|------------|----------
 | clientId        | credentials| Application client id.
 | clientSecret    | credentials| Application client secret key.
-| location        | String     | Required unless near is provided: Latitude and longitude of the user's location. Format: `lat,lng`. Example: `40.7,-74`
+| location        | Map     | Required unless near is provided: Latitude and longitude of the user's location. Format: `lat,lng`. Example: `40.7,-74`
 | near            | String     | Required unless location is provided:  A string naming a place in the world. If the near string is not geocodable, returns a failed_geocode error. Otherwise, searches within the bounds of the geocode. Adds a geocode object to the response. (Required for query searches)
 | locationAccuracy| Float      | Accuracy of latitude and longitude, in meters. (Does not currently affect search results.)
 | altitude        | Number     | Altitude of the user's location, in meters. (Does not currently affect search results.)
@@ -182,7 +191,7 @@ Returns a list of mini-venues partially matching the search term, near the locat
 | clientId        | credentials| Application client id.
 | clientSecret    | credentials| Application client secret key.
 | query           | String     | A search term to be applied against titles. Must be at least 3 characters long.
-| location        | String     | Required unless near is provided: Latitude and longitude of the user's location. Format: `lat,lng`. Example: `40.7,-74`
+| location        | Map     | Required unless near is provided: Latitude and longitude of the user's location. Format: `lat,lng`. Example: `40.7,-74`
 | near            | String     | Required unless location is provided:  A string naming a place in the world. If the near string is not geocodable, returns a failed_geocode error. Otherwise, searches within the bounds of the geocode. Adds a geocode object to the response. (Required for query searches)
 | locationAccuracy| Float      | Accuracy of latitude and longitude, in meters. (Does not currently affect search results.)
 | limit           | String     | Number of results to return, up to 100.
@@ -205,7 +214,7 @@ Returns a list of venues near the current location with the most people currentl
 |-------------|------------|----------
 | clientId    | credentials| Application client id.
 | clientSecret| credentials| Application client secret key.
-| location    | String     | Location of the user. Format: `lat,lng`. Example: `40.7,-74`
+| location    | Map     | Location of the user. Format: `lat,lng`. Example: `40.7,-74`
 | limit       | Number     | Number of results to return, up to 50.
 | radius      | String     | Radius in meters, up to approximately 2000 meters.
 
@@ -216,18 +225,18 @@ Returns a list of recommended venues near the current location.
 |-----------------|------------|----------
 | clientId        | credentials| Application client id.
 | clientSecret    | credentials| Application client secret key.
-| location        | String     | Required unless near is provided: Latitude and longitude of the user's location. Format: `lat,lng`. Example: `40.7,-74`
+| location        | Map     | Required unless near is provided: Latitude and longitude of the user's location. Format: `lat,lng`. Example: `40.7,-74`
 | near            | String     | Required unless location is provided:  A string naming a place in the world. If the near string is not geocodable, returns a failed_geocode error. Otherwise, searches within the bounds of the geocode. Adds a geocode object to the response. (Required for query searches)
 | locationAccuracy| Float      | Accuracy of latitude and longitude, in meters. (Does not currently affect search results.)
 | altitude        | Number     | Altitude of the user's location, in meters. (Does not currently affect search results.)
 | altitudeAccuracy| Float      | Accuracy of the user's altitude, in meters. (Does not currently affect search results.)
 | query           | String     | A search term to be applied against venue names.
 | radius          | Number     | Radius to search within, in meters. If radius is not specified, a suggested radius will be used based on the density of venues in the area.
-| section         | String     | One of `food`, `drinks`, `coffee`, `shops`, `arts`, `outdoors`, `sights`, `trending` or `specials`, `nextVenues` (venues frequently visited after a given venue), or topPicks (a mix of recommendations generated without a query from the user). Choosing one of these limits results to venues with the specified category or property.
+| section         | Select     | One of `food`, `drinks`, `coffee`, `shops`, `arts`, `outdoors`, `sights`, `trending` or `specials`, `nextVenues` (venues frequently visited after a given venue), or topPicks (a mix of recommendations generated without a query from the user). Choosing one of these limits results to venues with the specified category or property.
 | limit           | Number     | Number of results to return, up to 50.
 | offset          | String     | Used to page through results.
-| novelty         | String     | Pass `new `or `old` to limit results to places the acting user hasn't been or has been, respectively. Omitting this parameter returns a mixture of old and new venues.
-| friendVisits    | String     | Pass `visited` or `notvisited` to limit results to places the acting user's friends have or haven't been, respectively. Omitting this parameter returns a mixture of venues to which the user's friends have or haven't been.
+| novelty         | Select     | Pass `new `or `old` to limit results to places the acting user hasn't been or has been, respectively. Omitting this parameter returns a mixture of old and new venues.
+| friendVisits    | Select     | Pass `visited` or `notvisited` to limit results to places the acting user's friends have or haven't been, respectively. Omitting this parameter returns a mixture of venues to which the user's friends have or haven't been.
 | time            | String     | Pass `any` to retrieve results for any time of day. Omitting this parameter returns results targeted to the current time of day.
 | day             | String     | Pass `any` to retrieve results for any day of the week. Omitting this parameter returns results targeted to the current day of the week.
 | venuePhotos     | Number     | Boolean flag to include a photo in the response for each venue, if one is available. Default is `0` (no photos). Photos are returned as part of the venue JSON object.
@@ -252,7 +261,7 @@ Allows Foursquare users to add a new venue.
 | zip                | String | The zip or postal code for the venue.
 | phone              | String | The phone number of the venue.
 | twitter            | String | The twitter handle of the venue.
-| location           | String | Latitude and longitude of the venue, as accurate as is known. Format: `lat,lng`. Example: `40.7,-74`
+| location           | Map | Latitude and longitude of the venue, as accurate as is known. Format: `lat,lng`. Example: `40.7,-74`
 | primaryCategoryId  | String | The ID of the category to which you want to assign this venue.
 | description        | String | A freeform description of the venue, up to 160 characters.
 | url                | String | The url of the homepage of the venue.
@@ -350,7 +359,7 @@ Returns tips for a venue.
 | clientId    | credentials| Application client id.
 | clientSecret| credentials| Application client secret key.
 | venueId     | String     | The venue you want tips for.
-| sort        | String     | One of `friends`, `recent`, or `popular`.
+| sort        | Select     | One of `friends`, `recent`, or `popular`.
 | limit       | String     | Number of results to return, up to 500.
 | offset      | String     | Used to page through results.
 
@@ -395,7 +404,7 @@ Allows users to indicate a venue is incorrect in some way.
 |----------------|-------|----------
 | accessToken    | String| Access Token obtained from Foursquare OAuth.
 | venueId        | String| The venue id for which an edit is being proposed.
-| problem        | String| One of `mislocated`, `closed`, `duplicate`, `inappropriate`, `doesnt_exist`, `event_over`
+| problem        | Select| One of `mislocated`, `closed`, `duplicate`, `inappropriate`, `doesnt_exist`, `event_over`
 | dublicatedVenue| String| ID of the duplicated venue (for problem `duplicate`)
 
 ## Foursquare.proposeVenueChange
@@ -417,7 +426,7 @@ If the user knows the correct venue information, use this method to save it. Oth
 | url              | String| The url of the homepage of the venue.
 | menuUrl          | String| A url where the menu of the venue can be found.
 | facebookUrl      | String| The url for this venue's Facebook Page.
-| venueLocation    | String| Latitude and longitude at which the venue should be located. Example: `44.3,37.2`
+| venueLocation    | Map| Latitude and longitude at which the venue should be located. Example: `44.3,37.2`
 | primaryCategoryId| String| The ID of the category to which you want to assign this venue.
 | addCategoryIds   | String| Comma-separated list of new category IDs to be assigned to this venue. If you are adding a new category to a venue and you want to make it primary, you should just use primaryCategoryId.
 | removeCategoryIds| String| Comma-separated list of new category IDs to be removed from this venue.
@@ -468,7 +477,7 @@ Returns a list of recent checkins from friends.
 | Field          | Type  | Description
 |----------------|-------|----------
 | accessToken    | String| Access Token obtained from Foursquare OAuth.
-| location       | String| Latitude and longitude of the user's location, so response can include distance. Format: `lat,lng`. Example: `40.7,-74`
+| location       | Map| Latitude and longitude of the user's location, so response can include distance. Format: `lat,lng`. Example: `40.7,-74`
 | limit          | Number| Number of results to return, up to 100.
 | afterTimestamp | Number| Seconds after which to look for checkins, e.g. for looking for new checkins since the last fetch. If more than limit results are new since then, this is ignored. Checkins created prior to this timestamp will still be returned if they have new comments or photos, making it easier to poll for all new activity.
 
@@ -481,9 +490,9 @@ Allows you to check in to a place.
 | venueId         | String| The venue where the user is checking in. Find venue IDs by searching or from historical APIs.
 | eventId         | String| The event the user is checking in to.
 | shout           | String| A message about your check-in. The maximum length of this field is 140 characters.
-| mentions        | String| Mentions in your check-in. This parameter is a semicolon-delimited list of mentions. A single mention is of the form `start,end,userid`, where start is the index of the first character in the shout representing the mention, end is the index of the first character in the shout after the mention, and userid is the userid of the user being mentioned. If userid is prefixed with 'fbu-', this indicates a Facebook userid that is being mention. Character indices in shouts are 0-based.
-| broadcast       | String| Who to broadcast this check-in to. Accepts a comma-delimited list of values: `private`, `public`, `facebook`, `twitter`, `followers`
-| location        | String| Latitude and longitude of the user's location. Only specify this field if you have a GPS or other device reported location for the user at the time of check-in. Format: `lat,lng`. Example: `40.7,-74`
+| mentions        | Select| Mentions in your check-in. This parameter is a semicolon-delimited list of mentions. A single mention is of the form `start,end,userid`, where start is the index of the first character in the shout representing the mention, end is the index of the first character in the shout after the mention, and userid is the userid of the user being mentioned. If userid is prefixed with 'fbu-', this indicates a Facebook userid that is being mention. Character indices in shouts are 0-based.
+| broadcast       | Select| Who to broadcast this check-in to. Accepts a comma-delimited list of values: `private`, `public`, `facebook`, `twitter`, `followers`
+| location        | Map| Latitude and longitude of the user's location. Only specify this field if you have a GPS or other device reported location for the user at the time of check-in. Format: `lat,lng`. Example: `40.7,-74`
 | locationAccuracy| Float | Accuracy of latitude and longitude, in meters.
 | altitude        | Number| Altitude of the user's location, in meters.
 | altitudeAccuracy| Float | Accuracy of the user's altitude, in meters.
@@ -588,7 +597,7 @@ The lists that this tip appears on.
 | clientId    | credentials| Application client id.
 | clientSecret| credentials| Application client secret key.
 | tipId       | String     | Identity of a tip to get lists for.
-| group       | String     | can be `created`, `edited`, `followed`, `friends`, `other`. If no acting user is present, only other is supported.
+| group       | Select     | can be `created`, `edited`, `followed`, `friends`, `other`. If no acting user is present, only other is supported.
 
 ## Foursquare.removeTipFromToDoList
 Allows you to remove a tip from your to-do list.
@@ -606,7 +615,7 @@ Allows the acting user to flag a tip as offensive, spam, or not relevant.
 | accessToken    | String| Access Token obtained from Foursquare OAuth.
 | tipId          | String| The tip to flag.
 | comment        | String| A comment explaining the flag.
-| problem        | String| The specific problem with the tip. Must be one of `offensive`, `spam`, or `nolongerrelevant`.
+| problem        | Select| The specific problem with the tip. Must be one of `offensive`, `spam`, or `nolongerrelevant`.
 
 ## Foursquare.likeTip
 Allows the acting user to like a tip.
@@ -843,7 +852,7 @@ Returns a list of specials near the current location.
 |-----------------|------------|----------
 | clientId        | credentials| Application client id.
 | clientSecret    | credentials| Application client secret key.
-| location        | String     | Latitude and longitude to search near. Format: `lat,lng`. Example: `40.7,-74`
+| location        | Select     | Latitude and longitude to search near. Format: `lat,lng`. Example: `40.7,-74`
 | radius          | Number     | Limit results to venues within this many meters of the specified location. Defaults to a city-wide area.
 | locationAccuracy| Float      | Accuracy of latitude and longitude, in meters.
 | altitude        | Number     | Altitude of the user's location, in meters.
@@ -921,7 +930,7 @@ Allows you to get the page's venues.
 | pageId      | String     | The page whose venues to get venues for
 | location    | String     | Not valid with ne or sw. Limits results to venues near this latitude and longitude within an optional radius.
 | radius      | Number     | Can be used when including ll. Not valid with ne or sw. Limit results to venues within this many meters of the specified ll. The maximum supported radius is currently 100,000 meters.
-| southWest   | String     | Example: `44.3,37.2`. With northEast, limits results to the bounding quadrangle defined by the latitude and longitude given by sw as its south-west corner, and ne as its north-east corner. The bounding quadrangle is only supported for intent=browse searches. Not valid with ll or radius. Bounding quadrangles with an area up to approximately 10,000 square kilometers are supported.
+| southWest   | Map     | Example: `44.3,37.2`. With northEast, limits results to the bounding quadrangle defined by the latitude and longitude given by sw as its south-west corner, and ne as its north-east corner. The bounding quadrangle is only supported for intent=browse searches. Not valid with ll or radius. Bounding quadrangles with an area up to approximately 10,000 square kilometers are supported.
 | northEast   | String     | See `southWest`.
 | offset      | Number     | The offset of which venues to return. Defaults to 0.
 | limit       | Number     | The number of venues to return. Defaults to 20, max of 100.
