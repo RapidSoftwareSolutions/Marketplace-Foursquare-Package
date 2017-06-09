@@ -216,7 +216,7 @@
       "name": "userId",
       "type": "String",
       "info": "For now, only `self` is supported",
-      "required": false
+      "required": true
     }, {
       "name": "limit",
       "type": "Number",
