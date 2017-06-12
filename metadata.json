@@ -1448,7 +1448,7 @@
       "name": "checkinId",
       "type": "String",
       "info": "The ID of the check-in to retrieve additional information for.",
-      "required": false
+      "required": true
     }],
     "callbacks": [{
       "name": "error",
@@ -1923,7 +1923,7 @@
       "type": "Select",
       "options": ["offensive","spam","nolongerrelevant"],
       "info": "The specific problem with the tip. Must be one of `offensive`, `spam`, or `nolongerrelevant`.",
-      "required": false
+      "required": true
     }]
   }, {
     "name": "likeTip",
@@ -2606,9 +2606,9 @@
       "required": true
     }, {
       "name": "value",
-      "type": "Number",
-      "info": "1 for true, and 0 for false.",
-      "required": false
+      "type": "Boolean",
+      "info": "true, or false.",
+      "required": true
     }],
     "callbacks": [{
       "name": "error",
