@@ -12,6 +12,13 @@
       "clientSecret"
     ]
   },
+  'steps' : [
+    "Create a new Foursquare Application",
+    "Copy and save your clientId, clientSecret, redirectUrl",
+    "Direct user to foursquare.com/oauth2/authenticate?client_id=clientId&response_type=code&redirect_uri=redirectUrl",
+    "If the user accepts, they will be redirected back to http://YOUR_REGISTERED_REDIRECT_URI/?code=code",
+    "Use getAccessToken method to get users's accessToken."
+  ],
   "blocks": [{
     "name": "getAccessToken",
     "description": "Access tokens allow apps to make requests to Foursquare on the behalf of a user. Each access token is unique to the user and consumer key.",
