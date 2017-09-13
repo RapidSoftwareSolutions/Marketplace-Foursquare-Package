@@ -12,7 +12,7 @@
       "clientSecret"
     ]
   },
-  'steps' : [
+  "steps" : [
     "Create a new Foursquare Application",
     "Copy and save your clientId, clientSecret, redirectUrl",
     "Direct user to foursquare.com/oauth2/authenticate?client_id=clientId&response_type=code&redirect_uri=redirectUrl",
